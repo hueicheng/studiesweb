@@ -1,0 +1,15 @@
+pre { border:ridge 1px #888888; padding:10px; }
+div { padding:5px; margin:5px;}
+table,tr,td,th { border-collapse:collapse; }
+.menubar { text-align:right; font-family:細明體, Times New Roman; font-size:12px; background-color:#eeeeee; border:solid 1px #888888; padding:5px; margin:0px; }
+.wikitext { border:ridge 1px #888888; font-family:細明體, Times New Roman; font-size:12px; padding:5px; margin:5px;}
+.wikihtml { border:ridge 0px #888888; font-family:細明體, Times New Roman; font-size:12px; padding:5px; margin:5px;}
+body { padding:0px; margin:0px; }
+H1 { font-family:標楷體, Times New Roman; font-size:20px; text-decoration:none; line-height:160%; font-weight:bold;  }
+H1 span { font-family:標楷體, Times New Roman; font-size:20px; text-decoration:none; line-height:160%; font-weight:bold; }
+H1 a { font-family:標楷體, Times New Roman; font-size:20px; text-decoration:none; line-height:160%; font-weight:boldl; }
+H2 { font-family:細明體, Times New Roman; font-size:12px; text-decoration:none; line-height:80%; margin-left:0px; font-weight:normal; }
+H2 span { font-family:細明體, Times New Roman; font-size:12px; text-decoration:none; line-height:80%; margin-left:0px; font-weight:normal; }
+H2 a { font-family:細明體, Times New Roman; font-size:12px; text-decoration:none; line-height:80%; margin-left:0px; font-weight:normal; }
+H3 { font-family:細明體, Times New Roman; font-size:12px; text-decoration:none; line-height:80%; margin-left:10px; font-weight:normal; }
+H3 a { font-family:細明體, Times New Roman; font-size:12px; text-decoration:none; line-height:80%; margin-left:10px; font-weight:normal; }

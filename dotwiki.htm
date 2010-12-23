@@ -1,0 +1,60 @@
+﻿<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+  <link type="text/css" rel="stylesheet" href="dotwiki.css"/>
+  <SCRIPT language="JavaScript" SRC="dotwiki.js"></SCRIPT>
+  <SCRIPT language="JavaScript" SRC="jquery.js"></SCRIPT>
+  <script language="JavaScript" src="jquery.history.js"></script>
+</head>
+<body>
+  <div class="menubar">
+    <a href="JavaScript:show()">顯示</a> | 
+    <a href="JavaScript:edit()">編輯</a> | 
+    <a href="JavaScript:save()">儲存</a> | 
+    <a href="JavaScript:login()">登入</a>
+  </div>
+  <div>
+  <form id="form" action="/txtdb" method="post"> <!--  enctype="multipart/form-data" -->
+    <div><input type="hidden" id="op" name="op" value="put"/><input id="path" name="path" type="text" value=""><input type="submit" value="Save"/></div>
+    <div>
+<textarea id="wikibox" name="wikibox" style="width:100%; height:80%" class="wikitext">
+Error:load fail !
+</textarea>
+<div id="htmlbox" width="100%" class="wikihtml" style="width:100%; height:80%">
+</div>
+  </form>
+  <script type="text/javascript">
+    var wikiPath = "";
+	var attachPath = "";
+	var sourcepath = "";
+	
+    jQuery(document).ready(function($) { // 相當於 $(...)，但不會因找不到 $ 而失敗
+        function load(page) {
+  		  var r=new RegExp("\\#([\\w/:\\.]+)", "gi"); 
+	      if (location.href.match(r)) {
+   	        wikiPath = RegExp.$1;
+		    attachPath = "files/"+wikiPath.replace(/:/gi, '_');
+		    sourcePath = "source/"+wikiPath.replace(/:/gi, '_')+".txt";
+		    // 載入 path 指定的 wiki 檔案後呼叫 show() 函數，以將 wiki 轉為 HTML 顯示出來
+	        $('#wikibox').load(sourcePath, show);
+	      }
+        }
+
+        $.history.init(function(page) {
+                load(page == "" ? "main" : page);
+            });
+
+        $('a').live('click', function(e) {
+                var url = $(this).attr('href');
+				if (url.startsWith("#!")) {
+                  url = url.replace(/^.*#/, '');
+                  $.history.load(url);
+				} else
+				  location.href = url;
+                return false;
+            });
+    });	
+  </script>
+  </div>
+</body>
+</html>
