@@ -1,0 +1,21 @@
+* 宣告一個變數是使用##red|var##來宣告:
+[[code type="javascript"]]
+var a;
+var b;
+[[/code]]
+
+* 可以在宣告的時候給定一個**值**:
+[[code type="javascript"]]
+var a=10;
+var b="Hello World!";
+[[/code]] _
+這個時候的**a**的值是 **10**，**b**的值是 **Hello World!**、 _
+**a**的型態是##red|int##，**b**的型態是##red|string##。
+
+* 基本型態一覽表:
+
+||型態||說明||
+||int||整數型態||
+||float||小數型態||
+||string||字串型態，"",''內的值||
+||boolean||布林型態，只有**true**,**false**||

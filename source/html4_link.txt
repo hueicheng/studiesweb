@@ -1,0 +1,13 @@
+||<a href="連結網址">說明文字</a>||	當游標按到那些字上時，則會連到別的文章或網站。||
+
+* 範例
+[[code type="html"]]
+<a href="http://studiesweb.wikidot.com/">網路應用研究</a>
+[[/code]]
+
+*實作
+[[note]]
+[[html]]
+<a href="http://studiesweb.wikidot.com/">網路應用研究</a>
+[[/html]]
+[[/note]]

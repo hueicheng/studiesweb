@@ -1,0 +1,11 @@
+* 文字的框線（目前此功能僅有google chrome支援）
+
+[[code type="css"]]
+.stroke {
+   -webkit-text-stroke-color: red;
+   -webkit-text-stroke-width: 2px;
+}
+[[/code]]
+
+||-webkit-text-stroke-color||文字的框線顏色。||
+||-webkit-text-stroke-width||文字的框線粗細。||

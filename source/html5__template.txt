@@ -1,0 +1,26 @@
+[[table style="width:98%"]]
+[[row]]
+[[cell style="width:100px; vertical-align:top; "]]
++++ [[[html5:main|簡介]]]
++++ [[[html5:tags|標籤]]]
++++ [[[html5:attributes|屬性]]]
+
+
++++++ --[[[html5:_template|邊欄]]]--
+[[/cell]]
+[[cell style="vertical-align:top;"]]
+%%content%%
+
+------
++++ 參考文獻
+* [*http://html5demos.com/ HTML5 Demos and Examples]
+* [*http://dev.w3.org/html5/spec/Overview.html W3C-HTML]
+* [*http://www.w3schools.com/html5/default.asp w3school-HTML5]
+* [*http://www.html5rocks.com/ HTML5 Rocks]
+* [*http://www.html5test.com/ HTML5test]
+* [*http://9elements.com/io/projects/html5/canvas/ 好棒的範例]
+* [*http://www.w3schools.com/svg/default.asp w3school-SVG]
+* [*http://www.felgall.com/html5v.htm HTML5 VS HTML4]
+[[/cell]]
+[[/row]]
+[[/table]]

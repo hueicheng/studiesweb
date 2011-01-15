@@ -1,0 +1,15 @@
+* 邊框圓角
+
+[[code type="css"]]
+.border_rounded{
+  /*border-radius: 6px;  */ 
+  /*-moz-border-radius: 6px; */ 
+  -webkit-border-radius: 100px 50px; 
+  background: #ff0000; 
+  border: 2px solid #0000ff; 
+  padding: 10px; 
+}
+[[/code]]
+||border-radius||邊框圓角屬性，適用於「Opera 10.5+」。||
+||-moz-border-radius||邊框圓角屬性，適用於「Firfox」。||
+||-webkit-border-radius||邊框圓角屬性，適用於「Safari & google Chrome」。||

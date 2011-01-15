@@ -1,0 +1,19 @@
+[[table style="width:98%"]]
+[[row]]
+[[cell style="width:120px; vertical-align:top; "]]
++++ [[[svg:main|簡介]]]
++++ [[[svg:tags|標籤]]]
+
++++++ --[[[svg:_template|編輯此欄]]]--
+[[/cell]]
+[[cell style="vertical-align:top;"]]
+%%content%%
+
+------
++++ 參考文獻
+* [*http://www.w3schools.com/svg/default.asp w3school-SVG]
+* [*http://www.w3.org/Graphics/SVG/ W3C-SVG]
+* [*http://www.w3.org/TR/2003/REC-SVG11-20030114/ W3C-SVG標準?]
+[[/cell]]
+[[/row]]
+[[/table]]

@@ -1,0 +1,16 @@
+其實這個網站主要是研究HTML5 及其應用。
+
+++ 成員名單
+* 資工三 劉言誠
+* 資工三 林季陶
+* 資工三 廖茂勝
+* 資工三 陳柏華
+* 資工三 伍海威
+
+++ 工作分配
+||文章部|| ||
+||html,html5,DOM||廖茂勝||
+||css||林季陶||
+||JavaScript,jQuery,AJAX,JSON||劉言誠||
+||xml,SVG,RSS||陳柏華||
+||browser,JavaScript||伍海威||

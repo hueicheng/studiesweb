@@ -1,0 +1,40 @@
++ <ellipse>標籤用於創建一個橢圓。橢圓和圓是密切相關的。不同的是，一個橢圓有x和y半徑不同，取長補短，而圓的半徑等於X和Y。
+[[code type="xml"]]
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg width="100%" height="100%" version="1.1"
+xmlns="http://www.w3.org/2000/svg">
+
+<ellipse cx="300" cy="150" rx="200" ry="80"
+style="fill:rgb(200,100,50);
+stroke:rgb(0,0,100);stroke-width:2"/>
+
+</svg>
+[[/code]]
+**範例A [*http://studiesweb.wdfiles.com/local--files/files/ellipse.svg TEST]**
+||cx="n"||定義橢圓中心點x坐標軸的位置。n值無範圍限制。||
+||cy="n"||定義橢圓中心點y坐標軸的位置。n值無範圍限制。||
+||rx="n"||定義橢圓在x軸的半徑長度。n值範圍只能為正數。||
+||ry="n"||定義橢圓在y軸的半徑長度。n值範圍只能為正數。||
+
+++ 下面的例子是如何讓橢圓形旋轉：
+[[code type="xml"]]
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg width="100%" height="100%" version="1.1"
+xmlns="http://www.w3.org/2000/svg">
+
+<ellipse transform="translate(900 200) rotate(-30)"
+rx="250" ry="100"
+style="fill:none stroke:blue stroke-width:20"  />
+
+</svg>
+[[/code]]
+**範例B [*http://studiesweb.wikidot.com/local--files/files/ellipse2.svg TEST]**
+||transform||定義橢圓形轉換||
+||translate||轉換為||
+||rotate(n)||定義橢圓形旋轉角度。n值無範圍限制。||

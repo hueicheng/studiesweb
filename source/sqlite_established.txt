@@ -1,0 +1,19 @@
+[[note]]
+測試環境: Windows
+請下載sqlite-shell-win32-x86-3070400.zip
+
+請依個人環境下載shell檔案
+
+下載完並解壓縮，開啟裡面的檔案sqlite3.exe
+這是已經編譯好的sqlite3檔，可直接建立表單了
+[[/note]]
+
+[[note]]
+[[image http://studiesweb.wikidot.com/local--files/files/established.png]]
+[[/note]]
+
+[[note]]
+輸入 ".help" 會顯示出一些命令格式
+
+輸入 ".quit" 離開並關掉sqlite3.exe
+[[/note]]

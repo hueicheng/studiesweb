@@ -1,0 +1,27 @@
+[[include _thead]]
+
++++ [[[js:main|簡介]]]
++++ 基礎語法
+* [[[js:value|變數]]]
+* [[[js:expression|運算式]]]
+* [[[js:Predicates|判斷式]]]
+* [[[js:loop|迴圈]]]
+* [[[js:function|函數]]]
+* [[[js:dom|DOM]]]
++++ [[[js:works|作品]]]
+
++++++ [[[js:_template|編輯此欄]]]
+[[include _centerthead]]
+
++ 參考文獻
+* [*http://www.w3.org/standards/techs/js#w3c_all W3C-JS教學?]
+* [*http://www.w3.org/TR/2008/REC-ElementTraversal-20081222/ W3C-Element]
+* [*http://zh.wikipedia.org/zh-tw/JavaScript 維基百科- JavaScript ]
+* [*http://en.wikipedia.org/wiki/Document_Object_Model 維基百科- DOM]
+* [*http://zh.wikipedia.org/zh-tw/Ajax 維基百科-AJAX]
+* [*http://www.headfirstlabs.com/books/hfajax/ 參考書-Head First Ajax]
+* [*http://www.books.com.tw/exep/prod/booksfile.php?item=0010416211 參考書-深入淺出 Javascript 與 Ajax 網頁程式設計]
+* [*http://www.w3schools.com/js/default.asp w3school- Learn JavaScript]
+* [*http://www.w3schools.com/svg/default.asp w3school-SVG]
+
+[[include _endthead]]

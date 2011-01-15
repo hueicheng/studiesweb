@@ -1,0 +1,41 @@
+||<caption></caption>||	定義一個表格標題||
+
+* 範例
+[[code type="HTML"]]
+<html>
+<body>
+
+<table border="1">
+   <caption>表格範例</caption>
+　      <tr>
+　　          <th>第一列第一欄</th>
+　　          <th>第一列第二欄</th>
+　      </tr>
+　      <tr>
+　　          <td>第二列第一欄</td>
+　　          <td>第二列第二欄</td>
+　      </tr>
+</table>
+
+</body>
+</html>
+[[/code]]
+
+* 實作
+[[note]]
+[[html]]
+<body>
+<table border="1">
+   <caption>表格範例</caption>
+　      <tr>
+　　          <th>第一列第一欄</th>
+　　          <th>第一列第二欄</th>
+　      </tr>
+　      <tr>
+　　          <td>第二列第一欄</td>
+　　          <td>第二列第二欄</td>
+　      </tr>
+</table>
+</body>
+[[/html]]
+[[/note]]

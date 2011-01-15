@@ -1,0 +1,8 @@
++ 基本形狀標籤
+* [[[SVG:rect | 矩形標籤]]]
+* [[[SVG:circle | 圓圈標籤]]]
+* [[[SVG:ellipse | 橢圓標籤]]]
+* [[[SVG:line | 線標籤]]]
+* [[[SVG:polygon | 多邊形標籤]]]
+* [[[SVG:Polyline | 折線標籤]]]
+* [[[SVG:path | 路徑標籤]]]

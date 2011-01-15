@@ -1,0 +1,14 @@
+* 框線陰影（也可適用於圖片）
+
+[[code type="css"]]
+#boxShadow{
+  border: 5px solid #111;
+  -webkit-box-shadow: 5px 5px 7px #999;
+  -webkit-border-bottom-right-radius: 15px;
+  padding: 15px 25px;
+  height: inherit;
+  width: 590px;
+}
+[[/code]]
+
+||box-shadow||左至右為x軸、y軸、陰影柔化、顏色。||

@@ -1,0 +1,40 @@
+||<command></command>||	定義一個命令按鈕，該元素必須寫在一個<menu>標籤||
+||<menu></menu>||	定義一個菜單列表||
+
+
+||屬性||	數值||	說明||
+||type||	command,checkbox,radio||	指定命令的類型，預設為command||
+||label||	command name||	指定名稱命令，顯示給用戶。||
+||icon||	url||	指定的URI的圖形圖像||
+||disabled||	disabled||	指定如果命令被禁用或沒有||
+||checked||	checked||	指示該命令是否被選中與否||
+||radiogroup||	name of radiogroup||	指定名稱的一組命令，將切換時，切換命令本身，對於命令的類型屬性的值是“radio”||
+
+
+* 範例
+[[code type="HTML"]]
+<html>
+<body>
+
+<menu>
+<command onclick="alert('Welcome to 網路應用研究!')">
+Click Me!</command>
+</menu>
+
+</body>
+</html>
+[[/code]]
+
+
+* 實作
+
+[[note]]
+[[html]]
+<body>
+<menu>
+<command onclick="alert('Welcome to 網路應用研究!')">
+Click Me!</command>
+</menu>
+</body>
+[[/html]]
+[[/note]]

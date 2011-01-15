@@ -1,0 +1,28 @@
+||<basefont></basefont>||	指定一個默認的字型，顏色，字體大小||
+
+* 範例
+[[code type="HTML"]]
+<head>
+<basefont color="red" size="5" />
+</head>
+
+<body>
+<h1>已過時標籤</h1>
+<p>目前只有IE8瀏覽器支援，並且html5也沒有支援</p>
+<p>建議要設置字體屬性，使用CSS字體屬性</p>
+</body
+[[/code]]
+
+* 實作
+[[note]]
+[[html]]
+<head>
+<basefont color="red" size="5" />
+</head>
+<body>
+<h1>已過時標籤</h1>
+<p>目前只有IE8瀏覽器支援，並且html5也沒有支援</p>
+<p>建議要設置字體屬性，使用CSS字體屬性</p>
+</body
+[[/html]]
+[[/note]]

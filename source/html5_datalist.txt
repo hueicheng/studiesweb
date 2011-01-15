@@ -1,0 +1,32 @@
+||<datalist></datalist>||指定了一個清單選項輸入欄位||
+||目前支援的瀏覽器||Opera10.63||
+
+* 範例
+[[code type="HTML"]]
+<html>
+<body>
+
+網站: <input type="url" list="url_list" name="link" />
+<datalist id="url_list">
+   <option label="NQU" value="http://www.nqu.edu.tw" />
+   <option label="Google" value="http://www.google.com" />
+   <option label="Yahoo" value="http://tw.yahoo.com" />
+</datalist>
+
+</body>
+</html>
+[[/code]]
+
+* 實作
+[[note]]
+[[html]]
+<body>
+網站: <input type="url" list="url_list" name="link" />
+<datalist id="url_list">
+   <option label="NQU" value="http://www.nqu.edu.tw" />
+   <option label="Google" value="http://www.google.com" />
+   <option label="Yahoo" value="http://tw.yahoo.com" />
+</datalist>
+</body>
+[[/html]]
+[[/note]]

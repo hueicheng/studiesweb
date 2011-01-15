@@ -1,0 +1,22 @@
+[[include _thead]]
++++ [[[html4:main|簡介]]]
++++ [[[html4:tags|標籤]]]
++++ [[[html4:attribute|屬性]]]
++++ [[[html4:x|XHTML]]]
+
+
+
+++++++ --[[[html4:_template|可憐的模版]]]--
+[[include _centerthead]]
+
++++ 參考文獻
+* [*http://dev.w3.org/html5/spec/Overview.html W3C-HTML]
+* [*http://zh.wikipedia.org/zh-tw/Html 維基百科-HTML]
+* [*http://zh.wikipedia.org/zh-tw/XHTML 維基百科-XHTML]
+* [*http://zh.wikipedia.org/zh-tw/HTML_5 維基百科-HTML5]
+* [*http://www.w3schools.com/html/default.asp w3school- Learn HTML]
+* [*http://www.w3schools.com/xhtml/default.asp w3school- Learn XHTML]
+* [*http://www.pcnet.idv.tw/pcnet/html/html.htm html教學]
+* [*http://www.quackit.com/ quackit]
+
+[[include _endthead]]

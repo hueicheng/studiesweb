@@ -1,0 +1,26 @@
+* 從Youtube分享到Plurk _
+因為沒有支援分享到噗浪，所以只好自己寫一個放在書籤列--佔空間--。
+
+[[html]]
+<a href="javascript: var u=location.href , m=document.getElementById('eow-title').title +u.substring(0,u.search('&')) ,f='http://www.plurk.com/?status=' + encodeURIComponent(m); if(!window.open(f,'surfing'))location.href=f; void(0);">從Youtube分享到Plurk</a>
+[[/html]]
+
+* 從ニコニコ分享到Plurk _
+因為沒有支援分享到噗浪，所以也拿來--佔空間--。
+
+[[html]]
+<a href="javascript:%20var%20t%20=%20document.getElementsByClassName('video_title')[0].innerHTML;t=t.substring(t.indexOf('>',0)+1,t.indexOf('<',t.indexOf('>')));t=t.replace('(','%EF%BC%88');%20t=t.replace(')','%EF%BC%89')%20;%20m=location.href%20+%20'%20('%20+%20t%20+%20')',%20f='http://www.plurk.com/?status='%20+%20encodeURIComponent(m)%20+%20'&amp;qualifier=shares'%20,w%20=%20window.open(f,'surfing');w.focus();%20if(!w)location.href=f;void(0);">從ニコニコ分享到Plurk</a>
+[[/html]]
+
+
+[[collapsible show="...." hide="...."]]
+* 出於慵懶，寫了一個ニコニコ到にこ☆さうんど＃載音樂的東西 _
+因為會有很多問題，所以不久後會消失。
+
+[[html]]
+<a href="javascript: var u= location.href, f= u.replace(&quot;http://www.nicovideo.jp/watch&quot;,&quot;http://nicosound.anyap.info/sound&quot;);if(!window.open(f,&#39;surfing&#39;))location.href=f; void(0);">にこ☆さうんど＃</a> 
+[[/html]]
+
+[[/collapsible]]
+
+++++ 啊，如果你__##red|不是用##__ **IE9**之前的版本話、把連結直接"拉"到書籤列上就好了。

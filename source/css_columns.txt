@@ -1,0 +1,13 @@
+* 分欄
+
+[[code type="css"]]
+ #columns-no-example{
+           column-count: 2;
+           column-rule: 1px solid #bbb;
+           column-gap: 2em;
+}
+[[/code]]
+
+||column-count||分成幾欄。||
+||column-rule||從左至右分別為，分隔線粗細，線的樣式（範例中為實線），線的顏色。||
+||column-gap||文字距離分隔線之距離。||

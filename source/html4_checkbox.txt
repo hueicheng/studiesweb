@@ -1,0 +1,55 @@
+||<input type=”checkbox” />||	定義一個多選選取||
+
+
+* 範例
+
+[[code type="HTML"]]
+<html>
+ 
+<head>
+<script type="text/javascript">
+function check(habbit)
+{  
+   document.getElementById("answer").value+=habbit;   
+}
+</script>
+</head>
+ 
+<body>
+<form>
+     喜好：
+     <input type="checkbox" id="movie" value="電影" onclick="check(this.value)"/>電影
+     <input type="checkbox" id="book" value="看書" onclick="check(this.value)"/>看書
+     <input type="checkbox" id="jog" value="慢跑" onclick="check(this.value)"/>慢跑
+     <br>您的興趣是:<input type="text" id="answer" size="25">
+</form> 
+</body>
+ 
+</html>
+[[/code]]
+
+
+
+* 實做
+
+[[note]]
+[[html]]
+<head>
+<script type="text/javascript">
+function check(habbit)
+{  
+   document.getElementById("answer").value+=habbit;   
+}
+</script>
+</head>
+<body>
+<form>
+     喜好：
+     <input type="checkbox" id="movie" value="電影" onclick="check(this.value)"/>電影
+     <input type="checkbox" id="book" value="看書" onclick="check(this.value)"/>看書
+     <input type="checkbox" id="jog" value="慢跑" onclick="check(this.value)"/>慢跑
+     <br>您的興趣是:<input type="text" id="answer" size="25">
+</form> 
+</body>
+[[/html]]
+[[/note]]

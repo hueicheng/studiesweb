@@ -1,0 +1,21 @@
+[[table style="width:98%"]]
+[[row]]
+[[cell style="width:120px; vertical-align:top; "]]
++++ [[[jquery:main|簡介]]]
+
+
++++++ --[[[jquery:_template|此欄]]]--
+[[/cell]]
+[[cell style="vertical-align:top;"]]
+%%content%%
+
+------
++ 參考文獻
+
+* [*http://zh.wikipedia.org/zh-tw/JQuery 維基百科-jQuery]
+* [*http://www.w3schools.com/jquery/default.asp w3school-jQuery]
+* [*http://jsgears.com/thread-63-1-1.html jsgears.com-jQuery 教學]
+
+[[/cell]]
+[[/row]]
+[[/table]]

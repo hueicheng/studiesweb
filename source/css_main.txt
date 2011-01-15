@@ -1,0 +1,49 @@
++ 簡介
+CSS 的全名為Cascading Style Sheets（層疊樣式表／串樣式列表），它的目的是為了對像 XHTML 及 HTML 之類的標記語言 (markup language) 提供一個顯示層。有了 CSS，我們就可以將資料層及顯示層分開：HTML 文件就只包括資料，而 CSS 則是告訴瀏覽器這些資料應該要如何顯現出來。
+
+CSS由W3C定義和維護的標準，一種用來為結構化文檔（如HTML文檔或XML應用）添加樣式（字型、間距和顏色等）的電腦語言。目前最新版本是CSS 2.1，為W3C的候選推薦標準。下一版本CSS 3仍然在開發過程中。
+
+CSS特點
+
+CSS可以用來彌補HTML的不足：CSS的最大好處是提供了HTML所不支援的屬性。例如<FONT>中只可設定文字的前景顏色，而CSS不僅可指定背景顏色、背景圖形甚至還可以幫它畫個外框，不過CSS的出現並不是用來取代HTML，而是在HTML的基礎上讓我們能運用更多的屬性使網頁更漂亮！
+
+可以加快網頁的傳輸速度：我們常會用到許多相同參數的標籤如<FONT>標籤，如果使用CSS，我們可以指定某一群標籤都套用某個CSS，這樣設定就可以一次OK，而不需要重複指定每個標籤的屬性參數。
+
+方便集中管理樣式及樣式共用：當某一群標籤都套用某個CSS樣式，那麼更動樣式時就只須針對CSS樣式修改即可，而且CSS樣式還可以與顯示資料分開，以.css副檔名儲存成獨立的文字檔，提供網頁共享。
+
+------
++ 程式碼放置的地方
+CSS 的程式碼是放在<style></style>內的,你可以放在HTML的任何地方,通常我們習慣是放在<head></head>裡面,在引入文件的時候一起引入.
+[[code type="html"]]
+<html>
+<head>
+  <style>
+  /*這裡放置css內文*/
+  </style>
+</head>
+<body>
+</body>
+</html>
+[[/code]]
+
+當然,你也可以用外部引入的方式,像是寫一個***.css**檔,在html內寫個引入標籤:
+[[code type="html"]]
+<html>
+<head>
+  <link type="text/css" rel="stylesheet" href="myCSS.css" />
+</head>
+<body>
+</body>
+</html>
+[[/code]]
+* 值得注意的是: _
+<link ##red|type="text/css" rel="stylesheet"## href="myCSS.css" /> _
+紅字部分是請你務必要這樣寫的,這是告訴link 引入的東西是一個css檔.後面的href=##blue|"myCSS.css"## 指的是你css檔放的地方.
+以下是 myCSS.css的範例:
+[[code type="css"]]
+body{
+    color:write;
+    font-size: 24px;
+    background-color:black;
+}
+[[/code]]

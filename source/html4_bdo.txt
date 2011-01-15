@@ -1,0 +1,23 @@
+||<bdo></bdo>||	指定文字方向||
+
+
+||屬性||	數值||	說明||
+||dir||	ltr，rtl||	ltr表示文字從左至右排列並顯示，rtl表是文字從右至左排列並顯示||
+
+* 範例
+[[code type="HTML"]]
+<html>
+<body>
+<bdo dir="rtl">lmth究研-究研用應路網</bdo>
+</body>
+</html>
+[[/code]]
+
+* 實作
+[[note]]
+[[html]]
+<body>
+<bdo dir="rtl">lmth究研-究研用應路網</bdo>
+</body>
+[[/html]]
+[[/note]]

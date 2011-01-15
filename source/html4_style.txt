@@ -1,0 +1,35 @@
+||<style></style>||	定義html內的文字樣式||
+
+* 範例
+[[code type="HTML"]]
+<html>
+<head>
+<style type="text/css">
+h1 {color:red}
+p {color:blue}
+</style>
+</head>
+
+<body>
+<h1>網路應用研究</h1>
+<p>HTML研究</p>
+</body>
+</html>
+[[/code]]
+
+* 實作
+[[note]]
+[[html]]
+<head>
+<style type="text/css">
+h1 {color:red}
+p {color:blue}
+</style>
+</head>
+
+<body>
+<h1>網路應用研究</h1>
+<p>HTML研究</p>
+</body>
+[[/html]]
+[[/note]]

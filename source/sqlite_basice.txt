@@ -1,0 +1,129 @@
+[[note]]
+假設有一個表格
+Student_Data表格
+
+||Name||	sex||	age||
+||Jack||	boy||	18||
+||Mary||	girl||	19||
+||Amy||   girl|| 21||
+||Jack||    boy|| 20||
+[[/note]]
+
+[[collapsible show="SELECT 語 法" hide="返 回"]]
+[[note]]
+[[span style="color:red"]]SELECT "欄位名" FROM "表格名"[[/span]]
+||SELECT|| 指定欄位||
+||FROM||    指定表格來源||
+
+例如 SELECT Name FROM Student_Data
+
+||Name||
+||Jack||
+||Mary||
+||Amy||
+||Jack||
+[[/note]]
+[[/collapsible]]
+
+[[collapsible show="DISTINCT 語 法" hide="返 回"]]
+[[note]]
+[[span style="color:red"]]SELECT DISTINCT "欄位名" FROM "表格名"[[/span]]
+||DISTINCT|| 取出指定欄位不一樣的值||
+
+例如 SELECT DISTINCT Name FROM Student_Data
+
+||Name||
+||Jack||
+||Mary||
+||Amy||
+[[/note]]
+[[/collapsible]]
+
+[[collapsible show="WHERE 語 法" hide="返 回"]]
+[[note]]
+[[span style="color:red"]]SELECT "欄位名" FROM "表格名" WHERE "條件"[[/span]]
+
+||WHERE||指定條件||
+
+例如 SELECT Name FROM Student_Data WHERE age > 20
+
+||Name||
+||Amy||
+[[/note]]
+[[/collapsible]]
+
+[[collapsible show="AND & OR 語 法" hide="返 回"]]
+[[note]]
+[[span style="color:red"]]SELECT "欄位名" FROM "表格名" WHERE "條件" {[AND|OR] "簡單條件"}[[/span]]
+
+例如 SELECT Name FROM Student_Data WHERE age > 20 OR (age<19 AND age >20)
+
+||Name||
+||Amy||
+[[/note]]
+[[/collapsible]]
+
+[[collapsible show="ORDER BY 語 法" hide="返 回"]]
+[[note]]
+[[span style="color:red"]]SELECT "欄位名" FROM "表格名" ORDER BY "欄位名" [ASC, DESC][[/span]]
+
+||ORDER BY || 用於排序結果|| ASC:表示由小到大，DESC:表由大到小||
+
+例如 SELECT Name FROM Student_Data ORDER BY age DESC
+
+
+||Name||	sex||	age||
+||Amy||   girl|| 21||
+||Jack||    boy|| 20||
+||Mary||	girl||	19||
+||Jack||	boy||	18||
+[[/note]]
+[[/collapsible]]
+
+
+[[collapsible show="INSERT INTO 語 法" hide="返 回"]]
+[[note]]
+[[span style="color:red"]]INSERT INTO "表格名" VALUES ("值1", "值2", ...)[[/span]]
+
+||INSERT INTO||將資料輸入表格中內||
+
+例如 INSERT INTO Studen_Data VALUES ('Linda','girl',18)
+
+||Name||	sex||	age||
+||Jack||	boy||	18||
+||Mary||	girl||	19||
+||Amy||   girl|| 21||
+||Jack||    boy|| 20||
+||Linda|| giel||18||
+[[/note]]
+[[/collapsible]]
+
+[[collapsible show="UPDATE 語 法" hide="返 回"]]
+[[note]]
+[[span style="color:red"]]UPDATE "表格名" SET "欄位1" = [值] WHERE {條件}[[/span]]
+
+||UPDATE||更新表格內容||
+
+例如 UPDATE Studen_Data SET age = 18 WHERE Name = 'Amy'
+
+||Name||	sex||	age||
+||Jack||	boy||	18||
+||Mary||	girl||	19||
+||Amy||   girl|| 18||
+||Jack||    boy|| 20||
+[[/note]]
+[[/collapsible]]
+
+[[collapsible show="DELETE FROM 語 法" hide="返 回"]]
+[[note]]
+[[span style="color:red"]]DELETE FROM "表格名" WHERE {條件}[[/span]]
+
+||DELETE FROM||刪除某個資料||
+
+例如 DELETE FROM Student_Data WHERE Name='Jack'
+
+||Name||	sex||	age||
+||Mary||	girl||	19||
+||Amy||   girl|| 21||
+[[/note]]
+[[/collapsible]]

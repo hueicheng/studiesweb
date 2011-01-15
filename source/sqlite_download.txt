@@ -1,0 +1,23 @@
+[[note]]
+SQLite官網所提供的下載網址
+[[[http://www.sqlite.org/download.html]]]
+[[/note]]
+
+[[note]]
+Linux OS
+
+請往下拉，或者Ctrl+F 搜尋 "Precompiled Binaries for Linux"
+[[/note]]
+
+[[note]]
+Mac OS X
+
+請往下拉，或者Ctrl+F 搜尋 "Precompiled Binaries For Mac OS X (x86)"
+[[/note]]
+
+
+[[note]]
+Windows
+
+請往下拉，或者Ctrl+F 搜尋 "Precompiled Binaries For Windows"
+[[/note]]

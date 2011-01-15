@@ -1,0 +1,16 @@
+* 多重背景
+
+[[code type="css"]]
+#backgroundMultiple{
+border: 5px solid #bd9ec4;
+background:
+url(http://i166.photobucket.com/albums/u90/tony000aaa/zelos01.jpg) top right no-repeat,
+url(http://i166.photobucket.com/albums/u90/tony000aaa/zelos02.jpg) bottom left no-repeat,
+url(http://i166.photobucket.com/albums/u90/tony000aaa/17.jpg) bottom right no-repeat;
+padding: 15px 25px;
+width: 800px;
+height: 600px;
+}
+[[/code]]
+
+||background||用法同background，以逗號為區隔可放上多重背景圖。||

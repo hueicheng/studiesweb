@@ -1,0 +1,27 @@
+[[table style="width:98%"]]
+[[row]]
+[[cell style="width:120px; vertical-align:top; "]]
++++ [[[xml:main|簡介]]]
++++ [[[xml:dtd|DTD]]]
++++ [[[xml:xsd|XML Schema]]]
++++ [[[xml:xpath|XPath]]]
+
+
+
++++++ --[[[xml:_template|精美的邊欄]]]--
+[[/cell]]
+[[cell style="vertical-align:top;"]]
+%%content%%
+
+------
++++ 參考文獻
+* [*http://zh.wikipedia.org/zh-tw/Xml 維基百科-XML]
+* [*http://www.w3schools.com/xml/default.asp w3shool- Learn XML]
+* [*http://zh.wikipedia.org/zh-tw/DTD 維基百科-DTD]
+* [*http://zh.wikipedia.org/zh-tw/XML_Schema 維基百科-XML Schema]
+* [*http://zh.wikipedia.org/zh-tw/SGML 維基百科SGML]
+* [*http://yes.nctu.edu.tw/Lecture/Web/XML/Intro/index.htm XML入門教學]
+
+[[/cell]]
+[[/row]]
+[[/table]]

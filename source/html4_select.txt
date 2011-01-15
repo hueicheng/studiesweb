@@ -1,0 +1,63 @@
+||<select></select>||	定義一個下拉式選單||
+
+[[code type="HTML"]]
+<html>
+ 
+<head>
+<script type="text/javascript">
+function message()
+{
+var a = document.getElementById("mySelect").value
+alert("您的學歷:" + a);
+}
+</script>
+</head>
+ 
+<body>
+<form>
+       您的學歷 :
+       <select id="mySelect">
+                 <option>國小</option>
+                 <option>高中</option>
+                 <option>高中</option>
+                 <option>專科</option>
+                 <option>大學</option>
+                 <option>研究所</option>
+                 <option>博士班</option>
+        </select>
+        <input type="button" onclick="message()" value="確定">
+</form>
+</body>
+ 
+</html>
+[[/code]]
+
+
+[[note]]
+[[html]]
+<head>
+<script type="text/javascript">
+function message()
+{
+var a = document.getElementById("mySelect").value
+alert("您的學歷:" + a);
+}
+</script>
+</head>
+<body>
+<form>
+       您的學歷 :
+       <select id="mySelect">
+                 <option>國小</option>
+                 <option>高中</option>
+                 <option>高中</option>
+                 <option>專科</option>
+                 <option>大學</option>
+                 <option>研究所</option>
+                 <option>博士班</option>
+        </select>
+        <input type="button" onclick="message()" value="確定">
+</form>
+</body>
+[[/html]]
+[[/note]]

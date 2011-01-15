@@ -1,0 +1,16 @@
+++ 一個簡單的RSS實作
+
+[[note]]
+[[html]]
+<a href="http://studiesweb.wikidot.com/">Network Applications Home Page</a><br />
+Free web Chinese building tutorials
+
+<p><a href="http://studiesweb.wikidot.com/rss:main">RSS Tutorial</a><br />
+New RSS tutorial on Network Applications</p>
+
+<a href="http://studiesweb.wikidot.com/xml:main">XML Tutorial</a><br />
+New XML tutorial on Network Applications<br />
+
+<p><a href="http://studiesweb.wikidot.com/local--files/files/RSS(1).XML">訂閱此三篇小文章</a></p>
+[[/html]]
+[[/note]]

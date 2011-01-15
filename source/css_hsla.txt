@@ -1,0 +1,12 @@
+* HSLA
+
+使用CSS3 HSL聲明同樣是用來設置顏色的。這個和RGBA的效果是一樣的。
+HSL聲明使用色調Hue(H)、飽和度Saturation(s)和亮度Lightness(L)來設置顏色。
+[[code type="css"]]
+.hslaL1 { background:hsla(165, 35%, 50%, 0.2); width:570; height:20px; }
+.hslaL2 { background:hsla(165, 35%, 50%, 0.4); width:570; height:20px; }
+.hslaL3 { background:hsla(165, 35%, 50%, 0.6); width:570; height:20px; }
+.hslaL4 { background:hsla(165, 35%, 50%, 0.8); width:570; height:20px; }
+.hslaL5 { background:hsla(165, 35%, 50%, 1.0); width:570; height:20px; }
+[[/code]]
+||HSLA||Hue衍生於色盤：0和360是紅色，接近120的是綠色，240是藍色。Saturation值是一個百分比：0%是灰度，100%飽和度最高Lightness值也是一個百分比：0%是最暗，50%均值，100%最亮。||

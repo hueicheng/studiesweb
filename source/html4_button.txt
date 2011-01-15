@@ -1,0 +1,52 @@
+||<form></form>||	創建一個 HTML表單 ||
+||<intput  type="button" />||	定義一個按鈕||
+||<button></button>|| 定義一個按鈕||
+
+
+* 範例
+
+[[code type="HTML"]]
+<html>
+ 
+<head>
+<script type="text/javascript">
+function displaymessage()
+{
+alert("歡迎來到網路應用研究!");
+}
+</script>
+</head>
+ 
+<body>
+<form>
+       <input type="button" onclick="displaymessage()" value="請按我" />
+</form>
+
+<button type="button" onclick="displaymessage()">請按我</button>
+
+</body>
+ 
+</html>
+[[/code]]
+
+
+* 實作
+
+[[note]]
+[[html]]
+<head>
+<script type="text/javascript">
+function displaymessage()
+{
+alert("歡迎來到網路應用研究!");
+}
+</script>
+</head>
+<body>
+<form>
+       <input type="button" onclick="displaymessage()" value="請按我" />
+</form>
+<button type="button" onclick="displaymessage()">請按我</button>
+</body>
+[[/html]]
+[[/note]]

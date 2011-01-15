@@ -1,0 +1,55 @@
+* if...
+ * if...else
+ * if...else if...else
+[[code type="javascript"]]
+var a=10;
+var b=20;
+//第一段
+if(a<b){
+  document.write("<p>判斷正確</p>");
+}
+
+//第二段
+if(a>b){
+  document.write("<p>判斷正確</p>");
+}else{
+  document.write("<p>錯誤的判斷</p>");
+}
+
+//第三段
+if(a>b){
+  document.write("<p>判斷正確</p>");
+}else if(a == b){
+  document.write("<p>第二次判斷正確</p>");
+}else{
+  document.write("<p>判斷錯誤</p>");
+}
+[[/code]]
+
+* switch
+switch是直接選擇判斷，在給定的答案中找到所需。
+[[code type="javascript"]]
+var choose;
+switch(choose){
+  case 1:
+      document.write("選擇了 1");
+      break;
+  case 2:
+      document.write("選擇了 2");
+      break;
+  case 3:
+      document.write("選擇了 3");
+      break;
+  case 4:
+      document.write("選擇了 4");
+      break;
+   default:
+      document.write("選了以外的答案!");
+      break;
+}
+[[/code]]
+解說：
+# switch(##red|choose##) 中，紅色的部分代表要做判斷的**值**或**變數**；
+# ##red|case##後緊接著是內定的答案，再來用 **:** 來表示判斷正確後要執行什麼。跟if()**{}**功用是一樣的。
+# ##red|break;##代表判斷結束並跳出。
+# 最後的**default**是指上述條件都不滿足時執行。

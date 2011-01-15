@@ -1,0 +1,51 @@
+||<input type=”text” />||	定義一個文字欄位||
+
+
+* 範例
+
+[[code type="HTML"]]
+<html>
+ 
+<head>
+<script type="text/javascript">
+function displaymessage()
+{
+var x = document.getElementById("name").value;
+alert(x + "你好");
+}
+</script>
+</head>
+ 
+<body>
+<form>
+       名子：<input type="text" name="name" id="name" />
+       <input type="button" onclick="displaymessage()" value="送出" />
+</form>
+</body>
+ 
+</html>
+[[/code]]
+
+
+* 實作
+
+[[note]]
+[[html]] 
+<head>
+<script type="text/javascript">
+function displaymessage()
+{
+var x = document.getElementById("name").value;
+alert(x + "你好");
+}
+</script>
+</head>
+ 
+<body>
+<form>
+       名子：<input type="text" name="name" id="name" />
+       <input type="button" onclick="displaymessage()" value="送出" />
+</form>
+</body>
+[[/html]]
+[[/note]]

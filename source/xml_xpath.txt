@@ -1,0 +1,79 @@
++ 簡介
+XPath全名為"XML Path Language"即為XML路徑語言，它是一種用來確定XML文檔中某部分位置的語言。
+
+XPath是一種查詢語言，但它不屬於SQL類的查詢語言, 它只是一種尋找節點位置的語言, 用來描述XML元素的位置, 如同硬碟資料夾的檔案路徑。
+
+使用類似資料夾路徑一般的字串, 定義出XML元素節點的位置, 目前可被XSL與XPoint所採用。
+
+---------
+
+++ 一、XPath的節點介紹
+
+在XPath中，有七個不同的節點：元素，屬性，文本，命名空間，處理指令，註釋，文檔節點。
+XML文檔被視為樹節點。在XML文檔裡面最上面的元素被稱為樹的根元素。
+XML實例文檔：
+[[code type="xml"]]
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<bookstore>
+ <book>
+    <title lang="en">Harry Potter</title>
+    <author>J K. Rowling</author>
+   <year>2005</year>
+    <price>29.99</price>
+ </book>
+</bookstore>
+[[/code]]
+
+以下為XML文檔的各個節點名稱：
+||元素||節點名稱||
+||<bookstore>~</bookstore>||根元素節點||
+||<author>~</author>||元素節點||
+||lang||屬性節點||
+
+++ 二、XPath的語法
+
+XML實例文檔：
+[[code type="xml"]]
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<bookstore>
+
+<book>
+ <title lang="eng">Harry Potter</title>
+ <price>29.99</price>
+</book>
+
+<book>
+ <title lang="eng">Learning XML</title>
+ <price>39.95</price>
+</book>
+
+</bookstore>
+[[/code]]
+
++++*  1.選擇節點
+XPath使用路徑表達式來選擇在XML文檔中的節點(或一組節點)。
+以下是從以上XML文檔中介紹基本的表達示以及說明：
+||路徑表達示||說明||
+||bookstore||選擇所有<bookstore>元素底下的所有子節點元素。||
+||/bookstore||選擇<bookstore>根元素節點。||
+||bookstore/book||選擇<book>元素底下的所有子節點元素。||
+||//book||選擇所有<book>元素無論它們是在當前的元件或是其他的元件。||
+||bookstore//book||選擇<book>元素底下的所有子節點元素。||
+||//@lang||選擇所有lang的屬性。||
+
+
++++* 2.謂語
+謂語是用來尋找特定節點或節點所含有的屬性與屬性值。
+謂語被嵌入在中括號。
+以下是基本的謂語表達示與說明：
+||路徑表達式||說明||
+||/bookstore/book[1]||選擇bookstore底下的第一個book元素。||
+||/bookstore/book[last()]||選擇bookstore底下的最後一個book元素。||
+||/bookstore/book[last()-1]||選擇bookstore底下的倒數第二個book元素。||
+||/bookstore/book[position()<3]||選擇bookstore底下的前兩個book元素。||
+|| //title[@lang] || 選擇所有title元素有lang屬性的元素。||
+|| //title[@lang='eng'] || 選擇所有title元素有lang屬性與'eng'屬性值的元素。||
+||/bookstore/book[price>35.00]||選擇所有book元素底下price>35.00的元素。||
+||/bookstore/book[price>35.00]/title||選擇所有title元素和所有book元素底下price>35.00的元素。||

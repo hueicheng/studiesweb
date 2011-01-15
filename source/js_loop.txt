@@ -1,0 +1,58 @@
+* for
+用一個簡單的題目：從 一加到十
+[[code type="html"]]
+<html>
+<head>
+<script type="text/javascript">
+var sum = 0;
+for(i = 1; i < 11; i++){
+    	sum += i;
+}
+alert("1加到10=" + sum);
+</script>
+</head>
+</html>
+[[/code]]
+說明：
+# for(##red|i = 1;## ##green| i < 11;##  ##blue| i++##) _
+##red|設定 i 初值為 1##，##green|在 i < 11 的時候執行迴圈##，##blue|執行迴圈的時候‘ i 每次都+1##
+# 所以for 的結構是(##red|設定初始變數## ,##green|執行的條件## ,##blue|執行中要做的事情##)
+
+* while
+while 有兩種，一種是**前側式**、另一種是**後側式**。
+前側式：
+其運行方式是先判定條件是否成立，再決定是否執行迴圈。
+[[code type="html"]]
+<html>
+<head>
+<script type="text/javascript">
+var sum=0;
+var i =0;
+
+while(i<11){
+  sum += i;
+  i++;
+}
+alert("1加到10=" + sum);
+</script>
+</head>
+</html>
+[[/code]]
+後側式：
+其運行方式是先執行內碼，之後再判定條件是否成立、以決定是否繼續執行迴圈。
+[[code type="html"]]
+<html>
+<head>
+<script type="text/javascript">
+var sum=0;
+var i=0;
+
+do{
+  i++;
+  sum+=i;
+}while(i<11);
+alert("1加到10=" + sum);
+</script>
+</head>
+</html>
+[[/code]]

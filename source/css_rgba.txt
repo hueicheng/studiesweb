@@ -1,0 +1,17 @@
+* RGBA
+
+使用新的CSS3的「RGBA」聲明，不僅僅讓我們像通常一樣設置RGB顏色，而且還可以設置其透明度。
+
+RGBA像RGB一樣設置顏色，而這個「A」——RGBA中的最後一個值——允許我們設置該元素的透明度。就像opacity聲明一樣，一個opacity值為1的元素是完全不透明的，而一個opacity為0的元素是完全透明的。
+
+[[code type="css"]]
+<style>
+  .rgbaL1 { background:rgba(153, 134, 117, 0.2); width:570; height:20px; }
+  .rgbaL2 { background:rgba(153, 134, 117, 0.4); width:570; height:20px; }
+  .rgbaL3 { background:rgba(153, 134, 117, 0.6); width:570; height:20px; }
+  .rgbaL4 { background:rgba(153, 134, 117, 0.8); width:570; height:20px; }
+  .rgbaL5 { background:rgba(153, 134, 117, 1.0); width:570; height:20px; }
+</style>
+[[/code]]
+
+||RGBA||從左至右分別為紅、綠、藍、透明度，1為不透明，0為透明。||

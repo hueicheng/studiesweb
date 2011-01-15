@@ -1,0 +1,23 @@
+[[code type="css"]]
+<style type="text/css">
+  #sample1
+  {
+    width: 180px;
+    height: 170px;
+    float: right;
+  }
+  #sample2
+  {
+    newpara{clear:right}
+  }
+</style>
+[[/code]]
+
+
+||float-right||將指定的元素配置在左方，之後的文字內容在右側成文繞圖。||
+||float-left||將指定的元素配置在右方，之後的文字內容在左側成文繞圖。||
+||float-none||左右的配置設定不使用文繞圖。||
+||clear:right||解除文繞圖右側配置的元素。||
+||clear:left||解除文繞圖左側配置的元素。||
+||clear:both||解除文繞圖左、右側配置的元素。||
+||clear:none||不解除文繞圖。||

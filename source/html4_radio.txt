@@ -1,0 +1,51 @@
+||<input type=”radio” />||	定義一個單選核取||
+
+
+* 範例
+
+[[code type="HTML"]]
+<html>
+ 
+<head>
+<script type="text/javascript">
+function check(sex)
+{
+   document.getElementById("answer").value=sex;
+}
+</script>
+</head>
+ 
+<body>
+<form>
+     性別：
+     <input type="radio" name="sex" value="男" onclick="check(this.value)"/>男
+     <input type="radio" name="sex" value="女" onclick="check(this.value)"/>女
+     <br>您的性別是:<input type="text" id="answer" size="10" />
+</form>
+</body>
+ 
+</html>
+[[/code]]
+
+* 實作
+
+[[note]]
+[[html]]
+<head>
+<script type="text/javascript">
+function check(sex)
+{
+   document.getElementById("answer").value=sex;
+}
+</script>
+</head>
+<body>
+<form>
+     性別：
+     <input type="radio" name="sex" value="男" onclick="check(this.value)"/>男
+     <input type="radio" name="sex" value="女" onclick="check(this.value)"/>女
+     <br>您的性別是:<input type="text" id="answer" size="10" />
+</form>
+</body>
+[[/html]]
+[[/note]]

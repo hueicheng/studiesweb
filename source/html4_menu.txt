@@ -1,0 +1,30 @@
+||<menu></menu>||	指定一個菜單列表||
+
+* 範例
+[[code type="html"]]
+<html>
+<body>
+
+<menu>
+  <li>HTML全名是Hyper Text Markup Language</li>
+  <li>HTML不是程式語言，是標記語言</li>
+  <li>HTML使用標記來描述網頁</li>
+</menu>
+
+</body>
+</html>
+
+[[/code]]
+
+* 實作
+[[note]]
+[[html]]
+<body>
+<menu>
+  <li>HTML全名是Hyper Text Markup Language</li>
+  <li>HTML不是程式語言，是標記語言</li>
+  <li>HTML使用標記來描述網頁</li>
+</menu>
+</body>
+[[/html]]
+[[/note]]

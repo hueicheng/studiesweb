@@ -1,0 +1,34 @@
+||<video></video>||	將影片顯示在網頁上||
+
+||屬性||	值||	說明||
+||src	||url	||指定URL的視頻播放||
+||autoplay||	autoplay	||影片會自動播放||
+||loop||	loop	||當影片結束，會自動重新播放||
+||controls||	controls	||顯示視頻控件，如播放、暫停按鈕等||
+||height||	pixels	||設定播放器高度||
+||width||	pixels	||設定播放器寬度||
+
+* 範例
+[[code type="HTML"]]
+<html>
+<body>
+
+<video src="http://studiesweb.wikidot.com/local--files/files/SampleVideo.mp4"
+ autoplay="autoplay"controls="controls" height="280" width="350">
+<p>您的瀏覽器不支援</p>
+</video>
+
+</body>
+</html>
+[[/code]]
+
+* 實作
+[[note]]
+[[html]]
+<body>
+<video src="http://studiesweb.wikidot.com/local--files/files/SampleVideo.mp4" autoplay="autoplay" controls="controls" height="280" width="350">
+<p>您的瀏覽器不支援</p>
+</video>
+</body>
+[[/html]]
+[[/note]]

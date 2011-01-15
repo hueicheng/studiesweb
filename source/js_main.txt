@@ -1,0 +1,65 @@
++ 簡介
+
+得特別聲明一下，JavaScript 並**不是JAVA**、也不是**JAVA的延申**之類的、它只是借用了JAVA這一名字而已，可以參考[*http://zh.wikipedia.org/zh-tw/JavaScript#.E6.BE.84.E6.B8.85.E8.AA.A4.E8.A7.A3 維基百科-JavaScript]這篇來深入瞭解。講簡單一點，名字這麼像是Netscape為了行銷考慮與Sun公司達成協定的結果。
+
+如果你想開始瞭解JS，可以點一下左排的基本語法、在那之前請先注意下方的程式碼放置的地方，這樣才不會摸不著頭緒...。
+
+JAVAScript 與網頁的內容互動性很好、JAVAScript 可以利用 [[[dom|HTML DOM]]]與[[[html4:main|HTML]]]、[[[css:main|CSS]]] 等，達到互動的效果，另外在操控上也較簡單。透過介紹，能更深入的瞭解HTML上的運作，並加以掌握。
+
+有了一定程度之後、可以開始探討[[[html5:main|HTML5]]]的部分、看看新的內容，本篇會再加新的內容進來介紹。--現在沒有就是了--
+
+在JAVAScript 有了一定基礎之後、可以學習一下[[[jquery:main|jQuery]]]，它使JAVAScript 的使用更加精簡化...。
+
+------
+
++ 程式碼放置的地方
+基本上JAVAScript 程式碼放置的地方有以下幾種：
+* 放在HTML 文件內，以<script></script> 的標籤放入，當然、<script></script> 標籤放置的地點可以在<head></head>之內、或著</head><body>中間、<body></body> 內也行，看你想要做什麼？如果是載入HTML 時也要載入程式碼的話就放在<head></head>內，在讀取內文之前程式已經被讀取、通常我們都會放在這。
+[[code type="html"]]
+<html>
+<head>
+<script type="text/javascript">
+//這裡放置你的程式碼。
+</script>
+</head>
+<script type="text/javascript">
+//這裡也能放置你的程式碼。
+</script>
+<body>
+<script type="text/javascript">
+//當然，這裡也行。
+</script>
+</body>
+</html>
+[[/code]]
+
+* 可以寫一個***.js** 檔案， _
+接著用連結的方式引入到HTML文件之中。
+[[code type="html"]]
+<html>
+<head>
+  <title>使用外部連結引入JAVAScript 程式碼</title>
+</head>
+<script type="text/javascript" src="myJS.js"></script> //注意，就是這條；
+<body>
+網頁內容
+</body>
+</html>
+[[/code]]
+以下是 myJS.js 的內容：
+[[code type="javascript"]]
+document.write("Hello World!");
+[[/code]]
+**※**這麼做的好處是可以把HTML文件與JAVAScript分開，各別處理各別的問題，這樣不會互相影響本來的樣貌。
+
+* 也能用類似鏈結的方式來引入。
+[[code type="html"]]
+<html>
+<head>
+  <title>使用外部連結引入JAVAScript 程式碼</title>
+</head>
+<body>
+<input type="button" value="按一下" onclick="javascript:alert('按一下出現視窗')" />
+</body>
+</html>
+[[/code]]

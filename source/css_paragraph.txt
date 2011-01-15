@@ -1,0 +1,39 @@
+[[code type="css"]]
+<style type="text/css">
+  #word1 {word-spacing: 1em}
+  #word2 {word-spacing: -0.3em}
+  #letter1 {letter-spacing: 1em}
+  #letter2 {letter-spacing: 2em}
+  body
+  {
+    margin-top:1em;
+    margin-left: 1em;
+    margin-right: 1em;
+    padding: 1em;
+    border: solid 1px #000000;
+    border-left: solid 2em;
+    border-left-color: #009999;
+    border-bottom: solid 2px;
+    border-bottom-color: #009999;
+    half { width:50% }
+    min-width:800px;
+    max-width:200px;
+    min-height:200px;
+    max-height:20px;
+  }
+</style>
+[[/code]]
+
+
+||letter-spacing||文字間隔，可輸入正數或負數。||
+||word-spacing||單字間隔，可輸入正數或負數。||
+||margin-top||框線離邊界上方的距離。||
+||margin-left||框線離邊界左邊的距離。||
+||margin-right||框線離邊界右邊的距離。||
+||padding||第一行文字離框線的距離。||
+||border||框線的屬性。||
+||half||設定區塊的寬度。||
+||min-width||設定段落最少需有多少寬度。||
+||max-width||設定段落最多只可有多少寬度。||
+||min-height||設定段落最少需有多少高度。||
+||max-height||設定段落最多只可有多少高度。||

@@ -1,0 +1,60 @@
++ 簡介
+* XML是用來建立描述結構化資料標示語言的語言。
+* 與資料無關的格式。
+* 開放，可讓人讀取的資料格式，看起來像是HTML。
+* 能避免瀏覽器或是其他中介軟體，自行增加特定的HTML標籤。
+* 具擴展性，不像HTML有固定的格式。
+
++++* 語法規則
+範例：
+[[code type="xml"]]
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<note>
+       <to>Tove</to>
+       <from>Jani</from>
+       <heading>Reminder</heading>
+       <body>Don't forget me this weekend!</body>
+</note>
+[[/code]]
+
+規則1：必須以XML文件宣告為起始
+<?xml version="1.0" encoding="ISO-8859-1"?>
+這叫 XML宣告(declaration)，更有學問的稱呼為 前言(prolog)。其目的是在宣告，這是一份XML文件及宣告目前所用的XML版 本。其中version這個註明版本的屬性是一定要有的，encoding表示文檔所用的語言編碼。
+
+規則2：所有的標籤必須有相應的結束標籤
+在HTML中，標識可能不是成對出現的。而在XML中規定，所有標識必須成對出現，有一個開始標識，就必須有一個結束標識。否則將被視為錯誤。
+例如:正確的寫法→<to>Tove</to>
+錯誤的寫法→<to>Tove<to>
+
+規則3：注意你的大小寫
+在XML文檔中，大小寫是有區別的。<P>和<p>是不同的標籤。注意在寫元素時，前後標籤大小寫要保持一樣。
+例如：正確的寫法→<heading>Reminder</heading>
+錯誤的寫法→<heading>Reminder</Heading>
+
+規則4：所有的空標籤也必須被關閉
+空標識就是標識對之間沒有內容的標籤。比如<br>,<img>等標識。在XML中，規定所有的標籤必須有結束標籤，針對這樣的空標籤，XML中處理的方法是在原標籤最後加/，就可以了。
+例如：<br>應寫為<br />；<IMG src= "cool.gif">應寫為<IMG src= "cool.gif" />
+
+規則5：XML元素必須正確嵌套
+在HTML中，你可能會看到不正確的嵌套元素：
+<note><from>Jani</note></from>
+在XML中，所有元素 必須 被正確地嵌套在彼此：
+<note><from>Jani</from></note>
+在上述例子中，“正確嵌套”的意思是，從打開的<note>元素內<from>元素，它必須關閉內<from>元素。
+
+規則6：一個XML程式裡面必須有一個根元素
+什麼是根元素在下一節會為大家說明。
+
+規則7：實體引用
+某些字符在XML中具有特殊意義。如果你把一個字符，如“<”內一個XML元素時，它將產生一個錯誤，因為解析器解釋它作為開始一個新元素。這將產生一個 XML錯誤：
+<message>if salary < 1000 then</message>
+為了避免這種錯誤，把“<”字符替換成一個 實體引用：
+<message>if salary &lt; 1000 then</message>
+在 XML 中有五個預先保留的實體參考，如下表所示：
+||~實體參考||~符號||
+||&lt;||<||
+||&gt;||>||
+||&amp;||&||
+||&apos;||'||
+||&quote;||"||
+每一個實體參考都是由「＆」符號開始，然後以「；」結束。

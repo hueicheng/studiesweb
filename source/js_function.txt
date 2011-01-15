@@ -1,0 +1,16 @@
+* function
+
+[[code type="html"]]
+<html>
+<head>
+<script type="text/javascript">
+function btnclick(){
+    alert("你按了按鈕!");
+}
+</script>
+</head>
+<body>
+<input type="button" value="按一下" onclick="btnclick()" />
+</body>
+</html>
+[[/code]]

@@ -1,0 +1,32 @@
+||<blockquote></blockquote>||	定義一段很長的引文||
+||<q></q>||	定義一段很短的引文||
+
+* 範例
+[[code type="HTML"]]
+<html>
+<body>
+
+HTML4.01:
+<blockquote>
+HTML全名是<q>Hyper Text Markup Language</q></br>
+HTML不是程式語言，是<q>標記語言</q></br>
+HTML使用標記來描述網頁</br>
+</blockquote>
+
+</body>
+</html>
+[[/code]]
+
+* 實作
+[[note]]
+[[html]]
+<body>
+HTML4.01:
+<blockquote>
+HTML全名是<q>Hyper Text Markup Language</q></br>
+HTML不是程式語言，是<q>標記語言</q></br>
+HTML使用標記來描述網頁</br>
+</blockquote>
+</body>
+[[/html]]
+[[/note]]

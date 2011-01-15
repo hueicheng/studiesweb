@@ -1,0 +1,42 @@
++ <item>元素
+<item>元素用於定義一篇文章中RSS的概要。
+RSS簡單的文檔：
+[[code type="xml"]]
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<rss version="2.0">
+
+<channel>
+ <title>W3Schools Home Page</title>
+ <link>http://www.w3schools.com</link>
+ <description>Free web building tutorials</description>
+ <item>
+    <title>RSS Tutorial</title>
+    <link>http://www.w3schools.com/rss</link>
+    <description>New RSS tutorial on W3Schools</description>
+ </item>
+ <item>
+    <title>XML Tutorial</title>
+    <link>http://www.w3schools.com/xml</link>
+    <description>New XML tutorial on W3Schools</description>
+ </item>
+</channel>
+
+</rss>
+[[/code]]
+<item>元素有三個必需的子元素：
+    * <title> - 定義該文章標題的名稱（例如"W3Schools Home Page"）
+    * <link> - 定義該段文章出於何處的超鏈接（例如"http://www.w3schools.com"）
+    * <description> - 用來描述該文章的主要內容（例如"Free web building tutorials"）
+
+以下是可用於<item>元素底下的子元素說明：
+||元素||說明||
+||<author>||選擇性元素。定義電子郵件地址。||
+||<category>||選擇性元素。定義一個或多個類別的項目。||
+||<comments>||選擇性元素。定義一個網址鏈接到關於該段文章的意見。||
+||<description>||必需性元素。用來描述該文章的內容。||
+||<enclosure>||選擇性元素。定義顯示媒體文件。||
+||<guid>||選擇性元素。||
+||<link>||必需性元素。定義該段文章出於何處的超鏈接。||
+||<pubDate>||選擇性元素。定義該文章的發布時間。該元素只能排放在最後。||
+||<source>||選擇性元素。||
+||<title>||必需性元素。定義該文章標題的名稱。||

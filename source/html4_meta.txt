@@ -1,0 +1,38 @@
+||<meta></meta>||	指定頁面描述，關鍵字，作者的文件，也可用於刷新網頁或設置 Cookie||
+
+
+||屬性||	數值||	說明||
+||content||	text||	指定屬性的值||
+||http-equiv||	content-type,content-style-type, expires,refresh,set-cookie||	提供一個 HTTP標頭中的信息內容屬性||
+
+* 範例
+[[code type="HTML"]]
+<html>
+<head>
+<meta http-equiv="refresh" content="5;url=http://studiesweb.wikidot.com/" />
+</head>
+
+<body>
+<h1>對不起!我們搬家了!</h1>
+<h2>新的網址: <a href="http://studiesweb.wikidot.com/">http://studiesweb.wikidot.com/</a></h2>
+<p>5秒後將自動進入新的網址</p>
+<p>若超過5秒請點擊上面網址</p>
+</body>
+</html>
+[[/code]]
+
+* 實作
+[[note]]
+[[html]]
+<head>
+<meta http-equiv="refresh" content="5;url=http://studiesweb.wikidot.com/" />
+</head>
+
+<body>
+<h1>對不起!我們搬家了!</h1>
+<h2>新的網址: <a href="http://studiesweb.wikidot.com/">http://studiesweb.wikidot.com/</a></h2>
+<p>5秒後將自動進入新的網址</p>
+<p>若超過5秒請點擊上面網址</p>
+</body>
+[[/html]]
+[[/note]]

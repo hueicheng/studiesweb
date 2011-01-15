@@ -1,0 +1,77 @@
+||<source></source>||	定義多個視頻或音頻||
+
+
+||屬性||	值||	說明||
+||src||	url||	定義視頻或音頻的路徑||
+||type||	numeric value||	定義播放檔案的格式||
+
+
+* 範例
+[[code type="HTML"]]
+<html>
+<body>
+
+<video autoplay="autoplay" loop="loop" controls="controls" height="280" width="350">
+<source src="http://studiesweb.wikidot.com/local--files/files/SampleVideo.mp4" type="video/mp4" />
+<source src="http://studiesweb.wikidot.com/local--files/files/SampleVideo.ogg" type="video/ogg" />
+<p>您的瀏覽器不支援</p>
+</video>
+
+</body>
+</html>
+[[/code]]
+
+* 實作
+[[note]]
+[[html]]
+<body>
+<video autoplay="autoplay" loop="loop" controls="controls" height="280" width="350">
+ <source src="http://studiesweb.wikidot.com/local--files/files/SampleVideo.mp4" type="video/mp4" />
+ <source src="http://studiesweb.wikidot.com/local--files/files/SampleVideo.ogg" type="video/ogg" />
+ <p>您的瀏覽器不支援</p>
+</video>
+</body>
+[[/html]]
+[[/note]]
+
+* 視頻支援
+||影片格式||	IE8||	Firefox3.6||	Chrome7.0||	Opera10.63||	Safari5.0||
+||ogg||	no||	yes||	yes||	yes||	no||
+||mp4||	no||	no||	yes||	no||	no||
+
+* 範例
+[[code type="HTML"]]
+<html>
+<body>
+
+<audio autoplay="autoplay" loop="loop" controls="controls">
+<source src="http://studiesweb.wikidot.com/local--files/files/SampleAudio.mp3" type="audio/mp3" />
+<source src="http://studiesweb.wikidot.com/local--files/files/SampleAudio.ogg" type="audio/ogg" />
+<source src="http://studiesweb.wikidot.com/local--files/files/SampleAudio.wav" type="audio/wav" />
+<p>您的瀏覽器不支援</p>
+</audio>
+
+</body>
+</html>
+[[/code]]
+
+*  實作
+[[note]]
+[[html]]
+<body>
+<audio autoplay="autoplay" loop="loop" controls="controls">
+<source src="http://studiesweb.wikidot.com/local--files/files/SampleAudio.mp3" type="audio/mp3" />
+<source src="http://studiesweb.wikidot.com/local--files/files/SampleAudio.ogg" type="audio/ogg" />
+<source src="http://studiesweb.wikidot.com/local--files/files/SampleAudio.wav" type="audio/wav" />
+<p>您的瀏覽器不支援</p>
+</audio>
+</body>
+[[/html]]
+[[/note]]
+
+
+*音頻支援
+||影片格式||	IE8||	Firefox3.6||	Chrome7.0||	Opera10.63||	Safari5.0||
+||ogg||	no||	yes||	yes||	yes||	no||
+||mp3||	no||	no||	yes||	no||	no||
+||wav||	no||	yes||	no||	yes||	no||
