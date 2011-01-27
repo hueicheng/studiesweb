@@ -15,13 +15,16 @@
   </div>
   <div>
   <form id="form" action="/txtdb" method="post"> <!--  enctype="multipart/form-data" -->
-    <div><input type="hidden" id="op" name="op" value="put"/><input id="path" name="path" type="text" value=""><input type="submit" value="Save"/></div>
     <div>
-<textarea id="wikibox" name="wikibox" style="width:100%; height:80%" class="wikitext">
-Error:load fail !
-</textarea>
-<div id="htmlbox" width="100%" class="wikihtml" style="width:100%; height:80%">
-</div>
+		<input type="hidden" id="op" name="op" value="put"/>
+		<input id="path" name="path" type="text" value="">
+		<input type="submit" value="Save"/>
+	</div>
+	<textarea id="wikibox" name="wikibox" style="width:100%; height:80%" class="wikitext">
+		Error:load fail !
+	</textarea>
+	<div id="htmlbox" width="100%" class="wikihtml" style="width:100%; height:80%">
+	</div>
   </form>
   <script type="text/javascript">
     var wikiPath = "";
@@ -55,6 +58,5 @@ Error:load fail !
             });
     });	
   </script>
-  </div>
 </body>
 </html>
