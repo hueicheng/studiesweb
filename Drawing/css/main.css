@@ -1,0 +1,71 @@
+body{
+
+	background-color: #6a6a6a;
+	line-height: normal;
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+}
+
+.palette{
+  width: 200px;
+  height: 50px;
+  background-color: #a0a0a0;
+}
+
+.modules{
+	width: 640px;
+	height: 480px;
+}
+
+#workarea{
+	position: absolute;
+	top: 75px;
+	left: 90px;
+	background-color: #ffffff;
+}
+
+/*#toolbar預設*/
+#toolbar{
+  position: absolute;
+  width: 1280px;
+  height: 60px;
+  background-color: #a0a0a0;
+}
+/*#toolbar按鈕預設*/
+#toolbar a.btn{
+	background: url("../images/controlbar.jpg") 50px 50px no-repeat;
+	width: 50px;
+	height: 50px;
+	position: absolute;
+}
+/*#toolbar 各按鈕圖片*/
+#toolbar a.con1{ top: 5px; left: 10px; background-position: 0px 0px;}
+
+
+
+/*leftModule預設*/
+#leftModule{
+  position: absolute;
+  top: 60px;
+  width: 75px;
+  height: 500px;
+  background-color: #a0a0a0;
+}
+/*leftModule按鈕預設*/
+#leftModule a.btn{
+	background: url("../images/toolbar.jpg") 50px 400px no-repeat;
+	width: 50px;
+	height: 50px;
+	position: absolute;
+}
+/*leftModule 各按鈕圖片*/
+#leftModule a.b1{ top: 20px; left: 10px; background-position: 0px 0px; }
+#leftModule a.b2{ top: 80px; left: 10px; background-position: 0px -50px; }
+#leftModule a.b3{ top: 140px; left: 10px; background-position: 0px -150px;}
+#leftModule a.b4{ top: 200px; left: 10px; background-position: 0px -200px;}
+#leftModule a.b5{ top: 260px; left: 10px; background-position: 0px -250px; }
+#leftModule a.b6{ top: 320px; left: 10px; background-position: 0px -300px; }
+#leftModule a.b7{ top: 380px; left: 10px; background-position: 0px -350px; }
+/*按鈕使用情形*/
+#leftModule a.using{ border: 2px dashed; }
