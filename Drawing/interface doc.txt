@@ -1,0 +1,224 @@
+HTML 部分
+
+中間的畫布利用了<canvas>元素來表現
+按鈕利用了<a>元素與CSS的配合達成顯示圖像的功能，
+再利用<div>元素包覆按鈕成一區，便於控制。
+
+至於功能表列，利用項目清單<li><dd>與CSS的結合，做成現在的樣子。
+
+CSS 部分
+
+
+/*調色盤*/
+.palette{
+  position: absolute;
+  top: 575px;
+  width: 200px;
+  height: 50px;
+  background-color: #a0a0a0;
+}
+
+/*工作區大小*/
+.modules{
+	width: 640px;
+	height: 480px;
+}
+
+/*工作區*/
+#workarea{
+	position: fixed;
+	top: 75px;
+	left: 90px;
+	background-color: #ffffff;
+}
+
+/*#toolbar預設*/
+#toolbar{
+  position: relative;
+  width: 1280px;
+  height: 60px;
+  background-color: #a0a0a0;
+}
+/*#toolbar按鈕預設*/
+#toolbar a.btn{
+	background: url("../images/controlbar.jpg") 50px 50px no-repeat;
+	width: 50px;
+	height: 50px;
+	position: absolute;
+}
+/*#toolbar 各按鈕圖片*/
+#toolbar a.con1{ top: 5px; left: 10px; background-position: 0px 0px;}
+
+
+
+/*leftModule預設*/
+#leftModule{
+  position: absolute;
+  top: 60px;
+  width: 75px;
+  height: 500px;
+ }
+/*leftModule按鈕預設*/
+#leftModule a.btn{
+	background: url("../images/toolbar.jpg") 50px 400px no-repeat;
+	width: 50px;
+	height: 50px;
+	position: absolute;
+}
+/*leftModule 各按鈕圖片*/
+#leftModule a.b1{ top: 20px; left: 10px; background-position: 0px 0px; }
+#leftModule a.b2{ top: 80px; left: 10px; background-position: 0px -50px; }
+#leftModule a.b3{ top: 140px; left: 10px; background-position: 0px -150px;}
+#leftModule a.b4{ top: 200px; left: 10px; background-position: 0px -200px;}
+#leftModule a.b5{ top: 260px; left: 10px; background-position: 0px -250px; }
+#leftModule a.b6{ top: 320px; left: 10px; background-position: 0px -300px; }
+#leftModule a.b7{ top: 380px; left: 10px; background-position: 0px -350px; }
+/*左邊區塊按鈕使用情形*/
+#leftModule a.using{ border: 2px dashed; }
+
+/*下方區塊按鈕預設*/
+#bottonMoudle a.btn{
+	width: 20px;
+	height: 20px;
+	position: absolute;
+}
+
+/*下方區塊按鈕使用情形*/
+#bottonModule a.using( border: 1px  dashed; )
+
+/*topModule按鈕預設*/
+#topModule a.btn{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+}
+
+/*上方區塊按鈕使用情形*/
+#topModule a.using{ border: 1px dashed; }
+
+/*表格隱藏*/
+.hidden{
+	visibility: hidden;
+}
+
+/*表格顯示*/
+.show{
+	visibility: visible;
+}
+
+/*彈出式視窗預設*/
+#msgbox{
+	font-size: 16px;
+	color: #ff0000;
+}
+
+.ui_text{
+	font-size: 14px;
+	color: #aaaaaa;
+	text-align: center;
+}
+
+.li_text{
+
+}
+
+#newFile{}
+
+#openFile{}
+
+#openFileUrl{}
+
+#saveFile{}
+
+#printFile{}
+
+#closeFile{}
+
+#exit{}
+
+/* 整體設置*/ 
+.navigation {
+	margin:0; 
+	padding:0;
+	width:610px;
+	list-style-type:none; 
+	font:12px Arial;
+	position: absolute;
+	z-index: 0;
+	}
+ 
+.navigation li {
+	float:left; 
+    padding:0; 
+	margin:0 10px 0 0; 
+	width:150px;
+	}
+ 
+/* 設置選單區塊*/
+.navigation li  dl{ 
+	width:150px;/*ie6*/
+    margin:0; 
+	padding:0;
+	background-color:#fff;
+	border:solid 2px #666; 
+	}
+ 
+.navigation li dt a , .navigation li dd a{ display:block;}
+ 
+ 
+/* 設置主選單dt */
+.navigation li dt {
+	margin:0;
+	padding: 5px;
+	text-align:center;
+	background-color:#fff;	
+	font-size: 12px;
+	font-weight: bold;
+	height:15px;
+	overflow:hidden;
+	}
+ 
+.navigation li dt a ,.navigation  li dt a:visited {
+	display:block; 
+    color:#333;
+    text-decoration:none;
+	}
+ 
+/* 設置子選單dd */
+.navigation li dd { 
+	margin:0; 
+    padding:0; 
+	color: #333; 
+	background-color:#efefef;
+	border-bottom:dotted 1px #666;
+	}
+ 
+.navigation li dd.last {
+	border-bottom:0;
+	}	
+ 
+.navigation li dd a, .navigation  li dd a:visited {
+	display:block; 
+	color:#333; 
+    text-decoration:none; 
+	padding:4px 5px 4px 20px;
+    }
+ 
+ 
+/*隱藏子選單*/
+.navigation li dd { display:none;}
+ 
+ 
+/* 滑鼠滑入顯示子選單 */
+.navigation li:hover dd, .navigation li a:hover dd { display:block;}
+ 
+/*ie6 hack*/
+.navigation li:hover,.navigation li a:hover { border:0;}
+.navigation table { border-collapse:collapse; 
+    padding:0; 		
+	text-align:center;
+	}
+	
+#dropList{
+  z-index: 4;
+}

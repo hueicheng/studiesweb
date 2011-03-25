@@ -1,0 +1,392 @@
+.modules {
+	background-color:#ffffff;
+}
+
+#topModule{
+  position: absolute;
+  width:100%;
+  height:10%;
+}
+
+/*工作區*/
+#workarea{
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  top: 30%;
+}
+
+/*工具列*/
+#toolbar{
+  position: absolute;
+  width: 100%;
+  height:20%;
+  top:10%;
+}
+
+/*播放控制項*/
+#playModule{
+  position: absolute;
+  width: 100%;
+  height:20%;
+  top: 80%;
+}
+
+/*五線譜*/
+.stave{
+  width:3000;
+  height:150;
+  background:url(svg/Music-doublebar.svg) 0 0;
+  z-index: 0;
+}
+
+
+/*裝飾音*/
+.ornament{
+
+}
+
+/*鼓譜記號*/
+.drumMark{
+
+}
+
+/*譜號*/
+.clef{
+  width:15px;
+  height:30px;
+}
+
+.clef_Stave{
+  position: absolute;
+  width:25px;
+  height:60px;
+  top:15;
+  left:85;
+  z-index:1;
+}
+.clef1{
+  width:15px;
+  height:30px;
+  background:url(svg/alto pitch mark.svg) 0 0;
+}
+.clef2{
+  width:15px;
+  height:30px;
+  background:url(svg/low pitch mark.svg) 0 0;
+}
+.clef2_stave{
+  position: absolute;
+  width:25px;
+  height: 35px;
+  top:105;
+  left:85;
+  z-index: 1;
+}
+
+/*調號*/
+.keySignature{
+
+}
+
+/*拍號*/
+.signature{
+  position:absolute;
+  width:210px;
+  height:70px;
+  top:17;
+  left:120;
+  z-index:1;
+}
+.signature1{
+  position:absolute;
+  width:210px;
+  height:70px;
+  top:45;
+  left:120;
+  z-index:1;
+}
+.signature2{
+  position:absolute;
+  width:210px;
+  height:70px;
+  top:105;
+  left:90;
+  z-index:1;
+}
+.signature3{
+  position:absolute;
+  width:210px;
+  height:70px;
+  top:128;
+  left:73;
+  z-index:1;
+}
+.signature4{
+  position:absolute;
+  width:200px;
+  height:70px;
+  left:300;
+  z-index:1;
+}
+.signature5{
+  position:absolute;
+  width:200px;
+  height:70px;
+  left:300;
+  z-index:1;
+}
+.signature6{
+  position:absolute;
+  width:200px;
+  height:70px;
+  left:300;
+  z-index:1;
+}
+.signature7{
+  position:absolute;
+  width:200px;
+  height:70px;
+  left:300;
+  z-index:1;
+}
+.signature8{
+  position:absolute;
+  width:200px;
+  height:70px;
+  left:300;
+  z-index:1;
+}
+.signature9{
+  position:absolute;
+  width:200px;
+  height:70px;
+  left:300;
+  z-index:1;
+}
+/*小節線*/
+.section_Line{
+
+}
+
+/*線型記號*/
+.line_Mark{
+
+}
+
+/*滑奏*/
+.glissando{
+
+}
+
+/*換氣&稍停*/
+.pause{
+
+}
+
+/*括線*/
+.including_Line{
+
+}
+
+/*演奏標示*/
+.play_marked{
+
+}
+
+/*臨時升降記號*/
+.temp_Mark{
+
+}
+
+/*強弱*/
+.strong_Weak{
+
+}
+
+/*指法記號*/
+.finger_mark{
+
+}
+
+/*符頭*/
+.note_head{
+
+}
+
+/*顫音*/
+.tremolo{
+
+}
+
+/*反覆記號*/
+.repeat_Symbol{
+
+}
+
+/*換行&空格*/
+.space{
+
+}
+
+/*符幹屬性*/
+.note_Properties{
+
+}
+
+/*符號*/
+.symbol{
+
+}
+.all_point{
+  width:15px;
+  height:10px;
+  background:url(svg/all point note.svg) 0 0;
+}
+.two_point{
+  width:15px;
+  height:40px;
+  background:url(svg/up two point note.svg) 0 0;
+}
+.four_point{
+  width:15px;
+  height:40px;
+  background:url(svg/up four point note.svg) 0 0;
+}
+.eight_point{
+  width:20px;
+  height:40px;
+  background:url(svg/up eight point note.svg) 0 0;
+}
+.sixteen_point{
+  width:20px;
+  height:40px;
+  background:url(svg/up sixteen point note.svg) 0 0;
+}
+.thirtytwo_point{
+  width:20px;
+  height:40px;
+  background:url(svg/up thirty-two point note.svg) 0 0;
+}
+.sixtyfour_point{
+  width:20px;
+  height:40px;
+  background:url(svg/up sixty-four point note.svg) 0 0;
+}
+.allrelax_point{
+  width:20px;
+  height:40px;
+  background:url(svg/all relax point note.svg) 0 0;
+}
+.tworelax_point{
+  width:20px;
+  height:40px;
+  background:url(svg/two relax point note.svg) 0 0;
+}
+.fourrelax_point{
+  width:20px;
+  height:40px;
+  background:url(svg/four relax point note.svg) 0 0;
+}
+.eightrelax_point{
+  width:20px;
+  height:40px;
+  background:url(svg/eight relax point note.svg) 0 0;
+}
+.sixteenrelax_point{
+  width:10px;
+  height:30px;
+  background:url(svg/sixteen relax point note.svg) 0 0;
+}
+.thirtytworelax_point{
+  width:10px;
+  height:30px;
+  background:url(svg/thirty-two relax point note.svg) 0 0;
+}
+/* 整體設置*/ 
+.navigation {
+	margin:0; 
+	padding:0;
+	width:610px;
+	list-style-type:none; 
+	font:12px Arial;
+	position: absolute;
+	z-index: 0;
+	}
+ 
+.navigation li {
+	float:left; 
+    padding:0; 
+	margin:0 10px 0 0; 
+	width:150px;
+	}
+ 
+/* 設置選單區塊*/
+.navigation li  dl{ 
+	width:150px;/*ie6*/
+    margin:0; 
+	padding:0;
+	background-color:#fff;
+	border:solid 2px #666; 
+	}
+ 
+.navigation li dt a , .navigation li dd a{ display:block;}
+ 
+ 
+/* 設置主選單dt */
+.navigation li dt {
+	margin:0;
+	padding: 5px;
+	text-align:center;
+	background-color:#fff;	
+	font-size: 12px;
+	font-weight: bold;
+	height:15px;
+	overflow:hidden;
+	}
+ 
+.navigation li dt a ,.navigation  li dt a:visited {
+	display:block; 
+    color:#333;
+    text-decoration:none;
+	}
+ 
+/* 設置子選單dd */
+.navigation li dd { 
+	margin:0; 
+    padding:0; 
+	color: #333; 
+	background-color:#efefef;
+	border-bottom:dotted 1px #666;
+	}
+ 
+.navigation li dd.last {
+	border-bottom:0;
+	}	
+ 
+.navigation li dd a, .navigation  li dd a:visited {
+	display:block; 
+	color:#333; 
+    text-decoration:none; 
+	padding:4px 5px 4px 20px;
+    }
+ 
+ 
+/*隱藏子選單*/
+.navigation li dd { display:none;}
+ 
+ 
+/* 滑鼠滑入顯示子選單 */
+.navigation li:hover dd, .navigation li a:hover dd { display:block;}
+ 
+/*ie6 hack*/
+.navigation li:hover,.navigation li a:hover { border:0;}
+.navigation table { border-collapse:collapse; 
+    padding:0; 		
+	text-align:center;
+	}
+	
+#dropList{
+  z-index: 4;
+}
+

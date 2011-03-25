@@ -1,0 +1,25 @@
+body{
+  font-size: 14px;
+  text-align: center;
+  color: #000000;
+  background: #fff0f0
+}
+
+.left{
+  text-align: right;
+  font-size: 12;
+  color: #ff0000;
+}
+
+.div_bg{
+  background: #aaaaaa;
+}
+
+h1{
+  color: #f05f00;
+}
+
+.link_sytle_m{
+  color: fff0f0;
+  font-size: 16px;
+}

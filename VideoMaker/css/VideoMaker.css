@@ -1,0 +1,207 @@
+/*菜單*/
+.main{
+	width: 60%;
+	height: 7%;
+	overflow-x:scrolling;
+}
+
+table{
+  border: 1px solid;
+  width: 100%;
+  height: 100%;
+}
+th {
+  width: 100%;
+  height: 100%;
+}
+td {
+  width: 100%;
+  height: 100%;
+} 
+
+/*工具列*/
+.toolbar{
+	float: left;
+	width: 15%;
+	height: 65%;
+	overflow-x:scrolling;
+}
+
+/*已匯入檔案清單*/
+.files{
+	float: left;
+	overflow-x:scrolling;
+	width: 60%;
+	height: 65%;
+     }
+
+/*預覽*/
+.preview{
+	float: left;
+	overflow-x:scrolling;
+	width: 55%;
+	height: 30%;
+}
+
+/*時間軸控制項*/
+.time_bar{
+	float: left;
+	overflow-x:scrolling;
+	width: 100%;
+	height: 5%;
+}
+
+/*影片顯示框      background: #0f0f0f;*/
+.showVideo{
+      float: left;
+      width: 25%;
+      height: 58%;
+	  background:rgba(0, 0, 0,1.0);
+}
+
+/*影片撥放紐區塊*/
+.PlayControl{
+      float: left;
+      width: 25%;
+      height: 7%;
+	  background:rgba(180, 200, 255,0.5);
+}
+
+/*工具欄位*/
+.control_tool{
+        float: left;
+      	width: 100%;
+        height: 100%;
+		background:rgba(211, 211, 211,0.5);
+}
+
+/*文字欄位*/
+.controltext_mes{
+        float: left;
+        text-align: center;
+        line-height: 40px;
+      	width: 15%;
+        height: 495%; 
+}
+
+/*編輯區塊*/
+.edit{
+    overflow-y:scrolling;
+}
+
+/*時間軸*/
+.control_time{
+        float: left;
+      	width: 85%;
+        height: 80%;
+		background:rgba(255, 255, 200,0.5);
+}
+
+/*視訊區塊*/
+.control_video{
+        float: left;
+      	width: 85%;
+        height: 150%;
+		background:rgba(180, 255, 255,0.5);
+}
+
+/*音訊區塊*/
+.control_music{
+        float: left;
+      	width: 85%;
+        height:150%;
+		background:rgba(180, 255, 255,0.5);
+}
+
+/*重疊字幕區塊*/
+.control_Subtitles{
+        float: left;
+      	width: 85%;
+        height: 120%;
+		background:rgba(180, 255, 255,0.5);
+}
+
+/* 整體設置*/ 
+.navigation {
+	margin:0; 
+	padding:0;
+	list-style-type:none; 
+	font:12px Arial;
+	z-index: 0;
+}
+ 
+.navigation li {
+	float:left; 
+    padding-bottom:40px;
+	margin:0 10px 0 0; 
+	width:150px;
+}
+
+/* 設置選單區塊*/
+.navigation li  dl{ 
+	width:150px;/*ie6*/
+    margin:0; 
+	padding:0;
+	background-color:#fff;
+	border:solid 2px #666; 
+}
+ 
+.navigation li dt a , .navigation li dd a{ display:block;}
+ 
+ 
+/* 設置主選單dt */
+.navigation li dt {
+	margin:0;
+	padding: 5px;
+	text-align:center;
+	background-color:#fff;	
+	font-size: 12px;
+	font-weight: bold;
+	height:15px;
+	overflow:hidden;
+}
+ 
+.navigation li dt a ,.navigation  li dt a:visited {
+	display:block; 
+    color:#333;
+    text-decoration:none;
+}
+ 
+/* 設置子選單dd */
+.navigation li dd { 
+	margin:0; 
+    padding:0; 
+	color: #333; 
+	background-color:#efefef;
+	border-bottom:dotted 1px #666;
+}
+ 
+.navigation li dd.last {
+	border-bottom:0;
+}	
+ 
+.navigation li dd a, .navigation  li dd a:visited {
+	display:block; 
+	color:#333; 
+    text-decoration:none; 
+	padding:4px 5px 4px 20px;
+}
+ 
+ 
+/*隱藏子選單*/
+.navigation li dd { display:none;}
+ 
+ 
+/* 滑鼠滑入顯示子選單 */
+.navigation li:hover dd, .navigation li a:hover dd { display:block;}
+ 
+/*ie6 hack*/
+.navigation li:hover,.navigation li a:hover { border:0;}
+.navigation table { border-collapse:collapse; 
+    padding:0; 		
+	text-align:center;
+}
+	
+#dropList{
+  z-index: 4;
+}

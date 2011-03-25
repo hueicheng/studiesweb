@@ -1,4 +1,55 @@
 window.onload = init;
+window.onload = dtC;
+
+function dtC(){
+  dtC1 = document.getElementById("files01").getElementsByTagName("dt");
+  dtM1 = document.getElementById("files02").getElementsByTagName("dt");
+    for(x=0; x<dtC1.length; x++){
+	  var dtC2 = dtC1[x];
+	  dtC2.onclick = ddF;
+	 }
+	for(y=0; y<dtM1.length; y++){
+	  var dtM2 = dtM1[y];
+	  dtM2.onmouseover = ddM;
+  }
+}
+
+function ddF(){
+  ddF1 = document.getElementById("files01").getElementsByTagName("dd");
+
+  for(i=0; i<ddF1.length; i++){
+	ddF2 = ddF1[i];
+	if(ddF2.style.display == "block"){
+		ddF2.style.display = "none";
+	}
+	else{
+		ddF2.style.display = "block";
+	}
+  }
+
+}
+
+function ddM(){
+  ddM1 = document.getElementById("files02").getElementsByTagName("dd");
+
+  for(i=0; i<ddM1.length; i++){
+    ddM2 = ddM1[i];
+	ddM2.style.display = "block";
+  }
+}
+
+function test(){
+		  ddM1 = document.getElementById("files02").getElementsByTagName("dd");
+		  ddF1 = document.getElementById("files01").getElementsByTagName("dd");
+		  for(j=0;j<ddM1.length;j++){
+		    ddM2 = ddM1[j];
+			ddM2.style.display = "block";
+		  }
+		  for(a=0;a<ddF1.length;a++){
+		    ddF2 = ddF1[a];
+			ddF2.style.display = "none";
+		  }
+}
 
 function init(){
 	
@@ -18,7 +69,6 @@ function usingBtn(){
 		if(current.title == selected){
 			current.className = current.className.concat(" using");
 			usedStatus(current);
-			//document.onmousemove = selected;
 		}else{
 			current.className = current.className.replace(" using", "");
 		}
@@ -29,7 +79,7 @@ function usedStatus(obj){
 		case "select":
 		case "pen":
 		case "line":
-			document.onmousemove = line;
+			line(document.event);
 			break;
 		case "fill":
 		case "rect":

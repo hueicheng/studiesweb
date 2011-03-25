@@ -1,0 +1,81 @@
+/*基本格式*/
+body{
+	color: #999999;
+	font-size: 12px;
+	background: #000000;
+}
+
+/*上方表格樣式*/
+.toptable_style{
+	width: 100%;
+	text-align: center;
+	color: #999999;
+	font-size: 10px;
+	height:100;
+}
+
+/*內文表格樣式*/
+.maintable_style{
+	width: 100%;
+	text-align: center;
+	color:#999999;
+	font-size: 16px;
+	height: 30;
+}
+
+/*超連結樣式*/
+.link_style{
+	font-size: 24px;
+	font-family: "標楷體";
+	color: #aaaaaa;
+	text-decoration: none;
+}
+
+/*上區塊設定*/
+.top{
+	text-align: center;	
+	width: 100%;
+	height:15%;
+}
+
+/*左區塊設定*/
+.left{
+	float:left; 
+	width:10%; 
+	overflow-x:scrolling; 
+	color: #999999;
+}
+
+/*右區塊設定*/
+.right{
+	float:left; 
+	width:10%; 
+	overflow-x:scrolling;
+	color: #999999;
+}
+
+/*內文區塊設定*/
+.main{
+                  text-align: center;
+	float:left; 
+	width:80%; 
+	overflow-x:scrolling;
+	color: #999999;
+}
+
+/*文字區塊*/
+textarea{
+      text-align: left;
+      overflow: auto;
+      height: 60%;
+      width: 100%;
+}
+
+/*功能區塊*/
+.function-area{
+     text-align: left;
+     float:left; 
+     height: 20%;
+}
+
+.text_logout{text-align:right;}
