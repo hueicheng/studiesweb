@@ -1,0 +1,46 @@
+* 範例
+
+[[code type="HTML"]]
+<html>
+<body>
+ 
+<p><em>文字強調</em></p>
+
+<p><strong>重大文字</strong></p>
+
+<p><dfn>術語定義</dfn></p>
+
+<p><code>計算機代碼</code></p>
+
+<p><samp>計算機代碼樣品</samp></p>
+
+<p><kbd>鍵盤文字</kbd></p>
+
+<p><var>一段文字變量</var></p>
+
+<cite>一段引用</cite> 
+ 
+</body>
+</html>
+[[/code]]
+
+* 實作
+[[note]]
+[[html]]
+<p><em>文字強調</em></p>
+
+<p><strong>重大文字</strong></p>
+
+<p><dfn>術語定義</dfn></p>
+
+<p><code>計算機代碼</code></p>
+
+<p><samp>計算機代碼樣品</samp></p>
+
+<p><kbd>鍵盤文字</kbd></p>
+
+<p><var>一段文字變量</var></p>
+
+<cite>一段引用</cite> 
+[[/html]]
+[[/note]]

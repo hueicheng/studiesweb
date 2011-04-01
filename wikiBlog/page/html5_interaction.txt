@@ -1,0 +1,37 @@
+||<details></details>||	用於描述細節的文件，或部分的文件||
+||<legend></legend>||	定義一個標題||
+||<summary></summary>||	當點擊<summary></summary>內的文字時，會展開下面文字||
+||目前支援的瀏覽器||	Firefox3.6、Chrome7.0||
+
+* 範例
+[[code type="HTML"]]
+<body>
+
+<details>
+<summary>HTML5</summary>
+<p>是個新標準</p>
+</details>
+
+<details>
+<legend>標題</legend>
+說明文
+<details>
+
+</body>
+[[/code]]
+
+* 實作
+[[note]]
+[[html]]
+<body>
+<details>
+<summary>HTML5</summary>
+<p>是個新標準</p>
+</details>
+<details>
+<legend>標題</legend>
+說明文
+<details>
+</body>
+[[/html]]
+[[/note]]

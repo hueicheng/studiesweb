@@ -1,0 +1,25 @@
+在html文件中，你可以加個按鈕，
+[[code type="html"]]
+<html>
+<head>
+  <script type="text/javascript">
+  function testClick(){
+      alert("你按了按鈕");
+  }
+  </script>
+</head>
+<body>
+  <input type="button" id="btn" onclick="testClick()" value="按鈕"/>
+</body>
+</html>
+[[/code]]
+[[file /files/DOMtest.html |範例在這。]]
+簡單說明下：
+# ##red|<script></script>##中間是放置你JS程式碼的地方。
+# <input ##red|type="button"## onclick="testClick()" value="按鈕"/> 這就是按鈕。
+ # type 後面接的是表單中你要什麼東西，內容可以是 "button" , "text" , 等等...；
+ # 其中，onclick 指的是按下去的這件事，##red|="testClick()"## 指的是按下去所引發的方法。
+ # value 是變數、這裡指的是按鈕上的文字。
+# function 的部分以下會說明。
+# function 內部：
+ # ##red|alert##("你按了按鈕"); 這個是顯示一個彈跳視窗。

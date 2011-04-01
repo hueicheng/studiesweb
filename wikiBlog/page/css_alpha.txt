@@ -1,0 +1,12 @@
+* 透明度
+[[code type="css"]]
+<style>
+  .opacityL1 { background:#036; opacity:0.2; width:575px; height:20px; }
+  .opacityL2 { background:#036; opacity:0.4; width:575px; height:20px; }
+  .opacityL3 { background:#036; opacity:0.6; width:575px; height:20px; }
+  .opacityL4 { background:#036; opacity:0.8; width:575px; height:20px; }
+  .opacityL5 { background:#036; opacity:1.0; width:575px; height:20px; }
+</style>
+[[/code]]
+
+||opacity||背景、圖片、文字等物件的透明度，1為不透明，0為透明。||

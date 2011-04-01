@@ -1,0 +1,51 @@
+||<canvas></canvas>||使用JavaScript來繪製圖形在網頁上||
+||目前支援的瀏覽器||Firefox3.6、Chrome7.0、Opera10.63、Safari5.0||
+
+* 範例
+[[code type="HTML"]]
+<html>
+<body>
+
+<canvas id="myCanvas" width="200" height="150" style="border:1px solid #c3c3c3;">
+目前wikidot不支援，請自行複製到記事本，並改副檔名為html，再用上述所支援的瀏覽器開啟
+</canvas>
+
+<script type="text/javascript">
+
+var c=document.getElementById("myCanvas");
+var cxt=c.getContext("2d");
+cxt.fillStyle="#0000FF";
+cxt.fillRect(0,0,90,75);
+
+cxt.fillStyle="#FF0000";
+cxt.fillRect(90,0,110,200);
+
+cxt.fillStyle="#FF0000";
+cxt.fillRect(0,75,90,75);
+
+</script>
+
+</body>
+</html>
+[[/code]]
+
+* 實作
+[[note]]
+[[html]]
+<body>
+<canvas id="myCanvas" width="200" height="150" style="border:1px solid #c3c3c3;">
+目前wikidot不支援，請自行複製到記事本，並改副檔名為html，再用上述所支援的瀏覽器開啟
+</canvas>
+<script type="text/javascript">
+var c=document.getElementById("myCanvas");
+var cxt=c.getContext("2d");
+cxt.fillStyle="#0000FF";
+cxt.fillRect(0,0,90,75);
+cxt.fillStyle="#FF0000";
+cxt.fillRect(90,0,110,200);
+cxt.fillStyle="#FF0000";
+cxt.fillRect(0,75,90,75);
+</script>
+</body>
+[[/html]]
+[[/note]]

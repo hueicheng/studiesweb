@@ -1,0 +1,1 @@
+JSON是 Javascript Object Notation 的縮寫，是一種資料交換語言，以文字為基礎且容易閱讀。

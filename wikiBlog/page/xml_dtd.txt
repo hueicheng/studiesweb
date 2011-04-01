@@ -1,0 +1,37 @@
++ 簡介
+全名為「Document Type Definition」，是XML文件的驗證機制，屬於XML文件組成的一部份，DTD在XML文件所扮演的角色就是定義XML文件的元素架構、元素標籤與屬性。
+
+DTD概念緣於 SGML，每一份 SGML 文件，均應有相對應的 DTD。對 XML 文件而言，DTD 並非特別需要，well-formed XML 就不需要有 DTD。
+
+DTD 有四個組成如下：
+* 元素（Elements）
+* 屬性（Attribute）
+* 實體（Entities）
+* 注釋（Comments）
+
+**※**由於 DTD 限制較多，使用時較不方便，近來已漸被[[[xml:xsd|XML Schema]]]所取代。
+
+------
+DTD的功能：
+# 定義該類型文件所包含的元素(Element)，並定義每個元素的內容，包含子元素、文字內容與屬性。
+# 規範各元素(Element)的排列組合方式，包含出現的順序與可出現的次數。順序性與重複性。
+
++ 基本架構範例
+[[code type="dtd"]]
+<!DOCTYPE NEWSPAPER [
+
+<!ELEMENT NEWSPAPER (ARTICLE+)>
+<!ELEMENT ARTICLE (HEADLINE,BYLINE,LEAD,BODY,NOTES)>
+<!ELEMENT HEADLINE (#PCDATA)>
+<!ELEMENT BYLINE (#PCDATA)>
+<!ELEMENT LEAD (#PCDATA)>
+<!ELEMENT BODY (#PCDATA)>
+<!ELEMENT NOTES (#PCDATA)> 
+
+<!ATTLIST ARTICLE AUTHOR CDATA #REQUIRED>
+<!ATTLIST ARTICLE EDITOR CDATA #IMPLIED>
+<!ATTLIST ARTICLE DATE CDATA #IMPLIED>
+<!ATTLIST ARTICLE EDITION CDATA #IMPLIED>
+
+]>
+[[/code]]

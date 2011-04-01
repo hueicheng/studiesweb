@@ -1,0 +1,123 @@
+[[include maincss]]
+
++ 標準屬性(Standard Attributes)
+
+[[collapsible show="核	心	屬	性(Core Attributes)" hide="返	回"]]
+* 核心屬性(Core Attributes)
+
+[[note]]
+[[span style="color:red"]]在 base, head, html, meta, param, script, style, title 標籤裡無效[[/span]]
+[[/note]]
+
+||屬性||值||說明||
+||class||classname||定義一個類別名稱||
+||id||id||定義唯一的id||
+||style||style_definition||定義一個樣式||
+||title||text ||定義一個外加訊息||
+
+[[/collapsible]]
+
+[[collapsible show="語	言	屬	性(Language Attributes)" hide="返	回"]]
+* 語言屬性(Language Attributes)
+
+[[note]]
+[[span style="color:red"]]在 base, br, frame, frameset, hr, iframe, param, script 標籤裡無效[[/span]]
+[[/note]]
+
+||屬性||值||說明||
+||dir||ltr，rtl||定義文字方向||
+||lang||language_code||指定語言代碼||
+||xml:lang||language_code||在XHTML文件，指定語言代碼||
+[[note]]
+[[[*http://www.w3schools.com/tags/ref_language_codes.asp | 語言代碼參考]]]
+[[/note]]
+
+[[/collapsible]]
+
+[[collapsible show="鍵	盤	屬	性(Keyboard Attributes)" hide="返	回"]]
+* 鍵盤屬性(Keyboard Attributes)
+
+||屬性||值||說明||
+||accesskey||單 [A-Z] 字元(大小寫都可)||設定一個字元為「快速鍵」以迅速取用 HTML 元素||
+||tabindex||number||指定Tab鍵使用順序||
+
+[[/collapsible]]
+
++ 事件屬性(Event Attributes)
+
+[[collapsible show="<body> 和 <frameset> 事	件" hide="返	回"]]
+* <body> 和 <frameset> 事件
+
+[[note]]
+[[span style="color:red"]]只能應用於 body 和 frameset 標籤[[/span]]
+[[/note]]
+||屬性||值||說明||
+||onload||script||運行腳本載入文件||
+||onunload||script||運行腳本卸載文件||
+[[/collapsible]]
+
+
+[[collapsible show="表	單	事	件(Form Events)" hide="返	回"]]
+* 表單事件(Form Events)
+
+||屬性||值||說明||
+||onblur||	script||腳本失去焦點時發生||
+||onchange||	script||腳本運行時元素變化||
+||onfocus||	script||腳本運行時獲得焦點||
+||onreset||	script||腳本運行時表單被重置||
+||onselect||	script||腳本運行時元素被選中||
+||onsubmit||	script||腳本運行時送出表單||
+[[/collapsible]]
+
+[[collapsible show="圖	片	事	件(Image Events)" hide="返	回"]]
+* 圖片事件(Image Events)
+
+||屬性||值||說明||
+||onabort||script||使用者中斷圖片載入時事件||
+[[/collapsible]]
+
+
+[[collapsible show="鍵	盤	事	件(Keyboard Events)" hide="返	回"]]
+* 鍵盤事件(Keyboard Events)
+
+||屬性||值||說明||
+||onkeydown||script||使用者按下鍵盤時事件||
+||onkeypress||script||按完一個鍵時事件||
+||onkeyup||script||放開按下的鍵時事件||
+
+[[note]]
+可以使用鍵盤事件屬性的標籤
+[[span style="color:red"]]<a>, <acronym>, <address>, <area>, <b>, <bdo>, <big>, <blockquote>, <body>, 
+<button>, <caption>, <cite>, <code>, <dd>, <del>, <dfn>, <div>, <dt>, <em>, 
+<fieldset>, <form>, <h1> to <h6>, <hr>, <i>, <input>, <kbd>, <label>, <legend>, 
+<li>, <map>, <object>, <ol>, <p>, <pre>, <q>, <samp>, <select>, <small>, 
+<span>, <strong>, <sub>, <sup>, <table>, <tbody>, <td>, <textarea>, <tfoot>, 
+<th>, <thead>, <tr>, <tt>, <ul>, <var>[[/span]]
+[[/note]]
+[[/collapsible]]
+
+
+[[collapsible show="滑	鼠	事	件(Mouse Events)" hide="返	回"]]
+* 滑鼠事件(Mouse Events)
+
+||屬性||值||說明||
+||onclick||script||腳本運行時被滑鼠點擊||
+||ondblclick||script||腳本運行時被滑鼠雙擊||
+||onmousedown||script||腳本運行時滑鼠按鍵被按下||
+||onmousemove||script||腳本運行時滑鼠移動指標||
+||onmouseout||script||腳本運行時滑鼠指標移出指定元素||
+||onmouseover||script||腳本運行時滑鼠指標移到指定元素||
+||onmouseup||script||腳本運行時滑鼠按鍵被放鬆||
+
+
+[[note]]
+可以使用鍵盤事件屬性的標籤
+[[span style="color:red"]]<a>, <address>, <area>, <b>, <bdo>, <big>, <blockquote>, <body>, <button>, 
+<caption>, <cite>, <code>, <dd>, <dfn>, <div>, <dl>, <dt>, <em>, <fieldset>, 
+<form>, <h1> to <h6>, <hr>, <i>, <img>, <input>, <kbd>, <label>, <legend>, 
+<li>, <map>, <ol>, <p>, <pre>, <samp>, <select>, <small>, <span>, <strong>, 
+<sub>, <sup>, <table>, <tbody>, <td>, <textarea>, <tfoot>, <th>, <thead>, 
+<tr>, <tt>, <ul>, <var>
+[[/span]]
+[[/note]]
+[[/collapsible]]

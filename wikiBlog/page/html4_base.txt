@@ -1,0 +1,30 @@
+||<base></base>||	用來指定一個相同目錄的路徑，為相對鏈接||
+
+* 範例
+[[code type="HTML"]]
+<html>
+<head>
+<base href="http://studiesweb.wikidot.com/local--files/files/" />
+<base target="_blank" />
+</head>
+
+<body>
+<img src="shy.gif" />
+<img src="notgirl.gif" />
+</body>
+</html>
+[[/code]]
+
+* 實作
+[[note]]
+[[html]]
+<head>
+<base href="http://studiesweb.wikidot.com/local--files/files/" />
+<base target="_blank" />
+</head>
+<body>
+<img src="shy.gif" />
+<img src="notgirl.gif" />
+</body>
+[[/html]]
+[[/note]]

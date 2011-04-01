@@ -1,0 +1,24 @@
+||<img src="圖檔所在的路徑">||||||	貼圖標籤沒有結束標籤，常見的網頁圖形格式有兩種就是gif及jpg兩種格式。||
+||||||||路徑說明：假設目前有一個圖檔名稱為pic.gif(也可將圖片傳到網路上的貼圖空間，再鏈結該圖片網址)||
+||~ html檔的位置||~	圖檔的位置||~	寫法||~	說明|| 
+||c:\text||	c:\text||	<img src="pic.gif">||	圖文均在同一目錄 ||
+||c:\text||	c:\text\images||	<img src="images/pic.gif">||	圖在網頁下一層目錄||
+||c:\text||	c:\images||	<img src="images/tad.gif">||	圖文在同一層但不同目錄 ||
+
+* 範例
+[[code type="HTML"]]
+<body>
+
+<img src="http://studiesweb.wikidot.com/local--files/files/shy.gif" />
+
+</body>
+[[/code]]
+
+* 實作
+[[note]]
+[[html]]
+<body>
+<img src="http://studiesweb.wikidot.com/local--files/files/shy.gif" />
+</body>
+[[/html]]
+[[/note]]

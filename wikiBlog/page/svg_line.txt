@@ -1,0 +1,19 @@
++ <line>標籤用於創建一條線段。
+[[code type="xml"]]
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg width="100%" height="100%" version="1.1"
+xmlns="http://www.w3.org/2000/svg">
+
+<line x1="0" y1="0" x2="300" y2="300"
+style="stroke:rgb(99,99,99);stroke-width:2"/>
+
+</svg>
+[[/code]]
+**A範例 [*http://studiesweb.wdfiles.com/local--files/files/line.svg TEST]**
+||x1="n"||定義了該線段的開頭在x軸的位置。n值無範圍限制。||
+||y1="n"||定義了該線段的開頭在y軸的位置。n值無範圍限制。||
+||x2=”n”||定義了該線段的結尾在x軸的位置。n值無範圍限制。||
+||y2="n"||定義了該線段的結尾在y軸的位置。n值無範圍限制。||

@@ -1,0 +1,78 @@
+||<header></header>||	頁面上顯示的標題||
+||<hgroup></hgroup>|| 用於標頭組，<h1>到<h6>||
+||<section></section>||可以是書中的一章或一節||
+||<article></article>||	blog、雜誌、文章彙編等中的一篇文章||
+||<nav></nav>||	指向其他頁面的鏈接||
+||<footer></footer>||	頁腳：作者名稱、日期或聯繫信息||
+||目前支援的瀏覽器||	IE8、Firefox3.6、Chrome7.0、Opera10.63Safari5.0||
+
+* 範例
+[[code type="HTML"]]
+<body>
+<header>
+<h1><a href="http://studiesweb.wikidot.com/">網路應用研究</a></h1>
+<header>
+
+<hgroup>
+<h1>Welcome to 網路應用研究!</h1>
+<h2>HTML5 新標籤介紹</h2>
+</hgroup>
+
+<section>
+
+<article>
+<h3><a href="http://studiesweb.wikidot.com/html4:main">HTML</a></h3>
+<p>HTML的全名是HyperText Markup Language，照字面上翻譯為『超文件標記語言』，</p>
+<p>是編寫網頁的基本語言........</p>
+</article>
+<article>
+<h3><a href="http://studiesweb.wikidot.com/html5:main">HTML5</a></h3>
+<p>HTML自1999年發佈4.0版以來，以為就可以滿足未來的各種網頁內容的需求，</p>
+<p>隨著網路應用程式的發展........</p>
+</article>
+
+<nav>
+<a href="http://studiesweb.wikidot.com/">網路應用研究</a>
+</nav>
+
+</section>
+
+<footer>
+<p>24 Sep 2010</p>
+</footer>
+
+</body>
+[[/code]]
+
+* 實作
+[[note]]
+[[html]]
+<body>
+<header>
+<h1><a href="http://studiesweb.wikidot.com/">網路應用研究</a></h1>
+<header>
+<hgroup>
+<h1>Welcome to 網路應用研究!</h1>
+<h2>HTML5 新標籤介紹</h2>
+</hgroup>
+<section>
+<article>
+<h3><a href="http://studiesweb.wikidot.com/html4:main">HTML</a></h3>
+<p>HTML的全名是HyperText Markup Language，照字面上翻譯為『超文件標記語言』，</p>
+<p>是編寫網頁的基本語言........</p>
+</article>
+<article>
+<h3><a href="http://studiesweb.wikidot.com/html5:main">HTML5</a></h3>
+<p>HTML自1999年發佈4.0版以來，以為就可以滿足未來的各種網頁內容的需求，</p>
+<p>隨著網路應用程式的發展........</p>
+</article>
+<nav>
+<a href="http://studiesweb.wikidot.com/">網路應用研究</a>
+</nav>
+</section>
+<footer>
+<p>24 Sep 2010</p>
+</footer>
+</body>
+[[/html]]
+[[/note]]

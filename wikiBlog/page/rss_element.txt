@@ -1,0 +1,51 @@
++ <channel>元素
+<channel>元素為RSS的基本元素，用來定義RSS的提要
+RSS簡單的文檔：
+[[code type="xml"]]
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<rss version="2.0">
+
+<channel>
+ <title>W3Schools Home Page</title>
+ <link>http://www.w3schools.com</link>
+ <description>Free web building tutorials</description>
+ <item>
+    <title>RSS Tutorial</title>
+    <link>http://www.w3schools.com/rss</link>
+    <description>New RSS tutorial on W3Schools</description>
+ </item>
+ <item>
+    <title>XML Tutorial</title>
+    <link>http://www.w3schools.com/xml</link>
+    <description>New XML tutorial on W3Schools</description>
+ </item>
+</channel>
+
+</rss>
+[[/code]]
+<channel>元素定義了RSS的提要，並有三個必需的子元素：
+    * <title> - 定義該文章標題的名稱（例如"W3Schools Home Page"）
+    * <link> - 定義該段文章出於何處的超鏈接（例如"http://www.w3schools.com"）
+    * <description> - 用來描述該文章（例如"Free web building tutorials"）
+<channel>元素通常包含一個或多個 <item>元素。 每個<item>元素是用來定義一篇文章中的RSS提要。
+
+以下是可用於<channel>元素底下的子元素說明：
+||元素||說明||
+||<category>||選擇性元素。定義一個或多個類別的項目。||
+||<cloud>||選擇性元素。註冊流程 ||
+||<copyright>||選擇性元素。定義有關版權保護的材料。||
+||<description>||必需性元素。描述該文章的內容。||
+||<docs>||選擇性元素。指定一個URL的文檔的格式中使用。||
+||<generator>|| 選擇性元素。||
+||<image>||選擇性元素。定義圖像時顯示於目前的文章中。||
+||<language>||選擇性元素。定義語言。 ||
+||<lastBuildDate>||選擇性元素。定義的最後修改的日期。||
+||<link>||必需性元素。定義一個超鏈結。||
+||<managingEditor>||選擇性元素。定義e - mail地址的編輯內容。||
+||<pubDate>||選擇性元素。定義最後一次刊登的日期。||
+||<skipDays>||選擇性元素。||
+||<skipHours>||選擇性元素。定義該文章的標題||
+||<textInput>||選擇性元素。||
+||<title>||必需性元素。定義該文章的標題。||
+||<ttl>||選擇性元素。||
+||<webMaster>||選擇性元素。定義電子郵件地址的網站管理員 ||

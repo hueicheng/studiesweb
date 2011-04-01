@@ -1,0 +1,28 @@
+||<address></address>||	作者的聯絡資料及著作權||
+
+* 範例
+[[code type="HTML"]]
+<body>
+
+<address>
+<br>來源：網路應用研究<br />
+<br>Email：123456789@gmail.com<br />
+<br>地址: 金門縣金寧鄉大學路1號<br />
+<br>電話： 082123456</br>
+</address>
+
+</body>
+[[/code]]
+
+* 實作
+[[note]]
+[[html]]<body>
+<address>
+<br>著作權：網路應用研究<br />
+<br>Email：123456789@gmail.com<br />
+<br>地址: 金門縣金寧鄉大學路1號<br />
+<br>電話： 082123456</br>
+</address>
+</body>
+[[/html]]
+[[/note]]

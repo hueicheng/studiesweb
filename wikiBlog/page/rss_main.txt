@@ -1,0 +1,49 @@
++ 簡介
+RSS （ Really Simple Syndication ）是一種可供網路使用者「訂閱」資訊格式，使用者只要知道某資訊的 RSS 位置，就可以透過各種閱讀軟體、客制化首頁（如 MyYahoo! ）、 Widget 等工具隨時閱讀最新更新的資訊，不用再定期查閱特定網站，同時可以將自己常看的資訊來源彙整到一個單獨的介面，若要追蹤特定關鍵字的相關資訊，許多 RSS 也能夠提供自訂功能。
+
+
+[[image  http://studiesweb.wikidot.com/local--files/files/100px-Feed-icon.svg.png]]
+上面是RSS圖示
+
+RSS可以是以下三種解釋中任一種的縮寫，但其實這三者都是指同一種聯合供稿（Syndication）的技術：
+    * Really Simple Syndication（RSS 2.0）
+    * PDF（Resource Description Framework）Site Summary（RSS 0.91, RSS 1.0）
+    * Rich Site Summary（RSS 0.9 and 1.0）
+
+------
+
++ RSS基本語法
+RSS簡單的文檔：
+[[code type="xml"]]
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<rss version="2.0">
+
+<channel>
+ <title>W3Schools Home Page</title>
+ <link>http://www.w3schools.com</link>
+ <description>Free web building tutorials</description>
+ <item>
+    <title>RSS Tutorial</title>
+    <link>http://www.w3schools.com/rss</link>
+    <description>New RSS tutorial on W3Schools</description>
+ </item>
+ <item>
+    <title>XML Tutorial</title>
+    <link>http://www.w3schools.com/xml</link>
+    <description>New XML tutorial on W3Schools</description>
+ </item>
+</channel>
+
+</rss>
+[[/code]]
+語法說明：
+||<?xml version="1.0" encoding="ISO-8859-1" ?>||此行是XML的聲明。version="1.0"定義了XML的版本。encoding="ISO-8859-1"文件中字符所使用的編碼。||
+||<rss version="2.0"></rss>||RSS的聲明標籤，表示這是一個RSS文件。version="2.0"定義了RSS的版本。在最後必須有結束RSS文件的結束標籤</rss>。||
+||<channel></channel>||RSS的基本元素，用來描述RSS的提要。裡面的基本構造會在下一張做詳細介紹。||
+||<item></item>||RSS的基本元素，用來描述一篇文章中RSS的提要。裡面的基本構造會在下一張做詳細介紹。||
+
+由於是由XML所編寫，所以必須遵守XML的語法規則：
+    * 所有元素必須有結束標籤
+    * 元素必須區分大小寫
+    * 元素必須正確嵌套
+    * 屬性值必須加引號

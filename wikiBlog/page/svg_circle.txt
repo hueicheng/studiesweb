@@ -1,0 +1,21 @@
++ <circle>標籤用於創建一個中心點和半徑的圓圈。
+[[code type="xml"]]
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg width="100%" height="100%" version="1.1"
+xmlns="http://www.w3.org/2000/svg">
+
+<circle cx="100" cy="50" r="40" stroke="black"
+stroke-width="2" fill="red"/>
+
+</svg>
+[[/code]]
+**範例A [*http://studiesweb.wdfiles.com/local--files/files/circle.svg TEST]**
+||cx="n"||定義圓中心點的x座標，如果被省略則設定為0。n無範圍限制。||
+||cy="n"||定義圓中心點的y座標，如果被省略則設定為0。n無範圍限制。||
+||r="n"||定義圓的半徑。n值範圍只能為正數。||
+||stroke="n"||定義把圓圍起來的邊線顏色。無顏色限制。||
+||stroke-width="n"||定義把圓圍起來的邊線的寬度。n值無範圍限制。||
+||fill="n"||定義圓圈內的顏色。無顏色限制。||

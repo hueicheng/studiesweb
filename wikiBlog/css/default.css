@@ -1,0 +1,54 @@
+div{border:solid 2px #fff;}
+#menuPane{
+	margin:0px;
+	padding:5px;
+    background-color: #111;
+    text-align:right;
+}
+body
+{
+    background-color: #000000;
+}
+
+#top, #left, #right, #main, #bottom{
+	margin:0px;
+	padding:10px;
+}
+
+#left, #right{
+	width:20%;
+	height:80%;
+}
+
+#top{
+	
+}
+
+#left{
+	
+	position:fixed;
+}
+
+#right{
+	
+	position:fixed;
+	right: 0px;
+}
+
+#main{
+	
+	position:fixed;
+	left: 23%;
+	height: 80%;
+	width: 50%;
+}
+
+#bottom{
+	
+	position:fixed;
+	bottom:0px;
+	width:100%;
+}
+#textPane{ background:#fff; padding:10px;}
+
+

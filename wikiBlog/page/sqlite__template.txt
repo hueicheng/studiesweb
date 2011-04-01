@@ -1,0 +1,24 @@
+[[include _thead]]
+
++++ [[[sqlite:main|簡介]]]
++++ [[[sqlite:basice|SQL基本語法]]]
++++ SQLite軟體
+* [[[sqlite:download|下載]]]
+* [[[sqlite:established|建立資料庫]]]
+* [[[sqlite:table|建立表格]]]
+
+
++++++ [[[sqlite:_template|編輯此欄]]]
+[[/cell]]
+[[cell style="vertical-align:top;"]]
+%%content%%
+
+------
++ 參考文獻
+* [*http://www.sqlite.org/ SQLite官網]
+* [*http://www.1keydata.com/tw/sql/sql.html SQL語法教學]
+
+
+[[/cell]]
+[[/row]]
+[[/table]]

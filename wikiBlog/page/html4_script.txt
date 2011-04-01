@@ -1,0 +1,27 @@
+||<script></script>||	定義一個客戶端腳本，如JavaScript。||
+||<noscript></noscript>||	定義一個替代內容||
+
+* 範例
+[[code type="HTML"]]
+<html>
+<body>
+
+<script type="text/javascript">
+document.write("Hello Welcome to 網路應用研究")
+</script>
+<noscript>您的瀏覽器不支援<script>標籤</noscript>
+
+</body>
+</html>
+[[/code]]
+
+* 實作
+[[note]]
+
+[[html]]
+<script type="text/javascript">
+document.write("Hello Welcome to 網路應用研究")
+</script>
+<noscript>您的瀏覽器不支援<script>標籤</noscript>
+[[/html]]
+[[/note]]

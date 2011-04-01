@@ -1,0 +1,50 @@
+* 範例
+[[code type="HTML"]]
+<html>
+<body>
+
+<p><b>字型加粗</b></p>
+
+<p><i>斜體</i></p>
+
+<p><big>大</big></p>
+
+<p><small>小</small></p>
+
+<p><tt>同寬文字</tt></p>
+
+<p>文字 <sub>上標</sub></p>
+
+<p>文字 <sup>下標</sup></p>
+
+<p><del>刪除線</del></p>
+
+<ins>底線</ins>
+ 
+</body>
+</html>
+[[/code]]
+
+
+* 實作
+[[note]]
+[[html]]
+<p><b>字型加粗</b></p>
+
+<p><i>斜體</i></p>
+
+<p><big>大</big></p>
+
+<p><small>小</small></p>
+
+<p><tt>同寬文字</tt></p>
+
+<p>文字 <sub>上標</sub></p>
+
+<p>文字 <sup>下標</sup></p>
+
+<p><del>刪除線</del></p>
+
+<ins>底線</ins>
+[[/html]]
+[[/note]]

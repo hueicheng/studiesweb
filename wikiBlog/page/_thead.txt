@@ -1,0 +1,5 @@
+[[include maincss]]
+
+[[table style="width:98%"]]
+[[row]]
+[[cell style="width:160px; vertical-align:top; "]]

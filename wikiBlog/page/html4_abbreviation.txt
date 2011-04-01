@@ -1,0 +1,26 @@
+||<abbr></abbr>||	定義一個縮寫||
+||<acronym></acronym>||	定義一個縮寫||
+
+* 範例
+[[code type="HTML"]]
+<body>
+
+<p>金門技術學院將改大成為<abbr title="National Quemoy University">NQU</abbr>，改大時間為8月1號</p>
+
+<p><acronym title="Republic of China">ROC</acronym>在台灣</p>
+
+</body>
+[[/code]]
+
+* 實作
+[[note]]
+[[html]]
+<body>
+
+<p>金門技術學院將改大成為<abbr title="National Quemoy University">NQU</abbr>，改大時間為8月1號</p>
+
+<p><acronym title="Republic of China">ROC</acronym>在台灣</p>
+
+</body>
+[[/html]]
+[[/note]]

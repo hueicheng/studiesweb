@@ -1,0 +1,9 @@
+[[code type="css"]]
+<style type="text/css">
+ .hidden{visibility: hidden};
+</style>
+[[/code]]
+
+||visible||使框線顯示。||
+||hidden||不使框線顯示。不影響其他框線。||
+||collapse||對表的直列或橫列、或群組指定這個值時，所指定的範圍會從表中去除。||

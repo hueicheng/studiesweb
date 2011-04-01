@@ -1,0 +1,44 @@
+||<span></span>||	呈現文字使用樣式表的內嵌項目，在<span>標籤內無法建立分行符號||
+
+* 範例
+[[code type="HTML"]]
+<html>
+<head>
+<style type="text/css">
+span.red {color:red;font-weight:bold}
+span.blue {color:blue;font-weight:bold}
+</style>
+</head>
+
+<body>
+
+<h1>網路應用研究</h1>
+<p>主要是研讀<span class="red">WEB</span> 上的各種東西的應用，其中<span class="blue">HTML5</span>的研究應用是主要項目。
+其它的應用方面會一並帶上。</p>
+
+</body>
+</html>
+[[/code]]
+
+
+* 實作
+[[note]]
+[[html]]
+<html>
+<head>
+<style type="text/css">
+span.red {color:red;font-weight:bold}
+span.blue {color:blue;font-weight:bold}
+</style>
+</head>
+
+<body>
+
+<h1>網路應用研究</h1>
+<p>主要是研讀<span class="red">WEB</span> 上的各種東西的應用，其中<span class="blue">HTML5</span>的研究應用是主要項目。
+其它的應用方面會一並帶上。</p>
+
+</body>
+</html>
+[[/html]]
+[[/note]]

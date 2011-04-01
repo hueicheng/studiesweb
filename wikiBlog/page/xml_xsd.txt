@@ -1,0 +1,22 @@
++ 簡介
+全名為"XML Schema Definition"，簡稱"XSD"。
+XML Schema原為微軟所提出的規格, 目前已成為W3C XML文件驗證的規格，在未來有可能取代DTD成為XML文件驗證的規格。
+
+XML Schema的優點：
+* XML Schema不像DTD擁有自己的定義語法, 他本身就是一份良好格式的XML文件。
+* XML Schema支援更多XML元素的資料型態(Data Type), 可以定義各種XML元素的資料型態。
+* XML Schema支援名稱空間, 比起DTD擁有更大的擴充性。
+* XML Schema是一個Well-Formed XML文件,因此可以透過DOM介面存取細部元素與屬性。
+
+------
+XML Schema的功能：和DTD的角色相同，都是用來限定XML文件的結構。
+# 包含哪些元素(elements)、屬性(attributes)。
+# 元素的順序與重複性。
+# 限定每個元素與屬性的資料型態與值域(例如0~99的整數)。
+++ XML Schema 基本架構
+[[code type="dtd"]]
+<?xml version="1.0" encoding="Big5"?>
+<xsd:schema xmlns:xsd="http://ww.w3c.org/1999/XMLSchema">
+........
+</xsd:schema>
+[[/code]]

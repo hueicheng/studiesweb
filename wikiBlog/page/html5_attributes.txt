@@ -1,0 +1,128 @@
++ 標準屬性(Standard Attributes)
+
+||屬性||值||說明||
+||contenteditable||true or false||指定允許用戶是否可以編輯內容||
+||contextmenu||menu_id||指定上下菜單元素||
+||data-yourvalue||value||作者定義屬性。一個html文檔作者可以定義他們自己的屬性，必須以"data-"開頭||
+||draggable||true,false or auto||指定是否允許拖曳一個元素||
+||hidden||hidden||指定的元素是無關的，被隱藏的元素不會顯示||
+||item||empty or url||用於群體的元素||
+||itemprop||url or group value||用於群體的項目||
+||spellcheck||true or false||指定元素必須檢查它的拼寫和語法||
+||subject||id||指定元素相應的項目||
+
+
++ 事件屬性(Event Attributes)
+[[collapsible show="視　窗　事　件(Window Events)" hide="返回"]]
+* 視窗事件(Window Events)
+
+[[note]]
+為視窗物件觸發的事件
+
+適用於<body>標籤
+[[/note]]
+
+||屬性||值||說明||
+||onafterprint||script||印出文字檔之後運行腳本||
+||onbeforeprint||script||印出文字檔之前運行腳本||
+||onbeforeonload||script||載入文字檔之前運行腳本||
+||onerror||script||當發生錯誤時運行腳本||
+||onhaschange||script||當文字檔改變時運行腳本||
+||onmessage||script||當訊息備觸發時運行腳本||
+||onoffline||script||當文字檔離線時運行腳本||
+||ononline||script||當文字檔上線時運行腳本||
+||onpagehide||script||當視窗隱藏時運行腳本||
+||onpageshow||script||當看得見視窗時運行腳本||
+||onpopstate||script||當視窗歷史紀錄被改變時運行腳本||
+||onredo||script||當文字檔再執行時運行腳本||
+||onresize||script||當調整視窗大小時運行腳本||
+||onstorage||script||當文字檔載入時運行腳本||
+||onundo||script||當文字檔執行撤銷時運行腳本||
+||onunload||script||當使用者離開文字檔時運行腳本||
+[[/collapsible]]
+
+[[collapsible show="表　單　事　件(Form Events)" hide="返回"]]
+* 表單事件(Form Events)
+
+[[note]]
+由表單裡行動觸發的事件
+
+適用於所有的html5的元素
+[[/note]]
+
+||屬性||值||說明||
+||oncontextmenu||script||當觸發上下文菜單時運行腳本||
+||onformchange||script||當表單改變時運行腳本||
+||onforminput||script||當表單取得使用者輸入時運行腳本||
+||oninput||script||當元素取得使用者輸入時運行腳本||
+||oninvalid||script||當元素無效時運行腳本||
+[[/collapsible]]
+
+[[collapsible show="鍵　盤　事　件(Keybord Events)" hide="返回"]]
+[[note]]
+由鍵盤觸發的事件
+
+適用於所有的html5的元素
+[[/note]]
+[[note]]
+這部分在html5並沒有新增新的屬性
+請參考html4鍵盤事件介紹
+[[[html4:attribute | html4鍵盤事件]]]
+[[/note]]
+[[/collapsible]]
+
+[[collapsible show="滑　鼠　事　件(Mouse Events)" hide="返回"]]
+* 滑鼠事件(Mouse Events)
+
+[[note]]
+由滑鼠或使用者操作觸發的事件
+
+適用於所有的html5的元素
+[[/note]]
+
+||屬性||值||說明||
+||ondrag||script ||當拖曳元素時運行腳本||
+||ondragend||script ||結束拖曳操作時運行腳本||
+||ondragenter||script ||當拖曳到有效目標時運行腳本||
+||ondragleave||script ||當元素離開有效目標時運行腳本||
+||ondragover||script ||當拖曳在一個有效目標時運行腳本||
+||ondragstart||script ||當拖曳操作開始時運行腳本||
+||ondrop||script ||當拖曳元素放下時運行腳本||
+||onmousewheel||script ||當滑鼠滾輪轉動時運行腳本||
+||onscroll||script ||當元素滾動條滾動時運行腳本||
+[[/collapsible]]
+
+[[collapsible show="媒　體　事　件(Media Events)" hide="返回"]]
+* 媒體事件(Media Events)
+
+[[note]]
+由視頻,音頻和圖像媒體觸發的事件
+
+適用於所有的html5的元素，最常見的媒體元素如audio, embed, img, object, and video
+[[/note]]
+
+
+||屬性||值||說明||
+||oncanplay||script||當媒體開始播放時運行腳本，但是可能要有暫停緩衝||
+||oncanplaythrough||script||當媒體播放結束時運行腳本，沒有暫停緩衝||
+||ondurationchange||script||當媒體長度改變時運行腳本||
+||onemptied||script||當媒體資源元素突然變空(網路錯誤、載入錯誤等)時運行腳本||
+||onended||script||當媒體到結束時運行腳本||
+||onerror||script||當發生錯誤時運行腳本再載入一個元素||
+||onloadeddata||script||當媒體數據載入時運行腳本||
+||onloadedmetadata||script||當媒體元素的持續時間或載入其它媒體數據時運行腳本||
+||onloadstart||script||當瀏覽器開始載入媒體數據時運行腳本||
+||onpause||script||當媒體數據被暫停時運行腳本||
+||onplay||script||當媒體數據將開始播放時運行腳本||
+||onplaying||script||當媒體數據已經開始播放時運行腳本||
+||onprogress||script||當瀏覽器取得媒體數據時運行腳本||
+||onratechange||script||當媒體數據的播放率被改變時運行腳本||
+||onreadystatechange||script||當準備狀態被改變時運行腳本||
+||onseeked||script||當一個媒體元素的請求屬性不再為真，並請求結束時運行腳本||
+||onseeking||script||當一個媒體元素的請求屬性為真，並開始請求時運行腳本||
+||onstalled||script||當取得媒體數據有一個錯誤(停頓)時運行腳本||
+||onsuspend||script||當瀏覽器已經取得媒體數據，但是取得整個媒體數據之前停止時運行腳本||
+||ontimeupdate||script||當媒體改變播放位置時運行腳本||
+||onvolumechange||script||當媒體改變音量或音量設置靜音時運行腳本||
+||onwaiting||script||當媒體停止播放，但是希望恢復時運行腳本||
+[[/collapsible]]

@@ -1,0 +1,26 @@
+[[include _thead]]
+
++++ [[[browser:main|簡介]]]
++++ [[[browser:ie|IE]]]
++++ [[[browser:ff|Firefox]]]
++++ [[[browser:google|Google Chrome]]]
++++ [[[browser:apple|Safari]]]
++++ [[[browser:opera|Opera]]]
+
+
++++++ [[[browser:_template|編輯此欄]]]
+[[/cell]]
+[[cell style="vertical-align:top;"]]
+%%content%%
+
+------
++ 參考文獻
+* [*http://zh.wikipedia.org/zh-tw/Internet_Explorer 維基百科-Internet Explorer]
+* [*http://zh.wikipedia.org/zh-tw/Firefox 維基百科-Firefox]
+* [*http://zh.wikipedia.org/zh-tw/Google_Chrome 維基百科-Google Chrome]
+* [*http://zh.wikipedia.org/zh-tw/Safari 維基百科-Safari]
+* [*http://zh.wikipedia.org/zh-tw/Opera 維基百科-Opera]
+
+[[/cell]]
+[[/row]]
+[[/table]]

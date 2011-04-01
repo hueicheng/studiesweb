@@ -1,0 +1,51 @@
+||<aside></aside>||	aside 元素代表說明、提示、邊欄、引用、附加注釋等，例如在blog旁的邊攔||
+||<figure></figure>||	有說明的圖片||
+||<figcaption></figcaption>|| 定義<figure>標題||
+||目前支援的瀏覽器||	IE8、Firefox3.6、Chrome7.0、Opera10.63、Safari5.0||
+
+* 範例
+[[code type="HTML"]]
+<body>
+
+<aside>
+  <h3>最新文章</h3>
+  <ul>
+     <li><a href="http://studiesweb.wikidot.com/html4:main">HTML</a></li>
+     <li><a href="http://studiesweb.wikidot.com/css:main">CSS</a></li>
+     <li><a href="http://studiesweb.wikidot.com/js:main">JavaScript</a></li>
+     <li><a href="http://studiesweb.wikidot.com/xml:main">XML</a></li>
+  </ul>
+</aside>
+
+<figure>
+       <figcaption>害羞的喬巴</figcaption>
+       <img src="http://avatars.plurk.com/5356034-medium2.gif"  alt="Shy" />
+</figure>
+
+
+</body>
+[[/code]]
+
+* 實作
+[[note]]
+[[html]]
+<body>
+
+<aside>
+  <h3>最新文章</h3>
+  <ul>
+     <li><a href="http://studiesweb.wikidot.com/html4:main">HTML</a></li>
+     <li><a href="http://studiesweb.wikidot.com/css:main">CSS</a></li>
+     <li><a href="http://studiesweb.wikidot.com/js:main">JavaScript</a></li>
+     <li><a href="http://studiesweb.wikidot.com/xml:main">XML</a></li>
+  </ul>
+</aside>
+
+<figure>
+       <figcaption>害羞的喬巴</figcaption>
+       <img src="http://avatars.plurk.com/5356034-medium2.gif"  alt="Shy" />
+</figure>
+
+</body>
+[[/html]]
+[[/note]]

@@ -1,0 +1,52 @@
+||<colgroup></colgroup>||	定義一個表格的格式||
+||<col><col>||	定義一個欄位的格式||
+
+* 範例
+[[code type="HTML"]]
+<html>
+<body>
+
+<table border="1">
+       <colgroup style="background-color:yellow">
+             <col width="100" />
+             <col width="50" />  
+       </colgroup>
+　      <tr>
+　　          <th>姓名</th>
+　　          <th>性別</th>
+             <th>年齡</th>
+　      </tr>
+　      <tr>
+　　          <td>阿三</td>
+　　          <td>男</td>
+             <td>20</td>
+　      </tr>
+</table>
+
+</body>
+</html>
+[[/code]]
+
+* 實作
+[[note]]
+[[html]]
+<body>
+<table border="1">
+       <colgroup style="background-color:yellow">
+         <col width="100" />
+             <col width="50" />
+       </colgroup>
+　      <tr>
+　　          <th>姓名</th>
+　　          <th>性別</th>
+             <th>年齡</th>
+　      </tr>
+　      <tr>
+　　          <td>阿三</td>
+　　          <td>男</td>
+             <td>20</td>
+　      </tr>
+</table>
+</body>
+[[/html]]
+[[/note]]

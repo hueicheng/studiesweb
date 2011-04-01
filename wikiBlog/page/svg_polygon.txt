@@ -1,0 +1,32 @@
++ <polygon>標籤用於創建一個閉合形狀組成的一條連接線段。
+[[code type="xml"]]
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg width="100%" height="100%" version="1.1"
+xmlns="http://www.w3.org/2000/svg">
+
+<polygon points="220,100 300,210 170,250"
+style="fill:#cccccc;stroke:#000000;stroke-width:1"/>
+
+</svg>
+[[/code]]
+**範例A [*http://studiesweb.wikidot.com/local--files/files/polygon.svg TEST]**
+||points="n,n n,n"||定義多邊形每個頂點的座標。座標數必須是偶數個，奇數個則該標籤<polygon>是錯誤的。n值無範圍限制。||
+
+++ 下面的示例創建一個多邊形有四個方面：
+[[code type="xml"]]
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg width="100%" height="100%" version="1.1"
+xmlns="http://www.w3.org/2000/svg">
+
+<polygon points="220,100 300,210 170,250 123,234"
+style="fill:#cccccc;stroke:#000000;stroke-width:1"/>
+
+</svg> 
+[[/code]]
+**範例B [*http://studiesweb.wdfiles.com/local--files/files/polygon2.svg TEST]**

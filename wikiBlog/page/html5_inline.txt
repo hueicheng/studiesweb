@@ -1,0 +1,102 @@
+||<mark></mark>	||用來標記頁面中一些特別的內容||
+||<time></time>||	用來表示時間||
+||目前支援的瀏覽器||	Firefox3.6、Chrome7.0、Opera10.63、Safari5.0||
+
+* 範例
+[[code type="HTML"]]
+<body>
+
+<p>
+為了讓HTML語法更容易用來開發各種應用程式，
+W3C協會從2004年開始制定新的網頁格式標準，也就是
+<mark style="background-color:red;">HTML5</mark>。
+</p>
+
+<p>星期六 <time>9:00</time>，出去玩吧</p>
+
+</body>
+[[/code]]
+
+* 實作
+[[note]]
+[[html]]
+<body>
+
+<p>
+為了讓HTML語法更容易用來開發各種應用程式，
+W3C協會從2004年開始制定新的網頁格式標準，也就是
+<mark style="background-color:red;">HTML5</mark>。
+</p>
+
+<p>星期六 <time>9:00</time>，出去玩吧</p>
+
+</body>
+[[/html]]
+[[/note]]
+
+||<meter></meter>||	表示指定範圍的數值，每個<meter>最多只能有6個屬性||
+||目前支援的瀏覽器||	Chrome7.0||
+
+||value||	測量的數值||
+||min||	最低值，預設為0||
+||low||	測量的最低數值||
+||high||	測量的最高數值||
+||max||	最大值，預設為1||
+||optimum||	測量的最佳值，如果高於high的值，表示值為更大，若小於low的值，表示值為更小||
+
+* 範例
+[[code type="HTML"]]
+<body>
+
+<p>
+金門大學有<meter>5,000</meter>位學生
+</p>
+
+<p>
+你的成績是
+<meter value="90.6" min="0" max="100" low="70" high="99" optimum="100">A+</meter>
+</p>
+
+</body>
+[[/code]]
+
+* 實作
+[[note]]
+[[html]]
+<body>
+
+<p>
+金門大學有<meter>5,000</meter>位學生
+</p>
+
+<p>
+你的成績是
+<meter value="90.6" min="0" max="100" low="70" high="99" optimum="100">A+</meter>
+</p>
+
+</body>
+[[/html]]
+[[/note]]
+
+||<progress></progress>||	來顯示一個JavaScript功能正在下載的進度。||
+||目前支援的瀏覽器||	Chrome7.0||
+
+||value||	目前下載的數值||
+||max||	總共要下載的數值||
+
+* 範例
+[[code type="HTML"]]
+<body>
+完成度：<progress value="123456789" max="246913578">50%</progress>
+</body>
+[[/code]]
+
+* 實作
+[[note]]
+[[html]]
+<body>
+完成度：<progress value="512" max="1024">50%</progress>
+</body>
+[[/html]]
+[[/note]]
+[[file /files/progress.html | progress的範例]]

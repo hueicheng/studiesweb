@@ -1,0 +1,34 @@
+||<div></div>||	定義區塊內的樣式，在<div>標籤內可以使用換行||
+
+* 範例
+[[code type="HTML"]]
+<html>
+<body>
+
+<div style="color:#00FFBB">
+  <h3>網路應用研究</h3>
+  <p>主要是研讀WEB 上的各種東西的應用，其中HTML5的研究應用是主要項目。
+其它的應用方面會一並帶上。</p>
+</div>
+
+</body>
+</html>
+[[/code]]
+
+
+* 實作
+[[note]]
+[[html]]
+<html>
+<body>
+
+<div style="color:#00FFBB">
+  <h3>網路應用研究</h3>
+  <p>主要是研讀WEB 上的各種東西的應用，其中HTML5的研究應用是主要項目。
+其它的應用方面會一並帶上。</p>
+</div>
+
+</body>
+</html>
+[[/html]]
+[[/note]]

@@ -1,0 +1,41 @@
++ 簡介
+
+可縮放向量圖形（Scalable Vector Graphics，簡稱SVG）是W3C所制定的開放性網路標準之一。它是以可擴充套件標記語言（XML），來描述2D圖形的一種圖形格式，也可以作動態效果、提供互動功能。SVG的獨特性在於它可以搭配使用CSS、Script腳本和DOM。例如，想要制定SVG的圖像色彩及其他視覺的表現，可以搭配使用CSS來作設計。想要圖像具有互動的功能，可以使用JavaScript腳本，做出點擊等互動效果。
+
+何謂"向量圖形"，是電腦圖形學中用點、直線或者多邊形等基於數學方程的幾何圖元表示影像。矢量圖形與點陣圖使用像素表示影像的方法有所不同。
+
+SVG目前的最新標準為1.1版，適用於手機的 SVG Tiny是1.2版。由於SVG屬於開源技術，可以單擊右鍵察看某SVG圖案的源代碼。Adobe的Flash或微軟的Silverlight則屬專利技術，自由軟體支持者會擔心技術的專利性會威脅到網際網路被單一專利技術所獨佔，進而影響其創新的發展。
+
+SVG嚴格遵從XML語法，並用文字格式的描述性語言來描述影像內容，因此是一種和影像解析度無關的矢量圖形格式。
+
+SVG格式具有以下優點：
+    * 圖檔程式碼可讀，易於修改和編輯。
+    * 與現有技術可以互動融合。例如，SVG技術本身的動態部分（包括時序控制和動畫）就是基於SMIL標準。另外，SVG檔案還可嵌入        JavaScript（嚴格地說，應該是ECMAScript）指令碼來控制SVG物件。
+    * SVG圖形格式可以方便的建立文字索引，從而實作基於內容的影像搜尋。
+    * SVG圖形格式支援多種濾鏡和特殊效果，在不改變影像內容的前提下可以實作點陣圖格式中類似文字陰影的效果。
+    * SVG圖形格式可以用來動態生成圖形。例如，可用SVG動態生成具有互動功能的地圖，嵌入網頁中，並顯示給終端使用者。
+   
+現在Apple Safari、Firefox、Google Chrome 和 Opera 都逐步支持SVG，如果要在IE 8觀看SVG，則必須另外安裝Plug-In。
+
+------
+
++ SVG基本架構
+[[code type="xml"]]
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"  
+      "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg width="100%" height="100%" version="1.1"
+xmlns="http://www.w3.org/2000/svg">
+..............
+</svg> 
+[[/code]]
+
+||<?xml version="1.0" standalone="no"?>||XML的宣告。version註明xml版本的屬性是一定要有的，standalone表示SVG文件是獨立的。standalone="no"表示SVG文檔有一個引用到外部的DTD文件。||
+||<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN">||指SVG外部的DTD。||
+||<"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">||DTD的位址。DTD的駐留在W3C，它包含所有允許SVG的元素。||
+||<svg>~</svg>||為SVG的主要內容，它包含了開使 <svg>標籤和結束 </svg>標籤。||
+||width||設置SVG文件檔的寬度。||
+||height||設置SVG文件檔的高度。||
+||version||這裡的version是註明SVG版本的屬性，也是一定要有的。||
+||xmlns||定義了SVG的命名空間。||

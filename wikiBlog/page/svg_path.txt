@@ -1,0 +1,25 @@
++ <path>標籤用來定義一個路徑。
+[[code type="xml"]]
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg width="100%" height="100%" version="1.1"
+xmlns="http://www.w3.org/2000/svg">
+
+<path d="M250 150 L150 350 L350 350 Z" />
+
+</svg>
+[[/code]]
+**範例A [*http://studiesweb.wikidot.com/local--files/files/path.svg TEST]**
+[[size larger]]下面的命令是可用於路徑的數據：[[/size]]
+||M = moveto||命令從這個點||
+||L = lineto||命令從這裡||
+||H = horizontal  lineto||命令該水平線段從這個座標到另一個座標||
+||V = vertical lineto||命令該垂直線段從這個座標到另一個座標||
+||C = curveto||命令該曲線從這個座標到另一個座標||
+||S = smooth curveto||命令該平滑曲線從這個座標到另一個座||
+||Q = quadratic Belzier curve||二次的Belzier曲線||
+||T = smooth quadratic Belzier curveto||平滑的二次Belzier曲線||
+||A = elliptical Arc||建立一個橢圓形||
+||Z = closepath||結束路徑標籤||

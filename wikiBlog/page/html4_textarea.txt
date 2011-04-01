@@ -1,0 +1,26 @@
+||<textarea></textarea>||	定義一個文字區塊||
+
+* 範例
+
+[[code type="HTML"]]
+<html>
+<body>
+
+<textarea rows="3" cols="40">
+HTML的全名是HyperText Markup Language，照字面上翻譯為『超文件標記語言』，是編寫網頁的基本語言，而它並不是一個程式， 只是一些插在普通文件內的碼( code )，這些碼可以控制我們的瀏覽器要怎樣把文件顯示出來。
+</textarea>
+
+</body>
+</html>
+[[/code]]
+
+
+* 實作
+
+[[note]]
+[[html]]
+<textarea rows="3" cols="40">
+HTML的全名是HyperText Markup Language，照字面上翻譯為『超文件標記語言』，是編寫網頁的基本語言，而它並不是一個程式， 只是一些插在普通文件內的碼( code )，這些碼可以控制我們的瀏覽器要怎樣把文件顯示出來。
+</textarea>
+[[/html]]
+[[/note]]

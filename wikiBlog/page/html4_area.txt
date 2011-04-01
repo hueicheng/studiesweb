@@ -1,0 +1,41 @@
+||<area></area>||	定義一個圖片裡的某個區域||
+||<map></map>||	定義一個圖像地圖||
+
+* 範例
+[[code type="HTML"]]
+<html>
+<head>
+<base href="http://studiesweb.wikidot.com/local--files/files/" />
+</head>
+
+<body>
+
+<p>點選你要的顏色:</p>
+
+<img src="http://studiesweb.wikidot.com/local--files/files/color.jpg" alt="color" usemap="#planetmap" />
+
+<map name="planetmap">
+  <area shape="circle" coords="0,120,150,50" alt="red" href="red.html" />
+  <area shape="circle" coords="155,120,300,50" alt="yellow" href="yellow.html" />
+</map>
+
+</body>
+</html>
+[[/code]]
+
+* 實作
+[[note]]
+[[html]]
+<head>
+<base href="http://studiesweb.wikidot.com/local--files/files/" />
+</head>
+<body>
+<p>點選你要的顏色:</p>
+<img src="http://studiesweb.wikidot.com/local--files/files/color.jpg" alt="color" usemap="#planetmap" />
+<map name="planetmap">
+  <area shape="circle" coords="0,120,150,50" alt="red" href="red.html" />
+  <area shape="circle" coords="155,120,300,50" alt="yellow" href="yellow.html" />
+</map>
+</body>
+[[/html]]
+[[/note]]

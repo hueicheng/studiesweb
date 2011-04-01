@@ -1,0 +1,13 @@
+* 多重文字陰影
+
+[[code type="css"]]
+  .textShadowMultiple {
+    font-size: 3.2em;
+    color: #bd9ec4;
+    text-shadow: 10px 10px 10px #FF0000, -10px -10px 0px #0000FF;
+    text-align: center;
+    padding: 10px 0px 5px 0px;
+  }
+[[/code]]
+
+||text-shadow||左至右分別為x,y軸、長度、顏色，逗號以前為第一個陰影屬性，以後為第二個||

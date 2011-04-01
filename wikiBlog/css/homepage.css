@@ -1,11 +1,11 @@
-/*°ò¥»®æ¦¡*/
+/*åŸºæœ¬æ ¼å¼*/
 body{
 	color: #999999;
 	font-size: 12px;
 	background: #000000;
 }
 
-/*¤W¤èªí®æ¼Ë¦¡*/
+/*ä¸Šæ–¹è¡¨æ ¼æ¨£å¼*/
 .toptable_style{
 	width: 100%;
 	text-align: center;
@@ -14,7 +14,7 @@ body{
 	height:100;
 }
 
-/*¤º¤åªí®æ¼Ë¦¡*/
+/*å…§æ–‡è¡¨æ ¼æ¨£å¼*/
 .maintable_style{
 	width: 100%;
 	text-align: center;
@@ -23,22 +23,22 @@ body{
 	height: 30;
 }
 
-/*¶W³sµ²¼Ë¦¡*/
+/*è¶…é€£çµæ¨£å¼*/
 .link_style{
 	font-size: 24px;
-	font-family: "¼Ğ·¢Åé";
+	font-family: "æ¨™æ¥·é«”";
 	color: #aaaaaa;
 	text-decoration: none;
 }
 
-/*¤W°Ï¶ô³]©w*/
+/*ä¸Šå€å¡Šè¨­å®š*/
 .top{
 	text-align: center;	
 	width: 100%;
 	height:30%;
 }
 
-/*¥ª°Ï¶ô³]©w*/
+/*å·¦å€å¡Šè¨­å®š*/
 .left{
 	float:left; 
 	width:15%; 
@@ -46,7 +46,7 @@ body{
 	color: #999999;
 }
 
-/*¥k°Ï¶ô³]©w*/
+/*å³å€å¡Šè¨­å®š*/
 .right{
 	float:left; 
 	width:20%; 
@@ -54,7 +54,7 @@ body{
 	color: #999999;
 }
 
-/*¤º¤å°Ï¶ô³]©w*/
+/*å…§æ–‡å€å¡Šè¨­å®š*/
 .main{
 	float:left; 
 	width:60%; 
@@ -71,7 +71,7 @@ body{
 }
 
 
-/*±±¨î¥x°Ï¶ô*/
+/*æ§åˆ¶å°å€å¡Š*/
 .main-down {
        text-align: right;
 	   visibility: hidden;
