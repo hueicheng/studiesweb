@@ -5,7 +5,6 @@ function initPage(){
 	var r=new RegExp("\\#([\\w/:\\.]+)", "gi");
 	if (location.href.match(r)) {
    	   wikiPath = RegExp.$1;
-   	   alert(wikiPath);
 	}
 	
 	getText();
@@ -14,6 +13,5 @@ function initPage(){
 function getText(){
 	
 	var url = "page/" + wikiPath.replace(/:/gi, '_')+".txt";
-	alert(url);
-	$('textPane').load(url, convert);
+	document.getElementById("textPane").innerHTML = "";
 }

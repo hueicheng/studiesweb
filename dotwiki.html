@@ -40,6 +40,7 @@
 		    attachPath = "files/"+wikiPath.replace(/:/gi, '_');
 		    sourcePath = "source/"+wikiPath.replace(/:/gi, '_')+".txt";
 		    // 載入 path 指定的 wiki 檔案後呼叫 show() 函數，以將 wiki 轉為 HTML 顯示出來
+		    alert(sourcePath);
 	        $('#wikibox').load(sourcePath, show);
 	      }
         }
