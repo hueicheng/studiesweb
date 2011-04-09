@@ -14,7 +14,8 @@ function login(){
 }
 
 function logout(){
-	
+	google.accounts.user.logout();
+   
 }
 
 function editText(){
