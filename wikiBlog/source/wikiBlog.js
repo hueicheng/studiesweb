@@ -10,6 +10,7 @@ function login(){
 	
 	var scope = "http://www.google.com/calendar/feeds/";
 	var token = google.accounts.user.login(scope);
+	alert(token);
 }
 
 function logout(){
