@@ -1,4 +1,11 @@
-div{border:solid 2px #fff;}
+div{border:solid 2px #fff; }
+.module{
+	box-shadow: 10px 10px 31px #fff;
+	position:absolute;
+	right: 15%;
+	left: 15%;
+}
+
 #menuPane{
 	margin:0px;
 	padding:5px;
@@ -7,48 +14,24 @@ div{border:solid 2px #fff;}
 }
 body
 {
-    background-color: #000000;
+    background-color: #a2d9ff;
+    margin: 0;
 }
 
-#top, #left, #right, #main, #bottom{
-	margin:0px;
-	padding:10px;
+#top .title{
+	font-size: 30px;
+	color: #fff;
+}
+#main{float:left; width:80%}
+
+#right{float:right; right:0;width:19%}
+#right ul li{
+	list-style-type: none;
+	border-bottom:1px dashed #eee;
 }
 
-#left, #right{
-	width:20%;
-	height:80%;
-}
+#bottom{position:absolute; bottom:0;}
 
-#top{
-	
-}
-
-#left{
-	
-	position:fixed;
-}
-
-#right{
-	
-	position:fixed;
-	right: 0px;
-}
-
-#main{
-	
-	position:fixed;
-	left: 23%;
-	height: 80%;
-	width: 50%;
-}
-
-#bottom{
-	
-	position:fixed;
-	bottom:0px;
-	width:100%;
-}
-#textPane{ background:#fff; padding:10px;}
+.textPane{ background:#fff; padding:10px;}
 
 

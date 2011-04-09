@@ -1,27 +1,32 @@
 <html>
 <head>
   <title>網路應用研究</title>
+  <script src="https://www.google.com/jsapi?key=ABQIAAAATmkOKGhplAW_SrLcNMJCChQDHtZBmae3VtF8y2CruWNw50BUSBSi0ENfqoXVuIPugTDQ5niTo-NpWw" type="text/javascript"></script>
   <script src="source/wikiBlog.js"></script>
-  <script src="source/dotwiki.js"></script>
-  <script src="source/jquery.js"></script>
-  <script src="source/utils.js"></script>
+  
   <link rel="stylesheet" href="css/default.css" />
 
 </head>
 
 <body>
 	<div id="menuPane">
-		<a href="#">登入</a> |
+		<a href="#" onclick="login()">登入</a> |
 		<a href="#">編輯</a> |
 		<a href="#">管理</a>
 	</div>
-	<div id="top"></div>
-	<div id="left"></div>
-    <div id="main">
-		<div id="textPane">sadf</div>
-    </div>
-	<div id="right"></div>
-    <div id="bottom"></div>
+	<div class="module">
+		<div id="top">
+			<span class="title">網路應用與研究</span>
+		</div>
+		<div id="main">
+			<div class="textPane"><p>textPane</p></div>
+		</div>
+		<div id="right"><p>right</p></div>	
+		<div id="edit">
+			
+		</div>
+	</div>
+    <div id="bottom"><p>bottom</p></div>
 </body>
 </html>
 

@@ -1,17 +1,23 @@
-var wikiPath = "";
 window.onload = initPage;
+google.load("gdata", "1");
+google.load("jquery", "1.4.2");
 
 function initPage(){
-	var r=new RegExp("\\#([\\w/:\\.]+)", "gi");
-	if (location.href.match(r)) {
-   	   wikiPath = RegExp.$1;
-	}
 	
-	getText();
 }
 
-function getText(){
+function login(){
 	
-	var url = "page/" + wikiPath.replace(/:/gi, '_')+".txt";
-	document.getElementById("textPane").innerHTML = "";
+	var scope = "http://www.google.com/calendar/feeds/";
+	var token = google.accounts.user.login(scope);
 }
+
+function logout(){
+	
+}
+
+function editText(){
+	
+}
+
+function callBack(){}

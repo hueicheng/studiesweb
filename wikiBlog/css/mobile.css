@@ -20,7 +20,7 @@ body{
 	height:100;
 }
 
-/*¤º¤åªí®æ¼Ë¦¡*/
+/*å…§æ–‡è¡¨æ ¼æ¨£å¼*/
 .maintable_style{
 	visibility: hidden;
 }
@@ -31,17 +31,17 @@ body{
 	height:30%;
 }
 
-/*¥ª°Ï¶ô³]©w*/
+/*å·¦å€å¡Šè¨­å®š*/
 .left{
 	visibility: hidden;
 }
 
-/*¥k°Ï¶ô³]©w*/
+/*å³å€å¡Šè¨­å®š*/
 .right{
 	visibility: hidden;
 }
 
-/*¤º¤å°Ï¶ô³]©w*/
+/*å…§æ–‡å€å¡Šè¨­å®š*/
 .main{
 	float:center; 
 	color: #999999;
@@ -55,7 +55,7 @@ body{
   visibility: visible;
 }
 
-/*±±¨î¥x°Ï¶ô*/
+/*æ§åˆ¶å°å€å¡Š*/
 .main-down {
        text-align: right;
 	   visibility: hidden;
