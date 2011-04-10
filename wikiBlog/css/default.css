@@ -1,37 +1,58 @@
-div{border:solid 2px #fff; }
 .module{
-	box-shadow: 10px 10px 31px #fff;
+	//box-shadow: 10px 10px 31px #fff;
+	background: #333;
 	position:absolute;
-	right: 15%;
-	left: 15%;
+	right: 13%;
+	left: 13%;
 }
 
 #menuPane{
 	margin:0px;
 	padding:5px;
-    background-color: #111;
+    background: #444;
     text-align:right;
 }
+#menuPane a:link,
+#menuPane a:visited{color:#fff;}
+
 body
 {
-    background-color: #a2d9ff;
+    background-color: #292929;
     margin: 0;
 }
+#main{
+	float:left; 
+	width:80%;
+	
+}
 
+#top{
+	border-bottom:3px groove #fff;
+	padding: 10px 0 15px 5px;
+}
 #top .title{
-	font-size: 30px;
+	font-size: 52px;
 	color: #fff;
 }
-#main{float:left; width:80%}
 
-#right{float:right; right:0;width:19%}
+#right{
+	float:right; 
+	border-left:3px groove #fff;
+	right:0;
+	width:19%
+	
+}
 #right ul li{
 	list-style-type: none;
 	border-bottom:1px dashed #eee;
 }
 
-#bottom{position:absolute; bottom:0;}
+#bottom{
+	position:absolute; 
+	bottom:0;
+	border-top:3px groove #fff;
+}
 
-.textPane{ background:#fff; padding:10px;}
+.textPane{  padding:10px;}
 
 

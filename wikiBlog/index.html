@@ -2,6 +2,7 @@
 <head>
   <title>網路應用研究</title>
   <script src="https://www.google.com/jsapi?key=ABQIAAAATmkOKGhplAW_SrLcNMJCChQDHtZBmae3VtF8y2CruWNw50BUSBSi0ENfqoXVuIPugTDQ5niTo-NpWw" type="text/javascript"></script>
+  <script src="source/jquery.js"></script>
   <script src="source/wikiBlog.js"></script>
   
   <link rel="stylesheet" href="css/default.css" />
@@ -11,13 +12,14 @@
 <body>
 	<div id="menuPane">
 		<a href="#" title="login" onclick="login()">登入</a> |
-		<a href="#" title="logout" onclick="logout()">登出</a> |
+		<a href="#" title="logout" onclick="logout()" style="display:none;">登出</a> |
 		<a href="#" title="edit" onclick="editText()">編輯</a> |
 		<a href="#">管理</a>
+		<a href="#" title="test" onclick="test()">test</a>
 	</div>
 	<div class="module">
 		<div id="top">
-			<span class="title">網路應用與研究</span>
+			<h1 class="title">網路應用與研究</h1>
 		</div>
 		<div id="main">
 			<div class="textPane"><p>textPane</p></div>

@@ -1,22 +1,27 @@
-window.onload = initPage;
 google.load("gdata", "1");
-google.load("jquery", "1.4.2");
 
-function initPage(){
-	$('a[title=logout]').css("display='none'");
-}
+$(function(){
+	$.get("../page/about.txt", function(data){
+		alert(data);
+	});
+});
 
 function login(){
 	
 	var scope = "http://www.google.com/calendar/feeds/";
 	var token = google.accounts.user.login(scope);
 	if(token != "")
-     $('a[title=logout]').css("display=''");
+     $("a[title=logout]").css("display", "");
+    
+    $(this).css("display", "none");
+    
+   
 }
 
 function logout(){
 	google.accounts.user.logout();
-   
+    $("a[title=login]").css("display", "");
+    $(this).css("display", "none");
 }
 
 function editText(){
@@ -24,4 +29,4 @@ function editText(){
    alert(dateTime.getDate());
 }
 
-function callBack(){}
+function test(){ }
