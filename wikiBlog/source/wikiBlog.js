@@ -20,7 +20,8 @@ function logout(){
 }
 
 function editText(){
-	
+	var dateTime = new google.gdata.DateTime();
+   alert(dateTime.getDate());
 }
 
 function callBack(){}
