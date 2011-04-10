@@ -1,12 +1,16 @@
 function show() {
   convert();
-  document.getElementById("wikibox").style.display = "none";
-  document.getElementById("htmlbox").style.display = "";
+  //document.getElementById("wikibox").style.display = "none"; 
+  //document.getElementById("htmlbox").style.display = "";
+  $("#wikibox").hide();
+  $("#htmlbox").show();
 }
  
 function edit() {
-  document.getElementById("wikibox").style.display = "";
-  document.getElementById("htmlbox").style.display = "none";
+  //document.getElementById("wikibox").style.display = "";
+  //document.getElementById("htmlbox").style.display = "none";
+  $("#wikibox").show();
+  $("#htmlbox").hide();
 }
  
 function save() {

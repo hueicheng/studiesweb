@@ -1,12 +1,16 @@
 function show() {
   convert();
-  document.getElementById("wikibox").style.display = "none";
-  document.getElementById("htmlbox").style.display = "";
+  //document.getElementById("wikibox").style.display = "none"; 
+  //document.getElementById("htmlbox").style.display = "";
+  $("#wikibox").hide();
+  $("#htmlbox").show();
 }
  
 function edit() {
-  document.getElementById("wikibox").style.display = "";
-  document.getElementById("htmlbox").style.display = "none";
+  //document.getElementById("wikibox").style.display = "";
+  //document.getElementById("htmlbox").style.display = "none";
+  $("#wikibox").show();
+  $("#htmlbox").hide();
 }
  
 function save() {
@@ -18,8 +22,8 @@ function wiki2html(wikiText) {
   init();
   var text = wikiText
     .replace(/\r/gi, "") // 刪除 \r 字元
-    .replace(/\[\[image\s([^\s]+)\s+size="medium"\]\]/gi, '<center><img src='+attachPath+'/$1 width=512px/></center>') // 範例：[[image test.jpg size="medium"]]
-    .replace(/\[\[image\s([^\s\]]+)[^\]]*\]\]/gi, '<img src='+attachPath+'/$1/>') // 範例：[[image test.jpg]]
+    //.replace(/\[\[image\s([^\s]+)\s+size="medium"\]\]/gi, '<center><img src='+attachPath+'/$1 width=512px/></center>') // 範例：[[image test.jpg size="medium"]]
+    //.replace(/\[\[image\s([^\s\]]+)[^\]]*\]\]/gi, '<img src='+attachPath+'/$1/>') // 範例：[[image test.jpg]]
     .replace(/\[(http[s]?:\/\/[^\s\]]+)\s+([^\]]*)\]/gi, '<a href=$1>$2</a>') // 範例：[http://tw.yahoo.com/ 雅虎]
     .replace(/\[(http[s]?:\/\/[^\s\]]+)\]/gi, '<a href=$1>$1</a>') // 範例：[http://tw.yahoo.com/]
     .replace(/\[\[\[([:\w-]+)\]\]\]/gi, '<a href=#!$1>$1</a>') // 範例：[[[innerLink]]]	
@@ -31,8 +35,8 @@ function wiki2html(wikiText) {
     .replace(/[^:]\/\/(.+)\/\//gi, '<i>$1</i>') // 範例：//italic text//
     .replace(/\^\^(.+)\^\^/gi, '<sup>$1</sup>') // 範例：normal^^superscript^^
     .replace(/,,(.+),,/gi, '<sub>$1</sub>') // 範例：normal,,subscript,,
-    .replace(/\[\[video\s([^\s\]]+)[^\]]*\]\]/gi,'<video src='+attachPath+'/$1 controls="controls"></video>') //範例: [[video test.mp4]]
-    .replace(/\[\[audio\s([^\s\]]+)[^\]]*\]\]/gi,'<audio src='+attachPath+'/$1 controls="controls"></audio>') //範例: [[audio test.mp3]]
+    //.replace(/\[\[video\s([^\s\]]+)[^\]]*\]\]/gi,'<video src='+attachPath+'/$1 controls="controls"></video>') //範例: [[video test.mp4]]
+    //.replace(/\[\[audio\s([^\s\]]+)[^\]]*\]\]/gi,'<audio src='+attachPath+'/$1 controls="controls"></audio>') //範例: [[audio test.mp3]]
     ;
     
   var lines = text.replace(/\r/, '').split("\n");
