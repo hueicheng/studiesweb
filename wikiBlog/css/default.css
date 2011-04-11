@@ -17,13 +17,13 @@
 
 body
 {
-    background-color: #292929;
+    background: #292929;
     margin: 0;
 }
 #main{
 	float:left; 
 	width:80%;
-	
+	border-right:1px groove #fff;
 }
 
 #top{
@@ -37,7 +37,7 @@ body
 
 #right{
 	float:right; 
-	border-left:3px groove #fff;
+	//border-left:3px groove #fff;
 	right:0;
 	width:19%
 	
@@ -53,6 +53,11 @@ body
 	border-top:3px groove #fff;
 }
 
-.textPane{  padding:10px;}
+.textPane{ 
+	padding: 10px;
+	color:#eee;
+}
+.textPane a:link, 
+.textPane a:visited{ color:#ff9632 }
 
 

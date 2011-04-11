@@ -35,6 +35,7 @@ function wiki2html(wikiText) {
     .replace(/[^:]\/\/(.+)\/\//gi, '<i>$1</i>') // 範例：//italic text//
     .replace(/\^\^(.+)\^\^/gi, '<sup>$1</sup>') // 範例：normal^^superscript^^
     .replace(/,,(.+),,/gi, '<sub>$1</sub>') // 範例：normal,,subscript,,
+    .replace(/##[\w]\|\w##/gi, '<span style="color:$1">$2</span>')	//
     //.replace(/\[\[video\s([^\s\]]+)[^\]]*\]\]/gi,'<video src='+attachPath+'/$1 controls="controls"></video>') //範例: [[video test.mp4]]
     //.replace(/\[\[audio\s([^\s\]]+)[^\]]*\]\]/gi,'<audio src='+attachPath+'/$1 controls="controls"></audio>') //範例: [[audio test.mp3]]
     ;
