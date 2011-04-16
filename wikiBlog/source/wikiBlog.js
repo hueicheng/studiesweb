@@ -5,19 +5,24 @@ $(function(){
 		var tohtml = wiki2html(data);
 		$("div[class=textPane]").html(tohtml);
 	});
+	
+	if(localStorage.token != null){
+		$("a[title=login]").hide();
+		$("a[title=logout]").show();
+	}
+	
 });
 
 function login(){
 	
 	var scope = "http://www.google.com/calendar/feeds/";
 	var token = google.accounts.user.login(scope);
-	if(token != ""){
-     //$("a[title=logout]").css("display", "");
-		$("a[title=logout]").show();
-    }
+	localStorage.token = token;
+	//$("a[title=logout]").css("display", "");
+	$("a[title=logout]").show();
+    
     //$(this).css("display", "none");
-    $(this).hide();
-    alert($(this));
+    $("a[title=login]").hide();
     
    
 }
@@ -28,7 +33,9 @@ function logout(){
     //$(this).css("display", "none");
     $("a[title=login]").show();
     //$(this).hide();
-    alert($(this));
+    $("a[title=logout]").hide();
+    
+    delete localStorage.token;
 }
 
 function editText(){
@@ -36,4 +43,3 @@ function editText(){
    alert(dateTime.getDate());
 }
 
-function test(){ }

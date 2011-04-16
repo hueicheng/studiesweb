@@ -7,6 +7,28 @@
 	position: relative;
 }
 
+dl.sort dt {
+  background: #222222;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}
+
+dl.sort span{
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  border: solid 1px #ffffff;
+}
+
+dl.sort dd{
+  margin: 0;
+  padding: 0;
+  border-bottom: solid 1px;
+  border-right: solid 1px;
+  border-left: solid 1px;
+}
+
 .img_Fill{
   float: left;
   width: 32px;
@@ -21,10 +43,7 @@
 
 /*調色盤*/
 .palette{
-  position: relative;
-  top: 575px;
   width: 100%;
-  left: 15%;
 }
 
 .palette_style01{
@@ -335,19 +354,19 @@
 .modules{
 	width: 640px;
 	height: 480px;
+	margin:0;
+	padding: 0;
 }
 
 /*工作區*/
 #workarea{
-	position: absolute;
-	top: 75px;
-	left: 90px;
 	background-color: #ffffff;
+	margin:0;
+	padding: 0;
 }
 
 /*#toolbar預設*/
 #toolbar{
-  position: relative;
   width: 1280px;
   height: 60px;
   background-color: #a0a0a0;
@@ -366,26 +385,25 @@
 
 /*leftModule預設*/
 #leftModule{
-  position: absolute;
-  top: 60px;
-  width: 75px;
   height: 500px;
+  width: 80px;
+  margin: 0;
+  padding: 0;
  }
 /*leftModule按鈕預設*/
 #leftModule a.btn{
 	background: url("../images/toolbar.jpg") 50px 400px no-repeat;
 	width: 50px;
 	height: 50px;
-	position: absolute;
 }
 /*leftModule 各按鈕圖片*/
-#leftModule a.b1{ top: 20px; left: 10px; background-position: 0px 0px; }
-#leftModule a.b2{ top: 80px; left: 10px; background-position: 0px -50px; }
-#leftModule a.b3{ top: 140px; left: 10px; background-position: 0px -150px;}
-#leftModule a.b4{ top: 200px; left: 10px; background-position: 0px -200px;}
-#leftModule a.b5{ top: 260px; left: 10px; background-position: 0px -250px; }
-#leftModule a.b6{ top: 320px; left: 10px; background-position: 0px -300px; }
-#leftModule a.b7{ top: 380px; left: 10px; background-position: 0px -350px; }
+#leftModule a.b1{ background-position: 0px 0px; }
+#leftModule a.b2{ background-position: 0px -50px; }
+#leftModule a.b3{ background-position: 0px -150px;}
+#leftModule a.b4{ background-position: 0px -200px;}
+#leftModule a.b5{ background-position: 0px -250px; }
+#leftModule a.b6{ background-position: 0px -300px; }
+#leftModule a.b7{ background-position: 0px -350px; }
 /*左邊區塊按鈕使用情形*/
 #leftModule a.using{ border: 2px dashed; }
 
@@ -393,7 +411,6 @@
 #bottonMoudle a.btn{
 	width: 20px;
 	height: 20px;
-	position: absolute;
 }
 
 /*下方區塊按鈕使用情形*/
@@ -403,7 +420,6 @@
 #topModule a.btn{
 	width: 50px;
 	height: 50px;
-	position: absolute;
 }
 
 /*上方區塊按鈕使用情形*/
@@ -456,7 +472,6 @@
 	width:610px;
 	list-style-type:none; 
 	font:12px Arial;
-	position: absolute;
 	z-index: 0;
 	}
  

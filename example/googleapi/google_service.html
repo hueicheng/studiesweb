@@ -1,0 +1,40 @@
+<html>
+<head>
+	<title>Google 服務 - 登入實作範例</title>
+	<script type="text/javascript" src="http://www.google.com/jsapi?key=ABQIAAAATmkOKGhplAW_SrLcNMJCChQDHtZBmae3VtF8y2CruWNw50BUSBSi0ENfqoXVuIPugTDQ5niTo-NpWw"></script>
+<script type="text/javascript">
+google.load("gdata", "1");
+var scope = "http://www.google.com/calendar/feeds/";
+var doc = "https://docs.google.com/feeds/default/";
+
+function login(){
+	var token = google.accounts.user.login(scope);
+	//alert(google.accounts.user.getScopes());
+}
+
+function logout(){
+	google.accounts.user.logout();
+}
+
+function checkLogin(){
+	alert(google.accounts.user.checkLogin(scope));
+}
+
+function handleInfo(data){
+	var response = eval(data.currentTarget.responseText);
+	alert('target:' + response.Target + "\n" + 'Scope' + response.Scope + "\n" + 'Secure' + response.Secure);
+}
+
+function getInfo(){
+	if(google.accounts.user.checkLogin(scope)){
+		google.accounts.user.getInfo(handleInfo);
+	}
+}
+</script>
+</head>
+<body>
+<input type = "button" value="login" onclick="login()" />
+<input type="button" value="logout" onclick="logout()" />
+<input type ="button" value="check" onclick="checkLogin()" />
+</body>
+</html>
