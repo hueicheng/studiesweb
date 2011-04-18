@@ -4,7 +4,6 @@
 	line-height: normal;
 	display: inline-block;
 	vertical-align: middle;
-	position: relative;
 }
 
 dl.sort dt {
@@ -350,21 +349,11 @@ dl.sort dd{
 
  
  
-/*工作區大小*/
-.modules{
-	width: 640px;
-	height: 480px;
-	margin:0;
-	padding: 0;
-}
-
-/*工作區*/
+/*工作區設定*/
 #workarea{
-	background-color: #ffffff;
-	margin:0;
-	padding: 0;
+  background: #fff;
+  border:2px solid #000;
 }
-
 /*#toolbar預設*/
 #toolbar{
   width: 1280px;

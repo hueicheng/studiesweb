@@ -6,7 +6,7 @@
 
 <link type="text/css" rel="stylesheet" href="css/main.css" />
 <script src="http://www.google.com/jsapi"></script>
-<script src="score/drawing.js"></script>
+<script src="source/drawing.js"></script>
 <script src="jquery.js"></script>
 <script>
 google.load("jqueryui", "1.8");
@@ -23,7 +23,7 @@ var sortableChange = function(e, ui){
 
 $(function(){
 	//引用主頁面中的所有塊
-	var els = [];
+	var els = ['#history', '#layer', '#palette', '#canvasPaper', '#toolbar'];
 	var $els = $(els.toString());
 	
 	//使用外掛
@@ -41,15 +41,16 @@ $(function(){
 	});
 	
 });
-
 </script>
 </head>
 <body>
+<div id="canvasPaper">
   <dl class="sort">
 	<dt><span>X</span></dt>
-	<dd><canvas id="workarea" class="modules"></canvas></dd>
+	<dd><canvas id="workarea"></canvas></dd>
   </dl>
-
+</div>
+<div id="toolbar">
   <dl class="sort">
     <dt><span>X</span></dt>
 	<dd><a href="#" title="select" class="btn b1"></a></dd>
@@ -60,17 +61,24 @@ $(function(){
 	<dd><a href="#" title="fill" class="btn b6"></a></dd>
 	<dd><a href="#" title="text" class="btn b7"></a></dd>
   </dl>
+</div>
+<div id ="palette">
 <dl class="sort">
     <dt><span>X</span></dt>
 	<dd title="palette">palette</dd>
 </dl>
+</div>
+<div id="layer">
 <dl class="sort">
     <dt><span>X</span></dt>
 	<dd title="layer">layer</dd>
 </dl>
+</div>
+<div id="history">
 <dl class="sort">
     <dt><span>X</span></dt>
 	<dd title="history">history</dd>
 </dl>
+</div>
 </body>
 </html>

@@ -1,5 +1,91 @@
-window.onload = init;
-window.onload = dtC;
+var firstPointX = 0;
+var firstPointY = 0;
+var isMouseDown = false;
+var canvas, cxt;
+
+window.onload = function(){
+
+	leftBtn = document.getElementById("toolbar").getElementsByTagName("a");
+	
+	for(i=0; i<leftBtn.length; i++){
+		var currentBtn = leftBtn[i];
+		currentBtn.onclick = usingBtn;
+	}
+	
+	
+	canvas = document.getElementById('workarea');
+	cxt = canvas.getContext("2d");
+	canvas.onmousedown = function(e){
+		isMouseDown = true;
+		firstPointX = e.offsetX;
+		firstPointY = e.offsetY;	
+	};
+	canvas.onmouseup = function(e){
+		isMouseDown = false;
+
+		//drawLine(e.offsetX, e.offsetY);
+		//drawRect(e.offsetX, e.offsetY);
+		//drawCircle(e.offsetX, e.offsetY);
+	};
+	
+	canvas.onmousemove = function(e){
+		if(isMouseDown){
+			drawLine(e.offsetX, e.offsetY);
+			firstPointX = e.offsetX;
+			firstPointY = e.offsetY;
+		}
+		
+	};
+	
+	canvas.width = 800;
+	canvas.height = 600;
+};
+
+function lineReview(e){
+	if(isMouseDown){
+	secondPointX = e.offsetX;
+    secondPointY = e.offsetY;
+    var canvas = document.getElementById('myLine');
+    if(canvas && canvas.getContext){
+      var cxt = canvas.getContext("2d");
+  	  cxt.strokeStyle = "#f00";
+	  cxt.lineWidth = 3;
+	  cxt.moveTo(firstPointX,firstPointY);
+	  cxt.lineTo(secondPointX,secondPointY);
+	  cxt.stroke();
+    }
+  }
+}
+
+function drawLine(x, y){
+	//var canvas = document.getElementById('workarea');
+	
+		
+		cxt.strokeStyle = "#f00";
+		cxt.lineWidth = 3;
+		cxt.moveTo(firstPointX,firstPointY);
+		cxt.lineTo(x,y);
+		cxt.stroke();
+	
+  
+}
+
+function drawRect(x, y){
+	var cxt = canvas.getContext("2d");
+	cxt.strokeStyle = "#f00";
+	cxt.lineWidth = 3;
+	cxt.rect(firstPointX, firstPointY, x, y);
+	cxt.stroke();
+}
+
+function drawCircle(x, y){
+	var cxt = canvas.getContext("2d");
+	cxt.storkeStyle = "#f00";
+	cxt.lineWidth = 3;
+	cxt.beginPath();
+	cxt.arc(firstPointX, firstPointY, x, y, Math.PI * 2, true);
+	cxt.closePath();
+}
 
 function dtC(){
   dtC1 = document.getElementById("files01").getElementsByTagName("dt");
@@ -14,52 +100,6 @@ function dtC(){
   }
 }
 
-function ddF(){
-  ddF1 = document.getElementById("files01").getElementsByTagName("dd");
-
-  for(i=0; i<ddF1.length; i++){
-	ddF2 = ddF1[i];
-	if(ddF2.style.display == "block"){
-		ddF2.style.display = "none";
-	}
-	else{
-		ddF2.style.display = "block";
-	}
-  }
-
-}
-
-function ddM(){
-  ddM1 = document.getElementById("files02").getElementsByTagName("dd");
-
-  for(i=0; i<ddM1.length; i++){
-    ddM2 = ddM1[i];
-	ddM2.style.display = "block";
-  }
-}
-
-function test(){
-		  ddM1 = document.getElementById("files02").getElementsByTagName("dd");
-		  ddF1 = document.getElementById("files01").getElementsByTagName("dd");
-		  for(j=0;j<ddM1.length;j++){
-		    ddM2 = ddM1[j];
-			ddM2.style.display = "block";
-		  }
-		  for(a=0;a<ddF1.length;a++){
-		    ddF2 = ddF1[a];
-			ddF2.style.display = "none";
-		  }
-}
-
-function init(){
-	
-	leftBtn = document.getElementById("leftModule").getElementsByTagName("a");
-	
-	for(i=0; i<leftBtn.length; i++){
-		var currentBtn = leftBtn[i];
-		currentBtn.onclick = usingBtn;
-	}
-}
 
 function usingBtn(){
 	var selected = this.title;
@@ -95,19 +135,6 @@ function getCoor(e){
 
 function select(){}
 function pen(){}
-function line(e){
-	var cxt = canvas.getContext("2d");
-	cxt.strokeStyle = "#000000";	//線條顏色;
-	cxt.lineWidth = 2;				//線條粗細;
-	
-	canvas.onmousedown = getCoor;
-	cxt.moveTo(tempx, tempy);
-	
-	canvas.onmouseup = getCoor;
-	cxt.lineTo(tempx,tempy);
-	
-	cxt.stroke();
-}
 function fill(){}
 function rect(){}
 function round(){}
