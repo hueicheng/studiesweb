@@ -350,69 +350,71 @@ dl.sort dd{
  
  
 /*工作區設定*/
-#workarea{
+.workarea{
   background: #fff;
   border:2px solid #000;
 }
-/*#toolbar預設*/
-#toolbar{
-  width: 1280px;
-  height: 60px;
-  background-color: #a0a0a0;
+
+#canvasPaper{
+
 }
-/*#toolbar按鈕預設*/
-#toolbar a.btn{
-	background: url("../images/controlbar.jpg") 50px 50px no-repeat;
+/*#topModule預設*/
+#topModule{
+  float: left;
+  margin: 2px;
+  padding: 2px;
+}
+/*topModule按鈕預設*/
+#topModule dd.btn{
+  background: url("../images/topModule.jpg") 50px 100px no-repeat;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  float:left;
+}
+/*topModule各按鈕圖片*/
+#topModule dd.b1{top:5px; left:0px; background-position: 0px 0px; position:relative;}
+#topModule dd.b2{top:5px; left:5px; background-position: 0px -50px; position:relative;}
+#topModule dd.b3{top:5px; left:10px; background-position: 0px -100px; position:relative;}
+
+
+/*toolbar預設*/
+#toolbar{
+  height: 500px;
+  width: 80px;
+  margin: 2px;
+  padding: 2px;  
+ }
+/*toolbar按鈕預設*/
+#toolbar dd.btn{
+	background: url("../images/toolbar.jpg") 50px 400px no-repeat;
 	width: 50px;
 	height: 50px;
 	position: absolute;
 }
-/*#toolbar 各按鈕圖片*/
-#toolbar a.con1{ top: 5px; left: 10px; background-position: 0px 0px;}
-
-
-
-/*leftModule預設*/
-#leftModule{
-  height: 500px;
-  width: 80px;
-  margin: 0;
-  padding: 0;
- }
-/*leftModule按鈕預設*/
-#leftModule a.btn{
-	background: url("../images/toolbar.jpg") 50px 400px no-repeat;
-	width: 50px;
-	height: 50px;
-}
-/*leftModule 各按鈕圖片*/
-#leftModule a.b1{ background-position: 0px 0px; }
-#leftModule a.b2{ background-position: 0px -50px; }
-#leftModule a.b3{ background-position: 0px -150px;}
-#leftModule a.b4{ background-position: 0px -200px;}
-#leftModule a.b5{ background-position: 0px -250px; }
-#leftModule a.b6{ background-position: 0px -300px; }
-#leftModule a.b7{ background-position: 0px -350px; }
+/*toolbar 各按鈕圖片*/
+#toolbar dd.b1{ left:10px; top: 5px; background-position: 0px 0px; position:relative;}
+#toolbar dd.b2{ left:10px; top: 10px; background-position: 0px -50px; position:relative;}
+#toolbar dd.b3{ left:10px; top: 15px; background-position: 0px -150px;position:relative;}
+#toolbar dd.b4{ left:10px; top: 20px; background-position: 0px -200px;position:relative;}
+#toolbar dd.b5{ left:10px; top: 25px; background-position: 0px -250px; position:relative;}
+#toolbar dd.b6{ left:10px; top: 30px; background-position: 0px -300px; position:relative;}
+#toolbar dd.b7{ left:10px; top: 35px; background-position: 0px -350px; position:relative;}
 /*左邊區塊按鈕使用情形*/
-#leftModule a.using{ border: 2px dashed; }
+#toolbar dd.using{ border: 2px dashed; }
 
 /*下方區塊按鈕預設*/
-#bottonMoudle a.btn{
+#bottonMoudle dd.btn{
 	width: 20px;
 	height: 20px;
 }
 
 /*下方區塊按鈕使用情形*/
-#bottonModule a.using( border: 1px  dashed; )
+#bottonModule dd.using( border: 1px  dashed; )
 
-/*topModule按鈕預設*/
-#topModule a.btn{
-	width: 50px;
-	height: 50px;
-}
 
 /*上方區塊按鈕使用情形*/
-#topModule a.using{ border: 1px dashed; }
+#topModule dd.using{ border: 1px dashed; }
 
 /*表格隱藏*/
 .hidden{
@@ -454,83 +456,6 @@ dl.sort dd{
 
 #exit{}
 
-/* 整體設置*/ 
-.navigation {
-	margin:0; 
-	padding:0;
-	width:610px;
-	list-style-type:none; 
-	font:12px Arial;
-	z-index: 0;
-	}
- 
-.navigation li {
-	float:left; 
-    padding:0; 
-	margin:0 10px 0 0; 
-	width:100px;
-	}
- 
-/* 設置選單區塊*/
-.navigation li  dl{ 
-	width:100px;/*ie6*/
-    margin:0; 
-	padding:0;
-	background-color:#bbbbbb;
-	}
- 
-.navigation li dt a , .navigation li dd a{ display:block;}
- 
- 
-/* 設置主選單dt */
-.navigation li dt {
-	margin:0;
-	padding: 5px;
-	text-align:center;
-	background-color:#bbbbbb;	
-	font-size: 12px;
-	font-weight: bold;
-	height:15px;
-	overflow:hidden;
-	
-	}
- 
-.navigation li dt a ,.navigation  li dt a:visited {
-	display:block; 
-    color:#333;
-    text-decoration:none;
-	}
- 
-/* 設置子選單dd */
-.navigation li dd { 
-	margin:0; 
-    padding:0; 
-	color: #333; 
-	background-color:#efefef;
-	width:150px;
-	border: solid 1px #000000;
-	}
- 
-.navigation li dd.last {
-	border-bottom:solide 1px #000000;
-	}	
- 
-.navigation li dd a, .navigation  li dd a:visited {
-	display:block; 
-	color:#333; 
-    text-decoration:none; 
-	padding:4px 5px 4px 20px;
-}
- 
- 
-/*隱藏子選單*/
-.navigation li dd { display:none;}
- 
- 
-/* 滑鼠滑入顯示子選單 */
-/*.navigation li:hover dd, .navigation li a:hover dd { display:block;}*/
- 
-	
 #dropList{
   z-index: 4;
 }
@@ -542,3 +467,5 @@ dl.sort dd{
 
 
 
+
+ 

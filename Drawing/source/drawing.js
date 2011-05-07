@@ -1,45 +1,87 @@
+google.load("jqueryui", "1.8");
+
 var firstPointX = 0;
 var firstPointY = 0;
 var isMouseDown = false;
 var canvas, cxt;
 
-window.onload = function(){
-
+$(function(){
+	$("#toolbar dl dd").click("usingBtn");
+	
+	/*
 	leftBtn = document.getElementById("toolbar").getElementsByTagName("a");
 	
 	for(i=0; i<leftBtn.length; i++){
 		var currentBtn = leftBtn[i];
 		currentBtn.onclick = usingBtn;
 	}
-	
-	
-	canvas = document.getElementById('workarea');
-	cxt = canvas.getContext("2d");
-	canvas.onmousedown = function(e){
-		isMouseDown = true;
-		firstPointX = e.offsetX;
-		firstPointY = e.offsetY;	
-	};
-	canvas.onmouseup = function(e){
-		isMouseDown = false;
+	*/
+});
 
-		//drawLine(e.offsetX, e.offsetY);
-		//drawRect(e.offsetX, e.offsetY);
-		//drawCircle(e.offsetX, e.offsetY);
-	};
-	
-	canvas.onmousemove = function(e){
+function focus(){
+  	var notice = document.getElementById("canvasPaper").getElementsByTagName("dt");
+	if(notice.length == 1){
+	  canvas = document.getElementsByTagName("canvas")[0];
+	  draw();
+	}
+
+	if(notice.length > 1){
+      for(i=0;i < notice.length; i++){
+        notice[i].onclick = function(){
+	      canvas = document.getElementsByTagName("canvas")[i-1];
+		  draw();
+	    }
+      }
+	  	notice[0].onclick = function(){
+			canvas = document.getElementsByTagName("canvas")[0];
+			draw();
+		}
+	}
+}
+
+function draw(){
+	  cxt = canvas.getContext("2d");
+	  canvas.onmousedown = function(e){
+  		  isMouseDown = true;
+		  firstPointX = e.offsetX;
+		  firstPointY = e.offsetY;	
+	  };
+	  canvas.onmouseup = function(e){
+  		  isMouseDown = false;
+		  //drawLine(e.offsetX, e.offsetY);
+		  //drawRect(e.offsetX, e.offsetY);
+		  drawCircle(e.offsetX, e.offsetY);
+	  };
+	  /*	canvas.onmousemove = function(e){
 		if(isMouseDown){
-			drawLine(e.offsetX, e.offsetY);
+			var penWidth = document.getElementById("penWidth");
+			temp = parseInt(penWidth.value,10);
+			brushes(e.offsetX, e.offsetY,temp);
 			firstPointX = e.offsetX;
 			firstPointY = e.offsetY;
 		}
-		
-	};
-	
-	canvas.width = 800;
-	canvas.height = 600;
-};
+	    };*/
+}
+function addCanvas(x,y){
+  var addcanvas = document.createElement("canvas");
+  addcanvas.className = "workarea"
+  addcanvas.width = 500;
+  addcanvas.height = 500;
+  var dd = document.createElement("dd");
+  dd.appendChild(addcanvas);
+  var dt = document.createElement("dt");
+  var span = document.createElement("span");
+  var spanTextNode = document.createTextNode("X");
+  span.appendChild(spanTextNode);
+  dt.appendChild(span);
+  var dl = document.createElement("dl");
+  dl.className = "sort";
+  dl.appendChild(dt);
+  dl.appendChild(dd);
+  var div = document.getElementById("canvasPaper");
+  div.appendChild(dl);
+  focus();
+}
 
 function lineReview(e){
 	if(isMouseDown){
@@ -65,38 +107,49 @@ function drawLine(x, y){
 		cxt.lineWidth = 3;
 		cxt.moveTo(firstPointX,firstPointY);
 		cxt.lineTo(x,y);
-		cxt.stroke();
-	
-  
+		cxt.stroke();  
 }
 
-function drawRect(x, y){
-	var cxt = canvas.getContext("2d");
+function brushes(x,y){
+		cxt.beginPath();
+  		cxt.strokeStyle = "#f00";
+		cxt.lineWidth = temp;
+		cxt.moveTo(firstPointX,firstPointY);
+		cxt.lineTo(x,y);
+		cxt.stroke(); 
+		cxt.closePath();
+}
+
+function drawRect(x,y){
+  if(canvas && canvas.getContext){
+    var cxt = canvas.getContext("2d");
 	cxt.strokeStyle = "#f00";
 	cxt.lineWidth = 3;
-	cxt.rect(firstPointX, firstPointY, x, y);
+	var temp1 = (x - firstPointX);
+	var temp2 = (y - firstPointY);
+	cxt.rect(firstPointX,firstPointY,temp1,temp2);
 	cxt.stroke();
+  }
 }
 
-function drawCircle(x, y){
-	var cxt = canvas.getContext("2d");
-	cxt.storkeStyle = "#f00";
+function drawCircle(x,y){
+  if(canvas && canvas.getContext){
+    var cxt = canvas.getContext("2d");
+	var a = (x - firstPointX) * (x - firstPointX);
+	var b = (y - firstPointY) * (y - firstPointY);
+	var radius = (Math.sqrt(a + b) / 2);
+	var centerX = ((firstPointX + x)/2);
+	var centerY = ((firstPointY + y)/2);
+	
+	cxt.strokeStyle = "#f00";
 	cxt.lineWidth = 3;
+	cxt.fillStyle = "#f00";
 	cxt.beginPath();
-	cxt.arc(firstPointX, firstPointY, x, y, Math.PI * 2, true);
+	cxt.arc(centerX,centerY,radius,0,Math.PI * 2,true);
+	//arc(x,y,radius,startAngle,endAngle,anticlockwise);
 	cxt.closePath();
-}
-
-function dtC(){
-  dtC1 = document.getElementById("files01").getElementsByTagName("dt");
-  dtM1 = document.getElementById("files02").getElementsByTagName("dt");
-    for(x=0; x<dtC1.length; x++){
-	  var dtC2 = dtC1[x];
-	  dtC2.onclick = ddF;
-	 }
-	for(y=0; y<dtM1.length; y++){
-	  var dtM2 = dtM1[y];
-	  dtM2.onmouseover = ddM;
+	cxt.fill();
+	
   }
 }
 
@@ -127,14 +180,3 @@ function usedStatus(obj){
 	}
 }
 
-canvas = document.getElementById("workarea");
-tempx = 0 , tempy = 0;
-function getCoor(e){
-	tempx = e.pageX, tempy = e.pageY;
-}
-
-function select(){}
-function pen(){}
-function fill(){}
-function rect(){}
-function round(){}

@@ -1,13 +1,78 @@
 <html>
 <head>
   <title>網路應用研究</title>
-  
+  <style>
+<!--
+body{
+	background-color:#ffdee0;
+}
+
+#navigation {
+	width:180px;
+	font-family:Arial;
+}
+#navigation > ul {
+	list-style-type:none;
+	margin:0px;
+	padding:0px;
+}
+#navigation > ul > li {
+	border-bottom:1px solid #ED9F9F;
+}
+#navigation > ul > li > a{
+	display:block;
+	padding:5px 5px 5px 0.5em;
+	text-decoration:none;
+	border-left:12px solid #292929;
+	border-right:1px solid #292929;
+}
+#navigation > ul > li > a:link, #navigation > ul > li > a:visited{
+	background-color:#444;
+	color:#FFFFFF;
+}
+#navigation > ul > li > a:hover{
+	background-color:#990020;
+	color:#ffff00;
+}
+#navigation ul li ul{
+	list-style-type:none;
+	margin:0px;
+	padding:0px 0px 0px 0px;
+}
+#navigation ul li ul li{
+	border-top:1px solid #ffffff;
+}
+#navigation ul li ul li a{
+	display:block;
+	padding:3px 3px 3px 0.5em;
+	text-decoration:none;
+	border-left:28px solid #292929;
+	border-right:1px solid #292929;
+}
+#navigation ul li ul li a:link, #navigation ul li ul li a:visited{
+	background-color:#444;
+	color:#ffffff;
+}
+#navigation ul li ul li a:hover{
+	background-color:#c2425d;
+	color:#ffffff;
+}
+-->
+</style>
   <meta charset="utf-8" />
   
   <script src="https://www.google.com/jsapi?key=ABQIAAAATmkOKGhplAW_SrLcNMJCChQDHtZBmae3VtF8y2CruWNw50BUSBSi0ENfqoXVuIPugTDQ5niTo-NpWw" type="text/javascript"></script>
   <script src="source/jquery.js"></script>
   <script src="source/dotwiki.js"></script>
-  <script src="source/wikiBlog.js"></script>
+  <script src="source/wikiBlog.js"></script>  
+  <script language="javascript">
+	$(function(){
+		$("li").find("ul").prev().click(function(){
+			$(this).next().toggle();
+		});
+		$("li:has(ul)").find("ul").hide();
+	});
+  </script>
   
   <link rel="stylesheet" href="css/default.css" />
 
@@ -28,7 +93,211 @@
 		<div id="main">
 			<div class="textPane"><p>textPane</p></div>
 		</div>
-		<div id="right"><p>right</p></div>	
+		<div id="right">
+		<div id="navigation">
+			<ul id="listUL">
+				<li><a href="#">特殊</a>
+				<ul>
+					<li><a href="#">_centerthead.txt</a></li>
+					<li><a href="#">_endthead.txt</a></li>
+					<li><a href="#">_template.txt</a></li>
+					<li><a href="#">_template.txt</a></li>
+				</ul>
+				</li>
+				<li><a href="#">a</a>
+					<ul>
+						<li><a href="#">about.txt</a></li>
+						<li><a href="#">admin_manage.txt</a></li>
+						<li><a href="#">as_dos.txt</a></li>
+					</ul>
+				</li>
+				<li><a href="#">b</a>
+					<ul>
+						<li><a href="#">browser__template.txt</a></li>
+						<li><a href="#">browser_apple.txt</a></li>
+						<li><a href="#">browser_ff.txt</a></li>
+						<li><a href="#">browser_google.txt</a></li>
+						<li><a href="#">browser_ie.txt</a></li>
+						<li><a href="#">browser_main.txt</a></li>
+						<li><a href="#">browser_opera.txt</a></li>
+					</ul>        
+				</li>
+				<li><a href="#">c</a>
+					<ul>
+						<li><a href="#">css__template.txt</a></li>
+						<li><a href="#">css_alpha.txt</a></li>
+						<li><a href="#">css_attribute.txt</a></li>
+						<li><a href="#">css_background.txt</a></li>
+						<li><a href="#">css_bordershadow.txt</a></li>
+						<li><a href="#">css_bullet.txt</a></li>
+						<li><a href="#">css_columns.txt</a></li>
+						<li><a href="#">css_css3.txt</a></li>
+						<li><a href="#">css_form.txt</a></li>
+						<li><a href="#">css_hsla.txt</a></li>
+						<li><a href="#">css_main.txt</a></li>
+						<li><a href="#">css_multibackground.txt</a></li>
+						<li><a href="#">css_multishadow.txt</a></li>
+						<li><a href="#">css_overlap.txt</a></li>
+						<li><a href="#">css_paragraph.txt</a></li>
+						<li><a href="#">css_rgba.txt</a></li>
+						<li><a href="#">css_roundborder.txt</a></li>
+						<li><a href="#">css_text.txt</a></li>
+						<li><a href="#">css_visible.txt</a></li>
+						<li><a href="#">css_wordborder.txt</a></li>
+						<li><a href="#">css_wrapping.txt</a></li>
+					</ul>
+				</li>
+				<li><a href="#">dom.txt</a></li>
+				<li><a href="#">f</a>
+					<ul>
+						<li><a href="#">files.txt</a></li>
+						<li><a href="#">forum_category.txt</a></li>
+						<li><a href="#">forum_new-thread.txt</a></li>
+						<li><a href="#">forum_recent-posts.txt</a></li>
+						<li><a href="#">forum_recent-threads.txt</a></li>
+						<li><a href="#">forum_start.txt</a></li>
+						<li><a href="#">forum_thread.txt</a></li>
+					</ul>
+				</li>
+				<li><a href="#">h</a>
+					<ul>
+						<li><a href="#">history.txt</a></li>
+						<li><a href="#">html4__template.txt</a></li>
+						<li><a href="#">html4_abbreviation.txt</a></li>
+						<li><a href="#">html4_address.txt</a></li>
+						<li><a href="#">html4_area.txt</a></li>
+						<li><a href="#">html4_attribute.txt</a></li>
+						<li><a href="#">html4_base.txt</a></li>
+						<li><a href="#">html4_basefont.txt</a></li>
+						<li><a href="#">html4_bdo.txt</a></li>
+						<li><a href="#">html4_blockquote.txt</a></li>
+						<li><a href="#">html4_button.txt</a></li>
+						<li><a href="#">html4_caption.txt</a></li>
+						<li><a href="#">html4_checkbox.txt</a></li>
+						<li><a href="#">html4_colgroup.txt</a></li>
+						<li><a href="#">html4_comment.txt</a></li>
+						<li><a href="#">html4_div.txt</a></li>
+						<li><a href="#">html4_effect.txt</a></li>
+						<li><a href="#">html4_fieldset.txt</a></li>
+						<li><a href="#">html4_form.txt</a></li>
+						<li><a href="#">html4_images.txt</a></li>
+						<li><a href="#">html4_line.txt</a></li>
+						<li><a href="#">html4_link.txt</a></li>
+						<li><a href="#">html4_list.txt</a></li>
+						<li><a href="#">html4_main.txt</a></li>
+						<li><a href="#">html4_menu.txt</a></li>
+						<li><a href="#">html4_meta.txt</a></li>
+						<li><a href="#">html4_original.txt</a></li>
+						<li><a href="#">html4_paragraph.txt</a></li>
+						<li><a href="#">html4_password.txt</a></li>
+						<li><a href="#">html4_phrase.txt</a></li>
+						<li><a href="#">html4_radio.txt</a></li>
+						<li><a href="#">html4_script.txt</a></li>
+						<li><a href="#">html4_select.txt</a></li>
+						<li><a href="#">html4_separator.txt</a></li>
+						<li><a href="#">html4_spane.txt</a></li>
+						<li><a href="#">html4_style.txt</a></li>
+						<li><a href="#">html4_table.txt</a></li>
+						<li><a href="#">html4_tags.txt</a></li>
+						<li><a href="#">html4_text.txt</a></li>
+						<li><a href="#">html4_textarea.txt</a></li>
+						<li><a href="#">html4_title.txt</a></li>
+						<li><a href="#">html4_x.txt</a></li>
+						<li><a href="#">html5__template.txt</a></li>
+						<li><a href="#">html5_attributes.txt</a></li>
+						<li><a href="#">html5_audio.txt</a></li>
+						<li><a href="#">html5_block-level.txt</a></li>
+						<li><a href="#">html5_canvas.txt</a></li>
+						<li><a href="#">html5_command.txt</a></li>
+						<li><a href="#">html5_datalist.txt</a></li>
+						<li><a href="#">html5_embed.txt</a></li>
+						<li><a href="#">html5_inline.txt</a></li>
+						<li><a href="#">html5_interaction.txt</a></li>
+						<li><a href="#">html5_main.txt</a></li>
+						<li><a href="#">html5_output.txt</a></li>
+						<li><a href="#">html5_source.txt</a></li>
+						<li><a href="#">html5_structure.txt</a></li>
+						<li><a href="#">html5_structure__template.txt</a></li>
+						<li><a href="#">html5_tags.txt</a></li>
+						<li><a href="#">html5_video.txt</a></li>
+					</ul>        
+				</li>
+				<li><a href="#">j</a>
+					<ul>
+						<li><a href="#">jquery__template.txt</a></li>
+						<li><a href="#">jquery_main.txt</a></li>
+						<li><a href="#">js__template.txt</a></li>
+						<li><a href="#">js_dom.txt</a></li>
+						<li><a href="#">js_expression.txt</a></li>
+						<li><a href="#">js_function.txt</a></li>
+						<li><a href="#">js_loop.txt</a></li>
+						<li><a href="#">js_main.txt</a></li>
+						<li><a href="#">js_predicates.txt</a></li>
+						<li><a href="#">js_value.txt</a></li>
+						<li><a href="#">js_works.txt</a></li>
+						<li><a href="#">json__template.txt</a></li>
+						<li><a href="#">json_main.txt</a></li>
+					</ul>
+				</li>
+				<li><a href="#">maincss.txt</a></li>
+				<li><a href="#">nav_top.txt</a></li>
+				<li><a href="#">r</a>
+					<ul>
+						<li><a href="#">regex__template.txt</a></li>
+						<li><a href="#">regex_main.txt</a></li>
+						<li><a href="#">regex_template.txt</a></li>
+						<li><a href="#">regex_use.txt</a></li>
+						<li><a href="#">rss__template.txt</a></li>
+						<li><a href="#">rss_channel.txt</a></li>
+						<li><a href="#">rss_element.txt</a></li>
+						<li><a href="#">rss_exmple.txt</a></li>
+						<li><a href="#">rss_item.txt</a></li>
+						<li><a href="#">rss_main.txt</a></li>
+					</ul>
+				</li>
+				<li><a href="#">s</a>
+					<ul>
+						<li><a href="#">search_site.txt</a></li>
+						<li><a href="#">sqlite__template.txt</a></li>
+						<li><a href="#">sqlite_basice.txt</a></li>
+						<li><a href="#">sqlite_download.txt</a></li>
+						<li><a href="#">sqlite_established.txt</a></li>
+						<li><a href="#">sqlite_main.txt</a></li>
+						<li><a href="#">sqlite_table.txt</a></li>
+						<li><a href="#">start.txt</a></li>
+						<li><a href="#">structure.txt</a></li>
+						<li><a href="#">structure__template.txt</a></li>
+						<li><a href="#">svg__template.txt</a></li>
+						<li><a href="#">svg_circle.txt</a></li>
+						<li><a href="#">svg_ellipse.txt</a></li>
+						<li><a href="#">svg_line.txt</a></li>
+						<li><a href="#">svg_main.txt</a></li>
+						<li><a href="#">svg_path.txt</a></li>
+						<li><a href="#">svg_polygon.txt</a></li>
+						<li><a href="#">svg_polyline.txt</a></li>
+						<li><a href="#">svg_rect.txt</a></li>
+						<li><a href="#">svg_structure.txt</a></li>
+						<li><a href="#">svg_tags.txt</a></li>
+						<li><a href="#">system_list-all-pages.txt</a></li>
+						<li><a href="#">system_members.txt</a></li>
+						<li><a href="#">system_page-tags.txt</a></li>
+						<li><a href="#">system_page-tags-list.txt</a></li>
+						<li><a href="#">system_recent-changes.txt</a></li>
+					</ul>
+				</li>
+				<li><a href="#">test.txt</a></li>
+				<li><a href="#">x</a>
+					<ul>
+						<li><a href="#">xml__template.txt</a></li>
+						<li><a href="#">xml_dtd.txt</a></li>
+						<li><a href="#">xml_main.txt</a></li>
+						<li><a href="#">xml_xpath.txt</a></li>
+						<li><a href="#">xml_xsd.txt</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		</div>	
 		<div id="edit">
 			
 		</div>

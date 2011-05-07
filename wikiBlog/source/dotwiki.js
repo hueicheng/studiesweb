@@ -28,7 +28,7 @@ function wiki2html(wikiText) {
     .replace(/\[(http[s]?:\/\/[^\s\]]+)\]/gi, '<a href=$1>$1</a>') // 範例：[http://tw.yahoo.com/]
     .replace(/\[\[\[([:\w-]+)\]\]\]/gi, '<a href=#!$1>$1</a>') // 範例：[[[innerLink]]]	
     .replace(/\[\[\[([:\w-]+)\s*\|\s*([^\]]*)\]\]\]/gi, '<a href=#!$1>$2</a>') // 範例：[[[innerLink | 內部連結]]]
-    .replace(/[^=\">](http[s]?:\/\/[\w;\/\?:@=#&$-_.+!*\(\),]+)/gi, '<a href=$1>$1</a>') // 範例：http://tw.yahoo.com/
+    .replace(/[^=\"](http[s]?:\/\/[\w;\/\?:@=#&$-_.+!*\(\),]+)/gi, '<a href=$1>$1</a>') // 範例：http://tw.yahoo.com/
     .replace(/__(.+)__/gi, '<u>$1</u>') // 範例：__underline text__
     .replace(/\*\*(.+)\*\*/gi, '<b>$1</b>') // 範例：**bold text**
     .replace(/--(.+)--[^\]>]/gi, '<s>$1</s>') // 範例：--strikethrough text-- , 注意，要避開 --] 或 -->
