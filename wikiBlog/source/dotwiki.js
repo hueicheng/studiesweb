@@ -22,22 +22,22 @@ function wiki2html(wikiText) {
   init();
   var text = wikiText
     .replace(/\r/gi, "") // 刪除 \r 字元
-    //.replace(/\[\[image\s([^\s]+)\s+size="medium"\]\]/gi, '<center><img src='+attachPath+'/$1 width=512px/></center>') // 範例：[[image test.jpg size="medium"]]
-    //.replace(/\[\[image\s([^\s\]]+)[^\]]*\]\]/gi, '<img src='+attachPath+'/$1/>') // 範例：[[image test.jpg]]
+   // .replace(/\[\[image\s([^\s]+)\s+size="medium"\]\]/gi, '<center><img src='+attachPath+'/$1 width=512px/></center>') // 範例：[[image test.jpg size="medium"]]
+   // .replace(/\[\[image\s([^\s\]]+)[^\]]*\]\]/gi, '<img src='+attachPath+'/$1/>') // 範例：[[image test.jpg]]
     .replace(/\[(http[s]?:\/\/[^\s\]]+)\s+([^\]]*)\]/gi, '<a href=$1>$2</a>') // 範例：[http://tw.yahoo.com/ 雅虎]
     .replace(/\[(http[s]?:\/\/[^\s\]]+)\]/gi, '<a href=$1>$1</a>') // 範例：[http://tw.yahoo.com/]
     .replace(/\[\[\[([:\w-]+)\]\]\]/gi, '<a href=#!$1>$1</a>') // 範例：[[[innerLink]]]	
     .replace(/\[\[\[([:\w-]+)\s*\|\s*([^\]]*)\]\]\]/gi, '<a href=#!$1>$2</a>') // 範例：[[[innerLink | 內部連結]]]
-    .replace(/[^=\"](http[s]?:\/\/[\w;\/\?:@=#&$-_.+!*\(\),]+)/gi, '<a href=$1>$1</a>') // 範例：http://tw.yahoo.com/
+    .replace(/[^=\">](http[s]?:\/\/[\w;\/\?:@=#&$-_.+!*\(\),]+)/gi, '<a href=$1>$1</a>') // 範例：http://tw.yahoo.com/
     .replace(/__(.+)__/gi, '<u>$1</u>') // 範例：__underline text__
     .replace(/\*\*(.+)\*\*/gi, '<b>$1</b>') // 範例：**bold text**
     .replace(/--(.+)--[^\]>]/gi, '<s>$1</s>') // 範例：--strikethrough text-- , 注意，要避開 --] 或 -->
     .replace(/[^:]\/\/(.+)\/\//gi, '<i>$1</i>') // 範例：//italic text//
     .replace(/\^\^(.+)\^\^/gi, '<sup>$1</sup>') // 範例：normal^^superscript^^
     .replace(/,,(.+),,/gi, '<sub>$1</sub>') // 範例：normal,,subscript,,
-    .replace(/##[\w]\|\w##/gi, '<span style="color:$1">$2</span>')	//
-    //.replace(/\[\[video\s([^\s\]]+)[^\]]*\]\]/gi,'<video src='+attachPath+'/$1 controls="controls"></video>') //範例: [[video test.mp4]]
-    //.replace(/\[\[audio\s([^\s\]]+)[^\]]*\]\]/gi,'<audio src='+attachPath+'/$1 controls="controls"></audio>') //範例: [[audio test.mp3]]
+	//.replace(//gi,)
+   // .replace(/\[\[video\s([^\s\]]+)[^\]]*\]\]/gi,'<video src='+attachPath+'/$1 controls="controls"></video>') //範例: [[video test.mp4]]
+   // .replace(/\[\[audio\s([^\s\]]+)[^\]]*\]\]/gi,'<audio src='+attachPath+'/$1 controls="controls"></audio>') //範例: [[audio test.mp3]]
     ;
     
   var lines = text.replace(/\r/, '').split("\n");
@@ -47,7 +47,7 @@ function wiki2html(wikiText) {
     if (inCode || inList || inTitle || inComment || inTable) 
       html+="\n";
     else
-      html+="<BR/>";
+      html+="<br />";
   }
   return html;
 }
@@ -181,9 +181,12 @@ function convertComment(line) {
  
 function convert() {
   var wikiText = document.getElementById("wikibox").value;
-  var htmlBox = document.getElementById("htmlbox"); 
-  htmlBox.innerHTML = wiki2html(wikiText);
-  alert(htmlBox.innerHTML);
+  //var htmlBox = document.getElementById("htmlbox"); 
+  //htmlBox.innerHTML = wiki2html(wikiText);
+  
+  $('#htmlbox').html(wiki2html(wikiText));
+  
+  //alert(htmlBox.innerHTML);
 }
 
 function getParam(tag) {

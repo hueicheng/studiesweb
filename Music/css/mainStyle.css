@@ -1,3 +1,8 @@
+img .note{
+  position: absolute ;
+  z-index:  99;
+}
+
 .modules {
 	background-color:#ffffff;
 }
@@ -36,7 +41,6 @@
 .stave{
   width:3000;
   height:150;
-  background:url(svg/Music-doublebar.svg) 0 0;
   z-index: 0;
 }
 

@@ -1,0 +1,32 @@
+﻿<html>
+<head>
+  <title>pasteTest</title>
+</head>
+<style>
+img{
+  position: absolute;
+}
+
+</style>
+<script>
+  var x;
+  var y;
+  document.onmousedown = function(){
+    x = window.event.offsetX;
+	y = window.event.offsetY;
+	pasteNote();
+  }
+  function pasteNote(){
+    var addImg = document.createElement("img");
+	addImg.className = "note";
+	addImg.src = "svg/High pitch mark.svg";
+	addImg.style.left = parseInt(x,10) +7;
+	addImg.style.top = parseInt(y,10) -30;
+	document.body.appendChild(addImg);
+	
+  }
+</script>
+<body>
+</body>
+
+</html>

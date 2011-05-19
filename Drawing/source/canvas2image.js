@@ -4,7 +4,12 @@
  * MIT License [http://www.opensource.org/licenses/mit-license.php]
  */
 
-var Canvas2Image = (function() {
+var Canvas2Image = (functi
+
+
+
+
+	on() {
 
 	// check if we have canvas support
 	var bHasCanvas = false;

@@ -1,407 +1,80 @@
 ﻿body{
-	z-index:1;
 	background-color: #6a6a6a;
 	line-height: normal;
 	display: inline-block;
 	vertical-align: middle;
 }
 
-dl.sort dt {
-  background: #222222;
-  margin: 0;
-  padding: 0;
-  text-align: right;
-}
-
-dl.sort span{
-  color: #fff;
-  margin: 0;
-  padding: 0;
-  border: solid 1px #ffffff;
-}
-
-dl.sort dd{
-  margin: 0;
-  padding: 0;
-  border-bottom: solid 1px;
-  border-right: solid 1px;
-  border-left: solid 1px;
-}
-
-.img_Fill{
-  float: left;
-  width: 32px;
-  height: 32px;
-}
-
-.img_Text{
-  float: left;
-  width: 32px;
-  height: 32px;
-}
-
-/*調色盤*/
-.palette{
-  width: 100%;
-}
-
-.palette_style01{
-  height: 16px;
-  width: 16px;
-  float: left;
-  background: #000000; 
- }
- 
-.palette_style02{
-  height: 16px;
-  width: 16px;
-  float: left;
-  background: #3f3f3f; 
- }
-
-.palette_style03{
-  height: 16px;
-  width: 16px;
-  float: left;
-  background: #7f7f7f; 
-}
-
-.palette_style04{
-  height: 16px;
-  width: 16px;
-  float: left;
-  background: #bfbfbf; 
- }
- 
-.palette_style05{
-  height: 16px;
-  width: 16px;
-  float: left;
-  background: #ffffff; 
- }
-
-.palette_style06{
-  height: 16px;
-  width: 16px;
-  float: left;
-  background: #ff0000; 
- }
-
-.palette_style07{
-  height: 16px;
-  width: 16px;
-  float: left;
-  background: #ff7f00; 
- }
- 
- .palette_style08{
-  height: 16px;
-  width: 16px;
-  float: left;
-  background: #ffff00; 
- }
- 
- .palette_style09{
-  height: 16px;
-  width: 16px;
-  float: left;
-  background: #7fff00; 
- }
- 
- .palette_style10{
-  height: 16px;
-  width: 16px;
-  float: left;
-  background: #00ff00; 
- }
- 
- .palette_style11{
-  height: 16px;
-  width: 16px;
-  float: left;
-  background: #00ff7f; 
- }
- 
- .palette_style12{
-  height: 16px;
-  width: 16px;
-  float: left;
-  background: #00ffff; 
- }
- 
- .palette_style13{
-  height: 16px;
-  width: 16px;
-  float: left;
-  background: #007fff; 
- }
- 
- .palette_style14{
-  height: 16px;
-  width: 16px;
-  float: left;
-  background: #0000ff; 
- }
- 
- .palette_style15{
-  height: 16px;
-  width: 16px;
-  float: left;
-  background: #7f00ff;
- }
- 
- .palette_style16{
-  height: 16px;
-  width: 16px;
-  float: left;
-  background: #ff00ff; 
- }
- 
- .palette_style17{
-  height: 16px;
-  width: 16px;
-  float: left;
-  background: #ff007f; 
- }
- 
- .palette_style18{
-  height: 16px;
-  width: 16px;
-  float: left;
-  background: #7f0000; 
- }
- 
- .palette_style19{
-  height: 16px;
-  width: 16px;
-  float: left;
-  background: #7f3f00; 
- }
- 
- .palette_style20{
-  height: 16px;
-  width: 16px;
-  float: left;
-  background: #7f7f00; 
- }
- 
- .palette_style21{
-  height: 16px;
-  width: 16px;
-  float: left;
-  background: #3f7f00; 
- }
- 
- .palette_style22{
-  height: 16px;
-  width: 16px;
-  float: left;
-  background: #007f00; 
- }
- 
- .palette_style23{
-  height: 16px;
-  width: 16px;
-  float: left;
-  background: #007f3f; 
- }
- 
- .palette_style24{
-  height: 16px;
-  width: 16px;
-  float: left;
-  background: #007f7f; 
- }
- 
- .palette_style25{
-  height: 16px;
-  width: 16px;
-  float: left;
-  background: #003f7f; 
- }
- 
- .palette_style26{
-  height: 16px;
-  width: 16px;
-  float: left;
-  background: #00007f; 
- }
- 
- .palette_style27{
-  height: 16px;
-  width: 16px;
-  float: left;
-  background: #3f007f; 
- }
- 
- .palette_style28{
-  height: 16px;
-  width: 16px;
-  float: left;
-  background: #7f007f; 
- }
- 
- .palette_style29{
-  height: 16px;
-  width: 16px;
-  float: left;
-  background: #7f003f; 
- }
- 
- .palette_style30{
-  height: 16px;
-  width: 16px;
-  float: left;
-  background: #ffaaaa; 
- }
- 
- .palette_style31{
-  height: 16px;
-  width: 16px;
-  float: left;
-  background: #ffd4aa; 
- }
- 
- .palette_style32{
-  height: 16px;
-  width: 16px;
-  float: left;
-  background: #ffffaa; 
- }
- 
- .palette_style33{
-  height: 16px;
-  width: 16px;
-  float: left;
-  background: #d4ffaa; 
- }
- 
- .palette_style34{
-  height: 16px;
-  width: 16px;
-  float: left;
-  background: #aaffaa; 
- }
- 
- .palette_style35{
-  height: 16px;
-  width: 16px;
-  float: left;
-  background: #aaffd4; 
- }
- 
- .palette_style36{
-  height: 16px;
-  width: 16px;
-  float: left;
-  background: #aaffff; 
- }
- 
- 
-.palette_style37{
-  height: 16px;
-  width: 16px;
-  float: left;
-  background: #aad4ff; 
- }
- 
- .palette_style38{
-  height: 16px;
-  width: 16px;
-  float: left;
-  background: #aaaaff; 
- }
- 
- .palette_style39{
-  height: 16px;
-  width: 16px;
-  float: left;
-  background: #d4aaff; 
- }
- 
- .palette_style40{
-  height: 16px;
-  width: 16px;
-  float: left;
-  background: #ffaaff; 
- }
- 
- .palette_style41{
-  height: 16px;
-  width: 16px;
-  float: left;
-  background: #ffaad4; 
- }
- 
- 
- .palette_election_Text{
-   float: left;
-   height: 32px;
-   width: 32px;
-   background: #000000;
- }
- .palette_election_Fill{
-   float: left;
-   height: 32px;
-   width: 32px;
-   background: #000000;
- }
-
- 
  
 /*工作區設定*/
 .workarea{
   background: #fff;
   border:2px solid #000;
 }
-
-#canvasPaper{
-
+/*視窗標題設定*/
+.title{
+	color: #fff;
+	background: #222222;
+	text-align: right;
+	padding: 1px;
 }
-/*#topModule預設*/
+
+.drag{
+	border-radius: 25px;
+}
+
+.drag div.content{
+	border-left: solid 1px #000;
+	border-right: solid 1px #000;
+	border-bottom: solid 1px #000;
+}
+
 #topModule{
-  float: left;
-  margin: 2px;
-  padding: 2px;
+	top: 0;
+	left:0;
+	margin: 0;
+}
+#topModule .title{
+	width: 180px;
 }
 /*topModule按鈕預設*/
-#topModule dd.btn{
-  background: url("../images/topModule.jpg") 50px 100px no-repeat;
+#topModule a.btn{
+  background: url("../images/topModule.jpg") 50px 150px no-repeat;
   width: 50px;
   height: 50px;
   position: absolute;
-  float:left;
 }
 /*topModule各按鈕圖片*/
-#topModule dd.b1{top:5px; left:0px; background-position: 0px 0px; position:relative;}
-#topModule dd.b2{top:5px; left:5px; background-position: 0px -50px; position:relative;}
-#topModule dd.b3{top:5px; left:10px; background-position: 0px -100px; position:relative;}
+#topModule a.b1{ margin-left:5px; background-position: 0px 0px;}
+#topModule a.b2{ margin-left:60px; background-position: 0px -50px; }
+#topModule a.b3{ margin-left:115px; background-position: 0px -100px; }
 
-
-/*toolbar預設*/
 #toolbar{
-  height: 500px;
-  width: 80px;
-  margin: 2px;
-  padding: 2px;  
- }
+	left: 20px;
+	top: 70px;
+}
+/*toolbar 標題設定*/
+#toolbar .title{
+	width: 60px;
+}
 /*toolbar按鈕預設*/
-#toolbar dd.btn{
+#toolbar a.btn{
 	background: url("../images/toolbar.jpg") 50px 400px no-repeat;
 	width: 50px;
 	height: 50px;
 	position: absolute;
 }
 /*toolbar 各按鈕圖片*/
-#toolbar dd.b1{ left:10px; top: 5px; background-position: 0px 0px; position:relative;}
-#toolbar dd.b2{ left:10px; top: 10px; background-position: 0px -50px; position:relative;}
-#toolbar dd.b3{ left:10px; top: 15px; background-position: 0px -150px;position:relative;}
-#toolbar dd.b4{ left:10px; top: 20px; background-position: 0px -200px;position:relative;}
-#toolbar dd.b5{ left:10px; top: 25px; background-position: 0px -250px; position:relative;}
-#toolbar dd.b6{ left:10px; top: 30px; background-position: 0px -300px; position:relative;}
-#toolbar dd.b7{ left:10px; top: 35px; background-position: 0px -350px; position:relative;}
+#toolbar a.b1{ margin-top:5px; background-position: 0px 0px;}
+#toolbar a.b2{ margin-top:60px; background-position: 0px -50px; }
+#toolbar a.b3{ margin-top:115px; background-position: 0px -150px;}
+#toolbar a.b4{ margin-top:170px; background-position: 0px -200px;}
+#toolbar a.b5{ margin-top:225px; background-position: 0px -250px;}
+#toolbar a.b6{ margin-top:280px; background-position: 0px -300px;}
+#toolbar a.b7{ margin-top:335px; background-position: 0px -350px;}
 /*左邊區塊按鈕使用情形*/
-#toolbar dd.using{ border: 2px dashed; }
+#toolbar a.using{ border: 2px dashed; }
+
 
 /*下方區塊按鈕預設*/
 #bottonMoudle dd.btn{
@@ -414,58 +87,9 @@ dl.sort dd{
 
 
 /*上方區塊按鈕使用情形*/
-#topModule dd.using{ border: 1px dashed; }
+#topModule a.using{ border: 1px dashed; }
 
-/*表格隱藏*/
-.hidden{
-	visibility: hidden;
+#palette, #layer, #history{
+	
+	top: 60px;
 }
-
-/*表格顯示*/
-.show{
-	visibility: visible;
-}
-
-/*彈出式視窗預設*/
-#msgbox{
-	font-size: 16px;
-	color: #ff0000;
-}
-
-.ui_text{
-	font-size: 14px;
-	color: #aaaaaa;
-	text-align: center;
-}
-
-.li_text{
-
-}
-
-#newFile{}
-
-#openFile{}
-
-#openFileUrl{}
-
-#saveFile{}
-
-#printFile{}
-
-#closeFile{}
-
-#exit{}
-
-#dropList{
-  z-index: 4;
-}
-
-#dropDiv{
-
-}
- 
-
-
-
-
- 

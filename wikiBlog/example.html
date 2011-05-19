@@ -1,0 +1,20 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<script src="source/jquery.js"></script>
+</head>
+<body>
+<input id="get" type="button" value="get" />
+
+<div id="textPane"></div>
+<script>
+	$(function(){
+		$('#get').click(function(){
+			$.get("page/start.txt",function(data){
+				$('#textPane').text(data);
+			});
+		});
+	});
+</script>
+</body>
+</html>

@@ -1,39 +1,49 @@
 google.load("gdata", "1");
+google.load("jqueryui", "1.8.12");
 
 $(function(){
-	$.get("page/start.txt", function(data){
-		var tohtml = wiki2html(data);
-		$("div[class=textPane]").html(tohtml);
-	});
 	
+	var calendarService =
+		new google.gdata.calendar.CalendarService('com.appspot.interactivesampler');
+
+	readText("page/start.txt");
+	
+	$("a[title=regx]").click(login);
 	if(localStorage.token != null){
-		$("a[title=login]").hide();
-		$("a[title=logout]").show();
+		alert(localStorage.token);
+		$("a[title=regx]").html("logout").click(logout);
 	}
 	
+	$('#listUL a').attr('href','#');
+	
+	$('#listUL a').click(function(){
+		var u = "page/" + $(this).text();
+		readText(u);
+	});
 });
+
+function readText(url){
+	$.ajax({
+		url: url,
+		success: function(data){
+			$('#textPane').html(wiki2html(data));
+		}
+	});
+}
 
 function login(){
 	
 	var scope = "http://www.google.com/calendar/feeds/";
 	var token = google.accounts.user.login(scope);
-	localStorage.token = token;
-	//$("a[title=logout]").css("display", "");
-	$("a[title=logout]").show();
-    
-    //$(this).css("display", "none");
-    $("a[title=login]").hide();
+	localStorage.token = token;	
     
    
 }
 
 function logout(){
 	google.accounts.user.logout();
-    //$("a[title=login]").css("display", "");
-    //$(this).css("display", "none");
-    $("a[title=login]").show();
-    //$(this).hide();
-    $("a[title=logout]").hide();
+    
+    $("a[title=regx]").html("login").click(login);
     
     delete localStorage.token;
 }

@@ -1,57 +1,51 @@
 <html>
 <head>
-<title>線上繪圖版0.0.8.1</title>
+<title>線上繪圖版0.0.245.1</title>
 
 <meta charset="utf-8" />
 
 <link type="text/css" rel="stylesheet" href="css/main.css" />
 <script src="http://www.google.com/jsapi"></script>
 <script src="source/jquery.js"></script>
+<script src="source/main.js"></script>
 <script src="source/drawing.js"></script>
 </head>
 <body>
-<div id="topModule">
-  <dl class="sort">
-    <dt><span>X</span></dt>
-	<dd title="newFile" class="btn b1"  onclick="addCanvas(0,0)"></dd>
-	<dd title="openFile" class="btn b2"></dd>
-	<dd title="saveFile" class="btn b3"></dd>
-  </dl>
+
+<div id="topModule" class="drag">
+	<div class="title">X</div>
+	<a title="newFile" class="btn b1"></a>
+	<a title="openFile" class="btn b2"></a>
+	<a title="saveFile" class="btn b3"></a>
 </div>
 
-<div id="toolbar">
-  <dl class="sort">
-    <dt><span>X</span></dt>
-	<dd title="pen" class="btn b1"></dd>
-	<dd title="clear" class="btn b2"></dd>
-	<dd title="shar" class="btn b3"></dd>
-	<dd title="rect" class="btn b4"></dd>
-	<dd title="round" class="btn b5"></dd>
-	<dd title="fill" class="btn b6"></dd>
-	<dd title="text" class="btn b7"></dd>
-  </dl>
+<div id="toolbar" class="drag">
+	<div class="title">X</div>
+	<div class='content'>
+		<a title="pen" class="btn b1"></a>
+		<a title="clear" class="btn b2"></a>
+		<a title="shar" class="btn b3"></a>
+		<a title="rect" class="btn b4"></a>
+		<a title="round" class="btn b5"></a>
+		<a title="fill" class="btn b6"></a>
+		<a title="text" class="btn b7"></a>
+	</div>
 </div>
+
 <div id="canvasPaper"></div>
-<div id ="palette">
-<dl class="sort">
-    <dt><span>X</span></dt>
-	<dd title="palette">palette</dd>
-</dl>
+
+
+<div id ="palette" class="drag">
+	<div class='title'>X</div>
+	<div class='content'>palette</div>
 </div>
-<div id="layer">
-<dl class="sort">
-    <dt><span>X</span></dt>
-	<dd title="layer">layer</dd>
-</dl>
+<div id="layer" class='drag'>
+	<div class='title'>X</div>
+	<div class='content'>layer</div>
 </div>
-<div id="history">
-<dl class="sort">
-    <dt><span>X</span></dt>
-	<dd title="history">history</dd>
-</dl>
-</div>
-<div>
-<input type="text" id="penWidth" value="3" />
+<div id="history" class="drag">
+	<div class="title">X</div>
+	<div class="content">history</div>
 </div>
 
 </body>

@@ -1,57 +1,27 @@
 ﻿<html>
 <head>
 <title>樂譜製作</title>	
-<script type="text/javascript" src="score/main.js"></script>	
 <link rel="stylesheet" href="css/mainStyle.css" />
+<script type="text/javascript" src="source/music.js"></script>
 </head>
 <body>
-<div id="topModule" class="modules">top
-<ul id="dropList" class="navigation">
-	<li>  
-    	<dl>
-			<dt><a href="#">檔案</a></dt>
-			<dd><a href="#">新樂譜</a></dd>
-			<dd><a href="#">開啟樂譜</a></dd>
-			<dd><a href="#">開啟樂譜網址</a></dd>
-			<dd><a href="#">保存</a></dd>
-			<dd><a href="#">列印</a></dd>
-			<dd><a href="#">關閉</a></dd>
-			<dd class="last"><a href="#">退出</a></dd>
-		</dl>
-    </li> 
-    <li>
-        <dl>
-			<dt><a href="#">說明</a></dt>
-			<dd><a href="#">說明</a></dd>
-			<dd class="last"><a href="#">常見問題</a></dd>			
-		</dl>
-     </li>
-     <li>
-        <dl>
-			<dt><a href="#">空白欄位</a></dt>
-			<dd><a href="#">空白</a></dd>
-			<dd class="last"><a href="#">空白</a></dd>
-		</dl>
-     </li>
-</ul> 
-</div>	
 <div id="toolbar" class="modules">
-<img class="clef" src="svg/High pitch mark.svg" width="100%" height="100%" />
-<img class="clef1" src="svg/alto pitch mark.svg" width="2" height="2" />
-<img class="clef2" src="svg/low pitch mark.svg" width="1" height="1" />
-<img class="all_point" src="svg/all point note.svg" width="1" height="1" />
-<img class="two_point" src="svg/up two point note.svg" width="2" height="2" />
-<img class="four_point" src="svg/up four point note.svg" width="1" height="1" />
-<img class="eight_point" src="svg/up eight point note.svg" width="1" height="1" />
-<img class="sixteen_point" src="svg/up sixteen point note.svg" width="1" height="1" />
-<img class="thirtytwo_point" src="svg/up thirty-two point note.svg" width="1" height="1" />
-<img class="sixtyfour_point" src="svg/up sixty-four point note.svg" width="1" height="1" />
-<img class="allrelax_point" src="svg/all relax point note.svg" width="1" height="1" />
-<img class="tworelax_point" src="svg/two relax point note.svg" width="1" height="1" />
-<img class="fourrelax_point" src="svg/four relax point note.svg" width="1" height="1" />
-<img class="eightrelax_point" src="svg/eight relax point note.svg" width="1" height="1" />
-<img class="sixteenrelax_point" src="svg/sixteen relax point note.svg" width="1" height="1" />
-<img class="thirtytworelax_point" src="svg/thirty-two relax point note.svg" width="2" height="2" />
+<img class="clef" onclick="choiceNote()" src="svg/High pitch mark.svg" width="100%" height="100%" />
+<img class="clef1" onclick="choiceNote()" src="svg/alto pitch mark.svg" width="2" height="2" />
+<img class="clef2" onclick="choiceNote()" src="svg/low pitch mark.svg" width="1" height="1" />
+<img class="all_point" onclick="choiceNote()" src="svg/all point note.svg" width="1" height="1" />
+<img class="two_point" onclick="choiceNote()" src="svg/up two point note.svg" width="2" height="2" />
+<img class="four_point" onclick="choiceNote()" src="svg/up four point note.svg" width="1" height="1" />
+<img class="eight_point" onclick="choiceNote()" src="svg/up eight point note.svg" width="1" height="1" />
+<img class="sixteen_point" onclick="choiceNote()" src="svg/up sixteen point note.svg" width="1" height="1" />
+<img class="thirtytwo_point" onclick="choiceNote()" src="svg/up thirty-two point note.svg" width="1" height="1" />
+<img class="sixtyfour_point" onclick="choiceNote()" src="svg/up sixty-four point note.svg" width="1" height="1" />
+<img class="allrelax_point" onclick="choiceNote()" src="svg/all relax point note.svg" width="1" height="1" />
+<img class="tworelax_point" onclick="choiceNote()" src="svg/two relax point note.svg" width="1" height="1" />
+<img class="fourrelax_point" onclick="choiceNote()" src="svg/four relax point note.svg" width="1" height="1" />
+<img class="eightrelax_point" onclick="choiceNote()" src="svg/eight relax point note.svg" width="1" height="1" />
+<img class="sixteenrelax_point" onclick="choiceNote()" src="svg/sixteen relax point note.svg" width="1" height="1" />
+<img class="thirtytworelax_point" onclick="choiceNote()" src="svg/thirty-two relax point note.svg" width="2" height="2" />
 <img class="signature4" src="svg/four.svg" />
 <img class="signature5" src="svg/five.svg" />
 <img class="signature6" src="svg/six.svg" />
@@ -60,7 +30,9 @@
 <img class="signature9" src="svg/nine.svg" />
 </div>	
 <div id="workarea" class="modules">
-<img class="clef_Stave" src="svg/High pitch mark.svg" /><img class="clef2_Stave" src="svg/low pitch mark.svg" /><img class="stave" src="svg/Music-doublebar.svg" />
+<img class="clef_Stave" src="svg/High pitch mark.svg" />
+<img class="clef2_Stave" src="svg/low pitch mark.svg" />
+<img class="stave" onclick="pasteNote()" src="svg/Music-doublebar.svg" />
 <img class="signature" src="svg/zero.svg" /><img class="signature1" src="svg/one.svg" /><img class="signature2" src="svg/two.svg" /><img class="signature3" src="svg/three.svg" />
 </div>	
 <div id="playmodule" class="modules">		
