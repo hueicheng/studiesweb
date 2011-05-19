@@ -8,7 +8,7 @@ window.onload = init;
 var source;
 
 function init(){
-	var url = "./server.php";
+	var url = "http://studiesweb.googlecode.com/hg/server.php";
 	try{
 		source = new EventSource(url);
 		source.onopen = function(e){
