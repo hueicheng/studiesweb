@@ -195,4 +195,5 @@ function drawPath(cxt, lw, x, y){
 	cxt.closePath();
 }
 
+
 google.setOnLoadCallback(init);

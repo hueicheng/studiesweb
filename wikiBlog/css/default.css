@@ -1,16 +1,19 @@
+body{
+	background: rgb(40,40,40);
+}
 .module{
 	//box-shadow: 10px 10px 31px #fff;
 	position:absolute;
 	right: 13%;
 	left: 13%;
-	background-color: #039;
+	background: rgb(50,50,50);
 }
 
 #menuPane{
 	margin:0px;
 	padding:5px;
 	text-align:right;
-	background-color: #039;
+	background: rgb(125,125,125);
 }
 #menuPane a:link,
 #menuPane a:visited{color:#fff;}
@@ -23,17 +26,17 @@ body
 	float:left;
 	width:80%;
 	border-right:1px groove #fff;
-	background-color: #60F;
+	background: rgb(50,50,50);
 }
 
 #top{
 	border-bottom:3px groove #fff;
 	padding: 10px 0 15px 5px;
-	background-color: #09C;
+	background: rgb(50,50,50);
 }
 #top .title{
 	font-size: 52px;
-	color: #F90;
+	color: #fff;
 }
 
 #right{
@@ -42,13 +45,8 @@ body
 	//border-left:3px groove #fff;
 	right:0;
 	width:19%;
-	background-color: #039;
+	background: rgb(50,50,50);
 	
-}
-#right ul li{
-	list-style-type: none;
-	border-bottom:1px dashed #eee;
-	background-color: #039;
 }
 
 #bottom{
@@ -63,4 +61,4 @@ body
 	font-family: Arial, Helvetica, sans-serif;
 }
 .textPane a:link, 
-.textPane a:visited{ color:#ff9632 }
+.textPane a:visited{ color:#ff9632; }
