@@ -8,7 +8,7 @@ window.onload = init;
 var source;
 
 function init(){
-	var url = "https://studiesweb.googlecode.com/hg/server.php";
+	var url = "http://localhost/studiesweb/server.php";
 	try{
 		source = new EventSource(url);
 		source.onopen = function(e){
@@ -20,7 +20,7 @@ function init(){
 		source.onerror = function(e){
 				logs("當然有錯囉:" + this.readyState);
 			};
-	}catch(err){ logs(err.message); }
+	}catch(err){ logs("catch 發生了:" + err.message); }
 }
 
 function quit(){

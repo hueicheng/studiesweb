@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+<meta charset="utf-8">
+<script src="jquery.js"></script>
+<script>
+$(function(){
+	var msg = "" ;
+	var tags = "";
+	send = $("<button>",{
+			id:"btn",
+			html:"send"
+		}).click(function(){
+				$.ajax({
+					url: "http://114.35.176.89/studiesweb/save.php",
+					data:'title=start.txt',
+					success:function(data, status, xhr){
+						$('#show').text(data);
+						$('#editor').val(data);
+					}					
+				});
+			});
+	show = $('<div>',{
+			id:"show",
+			style:"border:dashed 1px #3c3c3c;"
+		});
+	editor = $('<textarea>',{id:"editor"})
+	
+	$('body').append(send, show, editor);
+});
+function getTag(str){
+	under = str.indexOf("_");
+	return str.slice(0, under);
+}
+
+</script>
+</head>
+<body></body>
+</html>

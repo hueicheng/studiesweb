@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<script>
+	$(function(){
+		title = $("<p>",{ html:"文章標題:"}).append($("<input>",{type:"text"}));
+		fontSelect = $("<select>",{id:"fontSelect"}).append(
+									$('<option>',{html:"標楷體"}),
+									$('<option>',{html:"新細明體"})
+								);
+		fontSize = $('<select>',{id:"fontSize"});
+		for(i = 8; i <= 72; i++){
+			fontSize.append($('<option>',{html: i.toString()}));
+		}
+		$('#main').append(title, fontSelect, fontSize);
+		
+		btnValue = ["粗體", "斜體", "底線", "刪除線", "字體顏色", "背景顏色"];
+		for(i = 0; i<btnValue.length; i++){
+			$("<input>",{ type:"button", value:btnValue[i]}).appendTo($('#main'));
+		}
+
+		$('<textarea>',{id:"post",cols:"25", rows:"20", style:"float:bottom;"}).appendTo($('#main'));
+		
+		btnReview = $('<input>',{id:'btnReview',type:"button",value:'預覽'});
+		btnSave = $("<input>",{id:"btnSave",type:"button",value:"儲存"});
+		
+		//btnStatus = ["預覽", "儲存"];
+		$("<div>",{id:"status"}).appendTo($('#main'));
+		$('#status').append(btnReview, btnSave);
+		/*
+		for(i=0; i<btnStatus.length; i++){
+			$('<input>',{type:"button",value:btnStatus[i]}).appendTo($('#status'));
+		}
+		*/
+	});
+	</script>
+</head>
+<body>
+      <div class="top">
+           <table class="toptable_style" border="0" cellspacing="2">
+			<td colspan=11 align=center><a href="http://studiesweb.wikidot.com" class="link_style">編輯文章</td>
+           </table>
+      </div>
+      <div id="main"></div>
+    
+</body>
+</html>

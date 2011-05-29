@@ -1,11 +1,25 @@
 <?php
-error_reporting(E_ALL);
+$dir = "source";
+getDirList($dir);
 
-header("Content-Type: text/event-stream\n\n");
+function getDirList($dir){
+	if(is_dir($dir)){
+		$dh = opendir($dir);
+		chdir($dir);
+		while(($file = readdir($dh))!== false){
+			if(is_dir($file) && basename($file)!='.' && basename($file)!='..'){
+				getDirList($file);
+			}else if(filename($file) != "." && filename($file) != "..")
+				echo $file . " ";
+		}
+		chdir("../");
+		closedir($dh);
+	}
+}
 
-$dateTime = new DateTime();
-$now = $dateTime->format('c');
-
-echo 'data: ' . $now . "\n";
+function filename($file){
+	$path_parts = pathinfo($file);
+	return basename($file, $path_parts['extension']);
+}
 
 ?>

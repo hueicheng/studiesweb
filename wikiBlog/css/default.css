@@ -1,50 +1,54 @@
 .module{
 	//box-shadow: 10px 10px 31px #fff;
-	background: #333;
 	position:absolute;
 	right: 13%;
 	left: 13%;
+	background-color: #039;
 }
 
 #menuPane{
 	margin:0px;
 	padding:5px;
-    background: #444;
-    text-align:right;
+	text-align:right;
+	background-color: #039;
 }
 #menuPane a:link,
 #menuPane a:visited{color:#fff;}
 
 body
 {
-    background: #292929;
-    margin: 0;
+	margin: 0;
 }
 #main{
-	float:left; 
+	float:left;
 	width:80%;
 	border-right:1px groove #fff;
+	background-color: #60F;
 }
 
 #top{
 	border-bottom:3px groove #fff;
 	padding: 10px 0 15px 5px;
+	background-color: #09C;
 }
 #top .title{
 	font-size: 52px;
-	color: #fff;
+	color: #F90;
 }
 
 #right{
-	float:right; 
+	float:right;
+
 	//border-left:3px groove #fff;
 	right:0;
-	width:19%
+	width:19%;
+	background-color: #039;
 	
 }
 #right ul li{
 	list-style-type: none;
 	border-bottom:1px dashed #eee;
+	background-color: #039;
 }
 
 #bottom{
@@ -53,11 +57,10 @@ body
 	border-top:3px groove #fff;
 }
 
-.textPane{ 
+.textPane{
 	padding: 10px;
 	color:#eee;
+	font-family: Arial, Helvetica, sans-serif;
 }
 .textPane a:link, 
 .textPane a:visited{ color:#ff9632 }
-
-

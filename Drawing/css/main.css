@@ -1,95 +1,31 @@
-﻿body{
-	background-color: #6a6a6a;
-	line-height: normal;
-	display: inline-block;
-	vertical-align: middle;
+html, body{
+	margin:0px;
+	padding:0px;
 }
 
- 
-/*工作區設定*/
-.workarea{
-  background: #fff;
-  border:2px solid #000;
-}
-/*視窗標題設定*/
-.title{
-	color: #fff;
-	background: #222222;
-	text-align: right;
-	padding: 1px;
+#module{
+	background:#3c3c3c;
+	width:100%;
+	height:100%;
 }
 
-.drag{
-	border-radius: 25px;
+.using{
+	opacity: 0.5;
 }
 
-.drag div.content{
-	border-left: solid 1px #000;
-	border-right: solid 1px #000;
-	border-bottom: solid 1px #000;
-}
-
-#topModule{
-	top: 0;
-	left:0;
-	margin: 0;
-}
-#topModule .title{
-	width: 180px;
-}
-/*topModule按鈕預設*/
-#topModule a.btn{
-  background: url("../images/topModule.jpg") 50px 150px no-repeat;
-  width: 50px;
-  height: 50px;
-  position: absolute;
-}
-/*topModule各按鈕圖片*/
-#topModule a.b1{ margin-left:5px; background-position: 0px 0px;}
-#topModule a.b2{ margin-left:60px; background-position: 0px -50px; }
-#topModule a.b3{ margin-left:115px; background-position: 0px -100px; }
-
-#toolbar{
-	left: 20px;
-	top: 70px;
-}
-/*toolbar 標題設定*/
-#toolbar .title{
-	width: 60px;
-}
-/*toolbar按鈕預設*/
-#toolbar a.btn{
-	background: url("../images/toolbar.jpg") 50px 400px no-repeat;
-	width: 50px;
-	height: 50px;
-	position: absolute;
-}
-/*toolbar 各按鈕圖片*/
-#toolbar a.b1{ margin-top:5px; background-position: 0px 0px;}
-#toolbar a.b2{ margin-top:60px; background-position: 0px -50px; }
-#toolbar a.b3{ margin-top:115px; background-position: 0px -150px;}
-#toolbar a.b4{ margin-top:170px; background-position: 0px -200px;}
-#toolbar a.b5{ margin-top:225px; background-position: 0px -250px;}
-#toolbar a.b6{ margin-top:280px; background-position: 0px -300px;}
-#toolbar a.b7{ margin-top:335px; background-position: 0px -350px;}
-/*左邊區塊按鈕使用情形*/
-#toolbar a.using{ border: 2px dashed; }
 
 
-/*下方區塊按鈕預設*/
-#bottonMoudle dd.btn{
-	width: 20px;
-	height: 20px;
+canvas.workarea{
+	background:#fff;
 }
 
-/*下方區塊按鈕使用情形*/
-#bottonModule dd.using( border: 1px  dashed; )
-
-
-/*上方區塊按鈕使用情形*/
-#topModule a.using{ border: 1px dashed; }
-
-#palette, #layer, #history{
-	
-	top: 60px;
+#tabs-1 img{
+	width:50px;
+	height:50px;
+	margin:5px;
+}
+#edit img{
+	width:50px;
+	height:50px;
+	margin:5px;
 }

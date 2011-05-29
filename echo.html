@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+<meta charset="utf-8">
+<script src="jquery.js"></script>
+<script>
+$(function(){
+	var msg = "" ;
+	var tags = "";
+	send = $("<button>",{
+			id:"btn",
+			html:"send"
+		}).click(function(){
+				$.ajax({
+					url: "http://114.35.176.89/studiesweb/server.php",
+					success:function(data, status, xhr){
+						var fs = data.split(" ");
+						for(i=0; i<fs.length; i++){
+							var f = fs[i];
+							//tags += getTag(f) + " ";
+							msg += f + "<br/>";
+						}
+						$('#show').html(msg);
+					}					
+				});
+			});
+	show = $('<div>',{
+			id:"show",
+			style:"border:dashed 1px #3c3c3c;"
+		});
+	
+	$('body').append(send, show);
+});
+function getTag(str){
+	under = str.indexOf("_");
+	return str.slice(0, under);
+}
+
+</script>
+</head>
+<body></body>
+</html>

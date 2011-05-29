@@ -1,0 +1,76 @@
+<html>
+<head>
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load("gdata","1");
+
+var url = "http://www.google.com/calendar/feeds/";
+
+function login(){
+    var token = google.accounts.user.login(url);
+}
+
+function logout(){
+     google.accounts.user.logout();
+}
+
+function getCalendar(){
+     var calendarService = new google.gdata.calendar.CalendarService();
+     var feedURL = "http://www.google.com/calendar/feeds/default/owncalendars/full";
+     calendarService.getOwnCalendarsFeed(feedURL,callback,handleError);
+}
+
+function callback(result){
+     var entries = result.feed.entry;
+     var st = "<table rules = all frame=box>" +
+                 "<tr><th>日曆名稱</th><th>日曆擁有者</th>" +
+                 "<th>日曆顏色</th><th>說明</th><th>位置</th>" +
+                 "<th>時區</th><th>是否隱藏</th><th>是否被選擇</th>";
+     
+     for(var i = 0; i < entries.length; i++){
+            var calendarEntry = entries[i];
+            var calendarTitle = calendarEntry.getTitle().getText();
+            var calendarOwner = "";
+
+            for(var j = 0; j < calendarEntry.getAuthors().length; j++){
+                   calemdarOwner += calendarEntry.getAuthors()[j] == null? "":calendarEntry.getAuthors()[j].getName().getValue() + " ";
+            }
+
+            var calendarColor = calendarEntry.getColor().getValue();
+            var calendarSummary = calendarEntry.getSummary() == null? "":calendarEntry.getSummary().getText();
+
+            var calendarLocations = "";
+            for(var j = 0; j < calendarEntry.getLocations().length; j++){
+                    calendarLocations += calendarEntry.getLocations()[j] == null? "":calendarEntry.getLocations()[j].getValueString() + " ";
+            }
+
+            var calendarTimeZone = calendarEntry.getTimeZone().getValue();
+            var calenrdarHidden = calendarEntry.getHidden().getValue();
+            var calendarSelected = calendarentry.getSelected().getValue();
+            
+            st = st + "<tr><td>" + calendarTitle + "</td>";
+            st = st + "<td>" + calendarOwner + "</td>";
+            st = st + "<td>" + calendarColor + "</td>";
+            st = st + "<td>" + calendarSummary + "</td>";
+            st = st + "<td>" + calendarLocations + "</td>";
+            st = st + "<td>" + calendarTimeZone + "</td>";
+            st = st + "<td>" + calendarHidden + "</td>";
+            st = st + "<td>" + calendarSelected + "</td></tr>";
+     }
+     st += "</table>";
+     document.getElementById("result").innerHTML = st;
+}
+
+function handleError(e){
+     window.alert("請先登入! ");
+}
+
+</script>
+</head>
+<body>
+<div><input type="button" value="登入" onclick="login()" /></div>
+<div><input type="button" value="登出" onclick="logout()" /></div>
+<div><input type="button" value="取得日曆資訊" onclick="getCalendar()" /></div>
+<div id = "result"></div>
+</body>
+</html>
