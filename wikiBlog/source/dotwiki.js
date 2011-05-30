@@ -25,13 +25,13 @@ function wiki2html(wikiText) {
    // .replace(/\[\[image\s([^\s]+)\s+size="medium"\]\]/gi, '<center><img src='+attachPath+'/$1 width=512px/></center>') // 範例：[[image test.jpg size="medium"]]
    // .replace(/\[\[image\s([^\s\]]+)[^\]]*\]\]/gi, '<img src='+attachPath+'/$1/>') // 範例：[[image test.jpg]]
     .replace(/\[(http[s]?:\/\/[^\s\]]+)\]/gi, '<a href=$1>$1</a>') // 範例：[http://tw.yahoo.com/]
-	.replace(/\[\*?(http[s]?:\/\/[^\s\]]+)\s(.+)\]/gi, '<a href=$1>$2</a>') // 範例：[http://tw.yahoo.com/ yahoo]
+	.replace(/\[\*?(http[s]?:\/\/[^\s\]]+)\s(.+)\]/gi, '<a href=$1>$2</a>') // 範例：[http://tw.yahoo.com/ yahoo]   //這有問題，尚無頭緒
     .replace(/\[\[\[([:\w-]+)\]\]\]/gi, '<a href=#!$1>$1</a>') // 範例：[[[innerLink]]]	
     .replace(/\[\[\[([:\w-]+)\s*\|\s*([^\]]*)\]\]\]/gi, '<a href=#!$1>$2</a>') // 範例：[[[innerLink | 內部連結]]]
     .replace(/[^=\">](http[s]?:\/\/[\w;\/\?:@=#&$-_.+!*\(\),]+)/gi, '<a href=$1>$1</a>') // 範例：http://tw.yahoo.com/
     .replace(/__(.+)__/gi, '<u>$1</u>') // 範例：__underline text__
     .replace(/\*\*(.+)\*\*/gi, '<b>$1</b>') // 範例：**bold text**
-    .replace(/--(.+)--[^\]>]/gi, '<s>$1</s>') // 範例：--strikethrough text-- , 注意，要避開 --] 或 -->
+    .replace(/\-\-(.+)\-\-/gi, '<s>$1</s>') // 範例：--strikethrough text-- , 注意，要避開 --] 或 -->
     .replace(/\/\/([^:]+)\/\//gi, '<i>$1</i>') // 範例：//italic text//
     .replace(/\^\^(.+)\^\^/gi, '<sup>$1</sup>') // 範例：normal^^superscript^^
     .replace(/,,(.+),,/gi, '<sub>$1</sub>') // 範例：normal,,subscript,,
@@ -55,8 +55,8 @@ function wiki2html(wikiText) {
 	.replace(/\[\[\$\s(.+)*\s\$\]\]/gi, '<img src="http://chart.apis.google.com/chart?cht=tx&chl=$1" />')//範例：數學表達式 尚有莫名錯誤..
 	.replace(/\[\[math label1\]\]\n\r(.+)*\n\r\[\[\/math label1\]\]/gi,'<img src="http://chart.apis.google.com/chart?cht=tx&chl=$1" />')
 	.replace(/:\s(.+)\s:\s(.+)/gi, '<dt>$1<dd>$2</dd></dt>')
-	.replace(/\[\[note\]\](.+)\[\[\/note\]\]/gi, '<pre>$1</pre>')  //範例  [[note]]hello world[[/note]]
-	.replace(/\[\[html\]\](.+)\[\[\/html\]\]/gi, '$1')  //範例[[html]]<p>hello</p>[[/html]]
+	.replace(/\[\[note\]\](.+)\[\[\/note\]\]/gi, '<pre>$1</pre>')  //範例 ：[[note]]hello world[[/note]]
+	.replace(/\[\[html\]\](.+)\[\[\/html\]\]/gi, '$1')  //範例：[[html]]<p>hello</p>[[/html]]
 	//.replace(/\@\@(.+)\@\@/gi, '@@$1@@')  //範例：@@hello //world// **bye**@@
    // .replace(/\[\[video\s([^\s\]]+)[^\]]*\]\]/gi,'<video src='+attachPath+'/$1 controls="controls"></video>') //範例: [[video test.mp4]]
    // .replace(/\[\[audio\s([^\s\]]+)[^\]]*\]\]/gi,'<audio src='+attachPath+'/$1 controls="controls"></audio>') //範例: [[audio test.mp3]]

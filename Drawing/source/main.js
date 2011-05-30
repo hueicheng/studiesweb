@@ -1,17 +1,19 @@
-google.load("jquery", "1.6");
 google.load("jqueryui", "1.8");
 var lineWidth = 1;	//初始筆粗;
 var defaultColor = "#ff0000";	//預設顏色;
 var secondColor = "#00f"	//預設二色;
+var canvasNum = 0;	//canvas 的個數;
+var canvasFocus;	//目前的canvas;
 var isDraw = false;	//繪圖狀態;
 var isMsg = false;	//訊息狀態;
 var fpX, fpY;	//firstPointX, firstPointY;第一個點座標;
 var selectedStutes;
 
-function init(){
+function init(){	
+	selectedStutes = "pen";
+	$('#pen').addClass('using');
+	
 	$('#menuPane').tabs();
-	//$('#module').html("hello World;");
-	//makeMsgBox();
 
 
 	$('img[title=newFile]').click(function(){
@@ -19,11 +21,42 @@ function init(){
 			makeMsgBox();
 	});
 	
+	$('img[title=saveFile]').click(function(){
+		saveCanvas(canvasFocus, 'png');
+	});
+	
 	$('div#edit > img').click(function(){
 		selectedStutes = this.id;
 		$('div#edit > img').removeClass('using');
 		$(this).addClass('using');
 	});
+	
+		
+	$('#colorPicker').click(function(){
+		makeWindow('幹你調色盤', $('<div>').farbtastic(function(color){
+				$(this).css('background', color);
+				defaultColor = color;
+			})).dialog({
+					width:'auto'
+					
+				});
+	});
+}
+
+function saveCanvas(canvas, type){
+	switch(type){
+		case 'png':
+			Canvas2Image.saveAsPNG(canvas);
+			break;
+		case 'jpg':
+			Canvas2Image.saveAsJPEG(canvas);
+			break;
+		case 'bmp':
+			Canvas2Image.saveAsBMP(canvas);
+			break;
+		default:
+			return 'type error';
+	}
 }
 
 function makeMsgBox(){	//建立初始的訊息視窗;
@@ -38,12 +71,14 @@ function makeMsgBox(){	//建立初始的訊息視窗;
 		buttons:{
 				'OK':function(){
 					isMsg = false;
-					filename = $('input[title=filename]').val();
-					h = $('input[title=height]').val();
-					w = $('input[title=width]').val();
+					canvasNum++;
+					filename = $('input[title=filename]').val()!=""?$('input[title=filename]').val():"canvas" + canvasNum.toString();
+					h = $('input[title=height]').val()!=""?$('input[title=height]').val():"150";
+					w = $('input[title=width]').val()!=""?$('input[title=width]').val():"300";
 					canvas = makeCanvas(filename, w, h, "#fff");
 					makeWindow(filename, canvas).dialog({
 						width:'auto',
+						focus:function(){ canvasFocus = $(this).children().get(0);},
 						close:function(){$(this).remove();}
 					});
 					

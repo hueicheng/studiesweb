@@ -1,7 +1,7 @@
 google.load("gdata", "1");
 google.load("jqueryui", "1.8.12");
 
-var serverPath = "http://studiesweb.googlecode.com/hg/save.php";
+var serverPath = "http://114.35.176.89/studiesweb/save.php";
 var readData = "";
 var name;	//目前讀到的檔案名稱;
 
@@ -17,7 +17,7 @@ $(function(){
 //檔案清單;
 function makeFileList(){
 	$.ajax({
-		url: "http://studiesweb.googlecode.com/hg/server.php",
+		url: "http://114.35.176.89/studiesweb/server.php",
 		success: function(data){
 			var fs = sortFile(data.split(" "));
 			ul = $("<ul>");
