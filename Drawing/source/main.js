@@ -43,7 +43,7 @@ function init(){
 			$("<p>",{id:"b",html:"b:"}).append($("<input>",{type:"text",size:"3"})),
 			$("<input>",{id:"co",type:"text",size:"7"}).change(function(){
 				
-			});
+			})
 			
 			//$("<p>").append($("<input>",{type:"text",size:"7"}))
 	);
