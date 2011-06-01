@@ -4,6 +4,7 @@ google.load("jqueryui", "1.8.12");
 var serverPath = "http://114.35.176.89/studiesweb/save.php";
 var readData = "";
 var name;	//目前讀到的檔案名稱;
+var tag = new Array();
 
 $(function(){
 	readText("start.txt");
@@ -19,7 +20,7 @@ function makeFileList(){
 	$.ajax({
 		url: "http://114.35.176.89/studiesweb/server.php",
 		success: function(data){
-			var fs = sortFile(data.split(" "));
+			var fs = sortFileList(data.split(" "));
 			ul = $("<ul>");
 			for(i=0; i<fs.length; i++){
 				
@@ -93,19 +94,47 @@ function saveText(title,context){
 	});
 }
 
-function sortFile(FS){
-	var comName = ["admin","browser","html4","html5","css","js","jquery","json","rss","sqlite","svg","xml"];
-	var CN = new Array();
-	var index = 0;
-	var m = 0;
-	for(i = 0; i < comName.length; i++){
-		for(j = 0; j < FS.length; j++){
-				var ss = FS[j].split("_");
-				if( comName[i] == ss[m] ){
-					CN[index] = FS[j];
-					index += 1;
-				}
-		}
-	}
-	return CN;
+//將沒有大標題的檔案名稱往前移
+function sortFileList(fs){
+  fs.sort(); //排列
+  var com;
+  var str1 = new Array(); //存放無大標題的檔案名稱
+  var str2 = new Array(); //存放有大標題的檔案名稱
+  var index1 = 0,index2 = 0;
+  
+  for(i = 1; i < fs.length; i++){
+    var ss = fs[i].split("_");
+    if( ss[0] == 0 || ss.length < 2){ //切割之後是否為空或者是無"_"                
+      str1[index1] = fs[i];
+      index1 += 1;
+    }
+    else{
+      str2[index2] = fs[i];
+      index2 += 1;
+    }  
+  }
+  saveFileTag(str2);
+  com = str1.concat(str2);  //將str2接在str1陣列後
+  return com;
+}
+
+function saveFileTag(str){
+  var index = 0;
+  
+  for(i = 0; i < str.length; i++){
+    var ss = str[i].split("_");
+    
+    if( index == 0 ){ //先存放1個值
+      tag[index] = ss[0];
+    }
+    else if( tag[index] == ss[0] ){ //比較是否相同
+      continue;
+    }
+    else{ //不同在存放到陣列
+      index += 1;
+      tag[index] = ss[0];
+    }
+  }
+  
+  //alert(tag);   //測試用
 }

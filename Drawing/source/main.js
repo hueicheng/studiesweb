@@ -1,10 +1,11 @@
 google.load("jqueryui", "1.8");
 var lineWidth = 1;	//初始筆粗;
-var defaultColor = "#ff0000";	//預設顏色;
+var defaultColor = "#f00";	//預設顏色;
 var secondColor = "#00f"	//預設二色;
 var canvasNum = 0;	//canvas 的個數;
 var canvasFocus;	//目前的canvas;
 var isDraw = false;	//繪圖狀態;
+var isLine;
 var isMsg = false;	//訊息狀態;
 var fpX, fpY;	//firstPointX, firstPointY;第一個點座標;
 var selectedStutes;
@@ -31,19 +32,30 @@ function init(){
 		$(this).addClass('using');
 	});
 	
-		
-	$('#colorPicker').click(function(){
-		makeWindow('幹你調色盤', $('<div>').farbtastic(function(color){
-				$(this).css('background', color);
+	$('#colorPicker').css({'background': defaultColor, color: 'rgba(0,0,0,0)'});	
+	colorPi = $('<div>').append($('<div>').farbtastic(function(color){
+				$('#colorPicker').css('background', color);
+				$('#co').val(color);
 				defaultColor = color;
-			})).dialog({
-					width:'auto'
-					
+			}),
+			$("<p>",{id:"r",html:"r:"}).append($("<input>",{type:"text",size:"3"})).css({float:'left'}),
+			$("<p>",{id:"g",html:"g:"}).append($("<input>",{type:"text",size:"3"})).css({float:'left'}),
+			$("<p>",{id:"b",html:"b:"}).append($("<input>",{type:"text",size:"3"})),
+			$("<input>",{id:"co",type:"text",size:"7"}).change(function(){
+				
+			});
+			
+			//$("<p>").append($("<input>",{type:"text",size:"7"}))
+	);
+	$('#colorPicker').click(function(){
+		makeWindow('調色盤', colorPi).dialog({
+					width:'auto',
+					close:function(){ $(this).remove();}
 				});
 	});
 }
 
-function saveCanvas(canvas, type){
+function saveCanvas(canvas, type){		//儲存他媽的檔案
 	switch(type){
 		case 'png':
 			Canvas2Image.saveAsPNG(canvas);
@@ -93,33 +105,16 @@ function makeMsgBox(){	//建立初始的訊息視窗;
 }
 
 function makeWindow(title, contentHTML){	//建立視窗的方法;
-	var createDivHead = document.createElement("div");  //創建視窗的標題欄;
-	createDivHead.height = 50;
-	createDivHead.innerHTML = title  //設定標題;
-	var createDivBody = document.createElement("div");  //創建內容容器;
-	var createDivMan = document.createElement("div");	//創建整個視窗的容器
-	//createDivBody.appendChild(contentHTML);	//把參數內容附加到內容容器中;
-	createDivMan.appendChild(createDivHead);  //將標題欄加到視窗容器;
-	createDivMan.appendChild(createDivBody);  //將內容加到視窗容器;
-	//return createDivMan;	
-	
-	header = $('<div>',{height:"20",html:title}).css({
-		background: '#03f'
-	});
-	content = $('<div>').append(contentHTML);
-	win = $('<div>').append(header, content).draggable({
-			headle: 'div',
-			opacity: 0.8
-		});
-	//return win;
 
 	return $('<div>',{title:title}).append(contentHTML);
 }
 
 function makeCanvas(title, w, h, bgcolor){		//建立畫布的方法;
-	canvas = $("<canvas>").css({background: bgcolor});
+	canvas = $("<canvas>").css('background', '#fff');
 	canvas.get(0).width = w;
 	canvas.get(0).height = h;
+	//canvas.get(0).getContext('2d').fillStyle = bgcolor;
+	//canvas.get(0).getContext('2d').fillRect(0,0,w,h);
 	
 	canvas.mousedown(function(e){
 		fpX = e.offsetX;
@@ -127,37 +122,88 @@ function makeCanvas(title, w, h, bgcolor){		//建立畫布的方法;
 		isDraw = true;
 	});
 	canvas.mousemove(function(e){
-			if(isDraw == true & selectedStutes == 'pen'){
-				drawPath(this.getContext("2d"), lineWidth, e.offsetX, e.offsetY);
-			}
+		if(isDraw && !isLine){
+			selectType(this.getContext("2d"), defaultColor, secondColor, lineWidth, e.offsetX, e.offsetY);
 		}
-	);
+
+	});
 	canvas.mouseup(function(e){
-		var thisCanvas = this.getContext("2d");		
-		if(isDraw == true & selectedStutes != 'pen'){
-			switch(selectedStutes){
-				case 'line':
-					drawLine(thisCanvas, lineWidth, e.offsetX, e.offsetY);
-					break;
-				case 'rect':
-					drawRect(thisCanvas, 1, lineWidth, e.offsetX, e.offsetY);
-					break;
-				case 'circle':
-					drawCircle(thisCanvas, 1, lineWidth, e.offsetX, e.offsetY);
-					break;
-				default:
-					alert('您尚未選擇繪畫方式。');
-					break;
-			}
+		if(isDraw){
+			selectType(this.getContext("2d"), defaultColor, secondColor, lineWidth, e.offsetX, e.offsetY);
 		}
+		
+		isDraw = false;
+	});
+	canvas.mouseover(function(e){
 		isDraw = false;
 	});
 	
 	return canvas;
 }
 
-function drawLine(cxt, lw, x, y){	//畫線方法;
-	cxt.strokeStyle = defaultColor;
+function selectType(cxt, color, scolor, lw, x, y){		//噁心的選擇
+	switch(selectedStutes){
+		case 'pen':
+			isLine = false;
+			return drawPath(cxt, color, lw, x, y);
+		case 'cleaner':
+			isLine = false;
+			return drawCleaner(cxt, 30, 30, x, y);
+		case 'line':
+			isLine = true;
+			return drawLine(cxt, color, lw, x, y);
+		case 'hollowRect':
+			isLine = true;
+			return drawRect(cxt, color, scolor, 'hollowRect', lw, x, y);
+		case 'solidRect':
+			isLine = true;
+			return drawRect(cxt, color, scolor, "solidRect", lw, x, y);
+		case 'twiceRect':
+			isLine = true;
+			return drawRect(cxt, color, scolor, "twiceRect", lw, x, y);
+		case 'hollowCir':
+			isLine = true;
+			return drawCircle(cxt, color, scolor, "hollowCir", lw, x, y);
+		case 'solidCir':
+			isLine = true;
+			return drawCircle(cxt, color, scolor, "solidCir", lw, x, y);
+		case 'twiceCir':
+			isLine = true;
+			return drawCircle(cxt, color, scolor, 'twiceCir', lw, x, y);
+		case 'fill':
+			isLine = true;
+			return drawFill(cxt,color);
+		default:
+			if(!isMsg)
+				return msgError();
+			break;
+	}
+}
+
+function msgError(){		//錯誤訊息淦
+	msgerr = $('<div>').addClass('ui-state-error ui-corner-all').append(
+		'<p><span class="ui-icon ui-icon-alert"></span><strong>錯誤:</strong>好像有點小問題，要不要先換別的？</p>'
+	);
+	$('<div>',{title:"Error"}).append(msgerr).dialog({
+		close:function(){$(this).remove();},
+		buttons:{
+			'雖然很麻煩，不過我知道了':function(e){$(this).remove();}
+		}	
+	});
+}
+
+function drawCleaner(cxt, w, h, x, y){		//清除髒話
+	cxt.clearRect(fpX - w / 2, fpY - h / 2, w, h);
+	fpX = x, fpY = y;
+}
+
+function drawFill(cxt,color){
+	cxt.fillStyle = color;
+	cxt.fill();
+}
+
+function drawLine(cxt, color, lw, x, y){	//畫線方法;
+	cxt.strokeStyle = color;
 	cxt.lineWidth = lw;
 	cxt.beginPath();
 	cxt.moveTo(fpX,fpY);
@@ -166,23 +212,21 @@ function drawLine(cxt, lw, x, y){	//畫線方法;
 	cxt.closePath();
 }
 
-function drawRect(cxt, type, lw, x, y){	//距形方法;
-	cxt.strokeStyle = defaultColor;
-	cxt.fillStyle = secondColor;
+function drawRect(cxt, color, scolor, type, lw, x, y){	//距形方法;
+	cxt.strokeStyle = color;
+	cxt.fillStyle = scolor;
 	cxt.lineWidth = lw;
 	cxt.beginPath();
 	switch(type){
-		case '1':
-			cxt.rect(fpX, fpY, x-fpX, y-fpY);
-			cxt.stroke();
+		case 'hollowRect':		//空心方塊;
+			cxt.strokeRect(fpX, fpY, x-fpX, y-fpY);
 			break;
-		case '':
-			cxt.rect(fpX, fpY, x-fpX, y-fpY);
-			cxt.fill();
+		case 'solidRect':		//實心方塊;
+			cxt.fillRect(fpX, fpY, x-fpX, y-fpY);
 			break;
-		case '':
-			cxt.storkeStyle = secondColor;
-			cxt.fillStyle = defaultColor;
+		case 'twiceRect':		//外框實心方塊;
+			cxt.storkeStyle = scolor;
+			cxt.fillStyle = color;
 			cxt.rect(fpX, fpY, x-fpX, y-fpY);
 			cxt.stroke();
 			cxt.fill();
@@ -194,21 +238,21 @@ function drawRect(cxt, type, lw, x, y){	//距形方法;
 	
 	cxt.closePath();
 }
-function drawCircle(cxt, type, lw, x, y){ //圓形方法;
-	cxt.strokeStyle = defaultColor;
-	cxt.fillStyle = secondColor;
+function drawCircle(cxt, color, scolor, type, lw, x, y){ //圓形方法;
+	cxt.strokeStyle = color;
+	cxt.fillStyle = scolor;
 	cxt.lineWidth = lw;
 	cxt.beginPath();
 	switch(type){
-		case '1':
+		case 'hollowCir':
 			cxt.arc((fpX+x)/2,(fpY+y),Math.sqrt((x-fpX)*(x-fpX)+ (y-fpY)*(y-fpY)) / 2, 0, Math.PI * 2, false);
 			cxt.stroke();
 			break;
-		case '':
+		case 'solidCir':
 			cxt.arc((fpX+x)/2,(fpY+y),Math.sqrt((x-fpX)*(x-fpX)+ (y-fpY)*(y-fpY)) / 2, 0, Math.PI * 2, false);
 			cxt.fill();
 			break;
-		case '':
+		case 'twiceCir':
 			cxt.arc((fpX+x)/2,(fpY+y),Math.sqrt((x-fpX)*(x-fpX)+ (y-fpY)*(y-fpY)) / 2, 0, Math.PI * 2, false);
 			cxt.stroke();
 			cxt.fill();
@@ -219,8 +263,8 @@ function drawCircle(cxt, type, lw, x, y){ //圓形方法;
 	}
 	cxt.closePath();
 }
-function drawPath(cxt, lw, x, y){
-	cxt.strokeStyle = defaultColor;
+function drawPath(cxt, color, lw, x, y){	//繪製路徑;
+	cxt.strokeStyle = color;
 	cxt.lineWidth = lw;
 	cxt.beginPath();
 	cxt.moveTo(fpX,fpY);
