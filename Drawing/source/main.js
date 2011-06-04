@@ -10,16 +10,26 @@ var isMsg = false;	//訊息狀態;
 var fpX, fpY;	//firstPointX, firstPointY;第一個點座標;
 var selectedStutes;
 
-function init(){	
+function init(){
+	var file = $('<input>',{accept:'image/*', type:"file"}).appendTo($('#tabs-1')).css('visibility', 'hidden');
+	
 	selectedStutes = "pen";
 	$('#pen').addClass('using');
 	
 	$('#menuPane').tabs();
+	dropFile( $('#module').get(0) );
 
 
 	$('img[title=newFile]').click(function(){
 		if(!isMsg)
 			makeMsgBox();
+	});
+	
+	$('img[title=openFile]').click(function(){
+		file.click();
+		file.change(function(){
+			readPic(this.files[0]);
+		});
 	});
 	
 	$('img[title=saveFile]').click(function(){
@@ -35,17 +45,8 @@ function init(){
 	$('#colorPicker').css({'background': defaultColor, color: 'rgba(0,0,0,0)'});	
 	colorPi = $('<div>').append($('<div>').farbtastic(function(color){
 				$('#colorPicker').css('background', color);
-				$('#co').val(color);
 				defaultColor = color;
-			}),
-			$("<p>",{id:"r",html:"r:"}).append($("<input>",{type:"text",size:"3"})).css({float:'left'}),
-			$("<p>",{id:"g",html:"g:"}).append($("<input>",{type:"text",size:"3"})).css({float:'left'}),
-			$("<p>",{id:"b",html:"b:"}).append($("<input>",{type:"text",size:"3"})),
-			$("<input>",{id:"co",type:"text",size:"7"}).change(function(){
-				
 			})
-			
-			//$("<p>").append($("<input>",{type:"text",size:"7"}))
 	);
 	$('#colorPicker').click(function(){
 		makeWindow('調色盤', colorPi).dialog({
@@ -55,7 +56,59 @@ function init(){
 	});
 }
 
-function saveCanvas(canvas, type){		//儲存他媽的檔案
+
+
+function dropFile(element){
+	element.ondragenter = function(event){
+			this.style.border = '';
+			return false;
+		};
+	element.ondragover = function(event){
+			this.style.border = "dashed 5px #fff";
+			return false;
+		};
+	element.ondragleave = function(event){
+			this.style.border = '';
+			return false;
+		};
+	element.ondrop = function(event){
+			this.style.border = "";
+			readPic(event.dataTransfer.files[0]);
+			
+			return false;
+		};
+}
+
+function readPic(file){
+	if(!window.FileReader){
+		msgError('你的瀏覽器不支援此讀檔喔,換一款試試.');
+	}else{
+		var reader = new FileReader();
+		var img = new Image();
+		
+		reader.readAsDataURL(file);
+		
+		reader.onload = function(event){
+			img.title = file.fileName;
+			img.src = event.target.result;
+			
+			canvas = makeCanvas(img.title, img.width, img.height, '#fff');
+			canvas.get(0).getContext('2d').drawImage(img, 0, 0);
+			makeWindow(img.title, canvas).dialog({
+					width: 'auto',
+					focus:function(){ canvasFocus = $(this).children().get(0);},
+					close: function(){ $(this).remove(); }
+				});
+		};
+		reader.onerror = function(event){
+			msgError('讀檔遇到錯誤囉,換張圖試試吧.');
+		};
+		
+		
+	}
+}
+
+function saveCanvas(canvas, type){		//儲存檔案
 	switch(type){
 		case 'png':
 			Canvas2Image.saveAsPNG(canvas);
@@ -141,7 +194,7 @@ function makeCanvas(title, w, h, bgcolor){		//建立畫布的方法;
 	return canvas;
 }
 
-function selectType(cxt, color, scolor, lw, x, y){		//噁心的選擇
+function selectType(cxt, color, scolor, lw, x, y){		//選擇
 	switch(selectedStutes){
 		case 'pen':
 			isLine = false;
@@ -175,14 +228,14 @@ function selectType(cxt, color, scolor, lw, x, y){		//噁心的選擇
 			return drawFill(cxt,color);
 		default:
 			if(!isMsg)
-				return msgError();
+				return msgError('好像有點小問題，要不要先換別的？');
 			break;
 	}
 }
 
-function msgError(){		//錯誤訊息淦
+function msgError(msg){		//錯誤訊息
 	msgerr = $('<div>').addClass('ui-state-error ui-corner-all').append(
-		'<p><span class="ui-icon ui-icon-alert"></span><strong>錯誤:</strong>好像有點小問題，要不要先換別的？</p>'
+		'<p><span class="ui-icon ui-icon-alert"></span><strong>錯誤:</strong>'+msg+'</p>'
 	);
 	$('<div>',{title:"Error"}).append(msgerr).dialog({
 		close:function(){$(this).remove();},
@@ -192,7 +245,7 @@ function msgError(){		//錯誤訊息淦
 	});
 }
 
-function drawCleaner(cxt, w, h, x, y){		//清除髒話
+function drawCleaner(cxt, w, h, x, y){		//清除
 	cxt.clearRect(fpX - w / 2, fpY - h / 2, w, h);
 	fpX = x, fpY = y;
 }

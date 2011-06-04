@@ -4,7 +4,7 @@ google.load("jqueryui", "1.8.12");
 var serverPath = "http://114.35.176.89/studiesweb/save.php";
 var readData = "";
 var name;	//目前讀到的檔案名稱;
-var tag = new Array();
+var tags = new Array();
 
 $(function(){
 	readText("start.txt");
@@ -123,18 +123,13 @@ function saveFileTag(str){
   
   for(i = 0; i < str.length; i++){
     var ss = str[i].split("_");
-    
-    if( index == 0 ){ //先存放1個值
-      tag[index] = ss[0];
-    }
-    else if( tag[index] == ss[0] ){ //比較是否相同
+	
+    if( index > 0 && tags[index-1] == ss[0] ){ //相同值跳過
       continue;
     }
     else{ //不同在存放到陣列
-      index += 1;
-      tag[index] = ss[0];
+      tags[index] = ss[0];
+	  index += 1;
     }
   }
-  
-  //alert(tag);   //測試用
 }
