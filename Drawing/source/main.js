@@ -31,7 +31,7 @@ function init(){
 		file.click();
 		file.change(function(){
 			readPic(this.files[0]);
-			this.files.pop();
+			alert(typeof this.files[0]);
 		});
 	});
 	
@@ -93,10 +93,17 @@ function readPic(file){
 		
 		reader.readAsDataURL(file);
 		
-		reader.onload = function(event){
+		reader.onloadend = function(event){
 			img.title = file.fileName;
 			img.src = event.target.result;
 			
+			
+		};
+		reader.onerror = function(event){
+			msgError('讀檔遇到錯誤囉,換張圖試試吧.');
+		};
+		
+		img.onload = function(){
 			canvas = makeCanvas(img.title, img.width, img.height, '#fff');
 			canvas.get(0).getContext('2d').drawImage(img, 0, 0);
 			makeWindow(img.title, canvas).dialog({
@@ -105,9 +112,6 @@ function readPic(file){
 					focus:function(){ canvasFocus = $(this).children().get(0);},
 					close: function(){ $(this).remove(); }
 				});
-		};
-		reader.onerror = function(event){
-			msgError('讀檔遇到錯誤囉,換張圖試試吧.');
 		};
 		
 		
