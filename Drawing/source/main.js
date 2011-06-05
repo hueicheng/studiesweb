@@ -11,8 +11,7 @@ var fpX, fpY;	//firstPointX, firstPointY;第一個點座標;
 var selectedStutes;
 
 function init(){
-	var file = $('<input>',{accept:'image/*', type:"file"}).appendTo($('#tabs-1')).css('visibility', 'hidden');
-	
+		
 	selectedStutes = "pen";
 	$('#pen').addClass('using');
 	
@@ -28,10 +27,11 @@ function init(){
 	});
 	
 	$('img[title=openFile]').click(function(){
+		var file = $('<input>',{accept:'image/*', type:"file"}).appendTo($('#tabs-1')).css('visibility', 'hidden');
 		file.click();
 		file.change(function(){
 			readPic(this.files[0]);
-			alert(typeof this.files[0]);
+			$(this).remove();
 		});
 	});
 	
@@ -79,7 +79,6 @@ function dropFile(element){
 			this.style.border = "";
 			
 			readPic(event.dataTransfer.files[0]);
-			event.dataTransfer.files.pop();
 			return false;
 		};
 }
