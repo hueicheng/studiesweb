@@ -21,14 +21,17 @@ function init(){
 
 
 	$('img[title=newFile]').click(function(){
-		if(!isMsg)
+		if(!isMsg){
 			makeMsgBox();
+			$('#menuPane').tabs({selected: 1});
+		}
 	});
 	
 	$('img[title=openFile]').click(function(){
 		file.click();
 		file.change(function(){
 			readPic(this.files[0]);
+			this.files.pop();
 		});
 	});
 	
@@ -51,6 +54,7 @@ function init(){
 	$('#colorPicker').click(function(){
 		makeWindow('調色盤', colorPi).dialog({
 					width:'auto',
+					resizable: false,
 					close:function(){ $(this).remove();}
 				});
 	});
@@ -73,8 +77,9 @@ function dropFile(element){
 		};
 	element.ondrop = function(event){
 			this.style.border = "";
-			readPic(event.dataTransfer.files[0]);
 			
+			readPic(event.dataTransfer.files[0]);
+			event.dataTransfer.files.pop();
 			return false;
 		};
 }
@@ -96,6 +101,7 @@ function readPic(file){
 			canvas.get(0).getContext('2d').drawImage(img, 0, 0);
 			makeWindow(img.title, canvas).dialog({
 					width: 'auto',
+					resizable: false,
 					focus:function(){ canvasFocus = $(this).children().get(0);},
 					close: function(){ $(this).remove(); }
 				});
@@ -133,6 +139,7 @@ function makeMsgBox(){	//建立初始的訊息視窗;
 	
 	makeWindow('msgbox', msgBox).dialog({
 		width:'auto',
+		resizable: false,
 		buttons:{
 				'OK':function(){
 					isMsg = false;
@@ -143,6 +150,7 @@ function makeMsgBox(){	//建立初始的訊息視窗;
 					canvas = makeCanvas(filename, w, h, "#fff");
 					makeWindow(filename, canvas).dialog({
 						width:'auto',
+						resizable: false,
 						focus:function(){ canvasFocus = $(this).children().get(0);},
 						close:function(){$(this).remove();}
 					});
@@ -238,6 +246,7 @@ function msgError(msg){		//錯誤訊息
 		'<p><span class="ui-icon ui-icon-alert"></span><strong>錯誤:</strong>'+msg+'</p>'
 	);
 	$('<div>',{title:"Error"}).append(msgerr).dialog({
+		resizable: false,
 		close:function(){$(this).remove();},
 		buttons:{
 			'雖然很麻煩，不過我知道了':function(e){$(this).remove();}
