@@ -3,7 +3,7 @@ var lineWidth = 1;	//初始筆粗;
 var defaultColor = "#f00";	//預設顏色;
 var secondColor = "#00f"	//預設二色;
 var canvasNum = 0;	//canvas 的個數;
-var canvasFocus;	//目前的canvas;
+var canvasFocus = null;	//目前的canvas;
 var isDraw = false;	//繪圖狀態;
 var isLine;
 var isMsg = false;	//訊息狀態;
@@ -14,6 +14,7 @@ function init(){
 		
 	selectedStutes = "pen";
 	$('#pen').addClass('using');
+	
 	
 	$('#menuPane').tabs();
 	dropFile( $('#module').get(0) );
@@ -36,7 +37,11 @@ function init(){
 	});
 	
 	$('img[title=saveFile]').click(function(){
-		saveCanvas(canvasFocus, 'png');
+		if(canvasFocus != null){
+			saveCanvas(canvasFocus, 'png');
+		}else{
+			msgError('存檔好像有點問題，確定一下圖片吧？');
+		}
 	});
 	
 	$('div#edit > img').click(function(){
@@ -46,21 +51,34 @@ function init(){
 	});
 	
 	$('#colorPicker').css({'background': defaultColor, color: 'rgba(0,0,0,0)'});	
-	colorPi = $('<div>').append($('<div>').farbtastic(function(color){
-				$('#colorPicker').css('background', color);
-				defaultColor = color;
-			})
-	);
 	$('#colorPicker').click(function(){
+		var colorPi = $('<div>').farbtastic(function(color){
+			$('#colorPicker').css('background', color);
+			defaultColor = color;
+		});
 		makeWindow('調色盤', colorPi).dialog({
 					width:'auto',
 					resizable: false,
 					close:function(){ $(this).remove();}
 				});
 	});
+	
+	$('#colorPicker').before(makeRange(1, 10, 1));
 }
 
-
+function makeRange(min, max, step){
+	var range = $('<input>',{type:"range",max:max,min:min, step:step, value:1});
+	var textNum = $('<input>',{type:'number',max:max, min:min, step:step, size:"4", value:range.val()});
+	range.change(function(){
+		textNum.val(range.val());
+		lineWidth = textNum.val();
+	});
+	textNum.change(function(){
+		range.val(textNum.val());
+		lineWidth = range.val();
+	});
+	return $("<span>").append(range, textNum);
+}
 
 function dropFile(element){
 	element.ondragenter = function(event){
@@ -136,8 +154,8 @@ function saveCanvas(canvas, type){		//儲存檔案
 function makeMsgBox(){	//建立初始的訊息視窗;
 	isMsg = true;
 	msgBox = $('<div>').append($('<p>',{html:"title:"}).append($('<input>',{title:"filename",type:"text",size:"6"})),
-		$("<p>",{html:"width:"}).append($("<input>",{title:"width",type:"text",size:"6"})),
-		$("<p>",{html:"height:"}).append($("<input>",{title:"height",type:"text",size:"6"}))
+		$("<p>",{html:"width:"}).append($("<input>",{title:"width",type:"number",min:"300", max:"1280",step:"50",value:"300",size:"6"})),
+		$("<p>",{html:"height:"}).append($("<input>",{title:"height",type:"number",min:"150", max:"800",step:"50",value:"150",size:"6"}))
 	);
 	
 	makeWindow('msgbox', msgBox).dialog({
@@ -155,7 +173,11 @@ function makeMsgBox(){	//建立初始的訊息視窗;
 						width:'auto',
 						resizable: false,
 						focus:function(){ canvasFocus = $(this).children().get(0);},
-						close:function(){$(this).remove();}
+						close:function(){
+							canvasNum--;
+							canvasFocus = (canvasNum != 0)?canvasFocus:null;
+							$(this).remove();
+						}
 					});
 					
 					$(this).remove();
@@ -173,6 +195,38 @@ function makeWindow(title, contentHTML){	//建立視窗的方法;
 	return $('<div>',{title:title}).append(contentHTML);
 }
 
+//...以下是針對Netscape所設計的offset...;
+function getOffset(event){	
+	var target = event.target;
+	if(target.offsetLeft == undefined){
+		target = target.parentNode;
+	}
+	var pageCoord = getPageCoord(target);
+	var eventCoord = {
+		x:window.pageXOffset + event.clientX,
+		y:window.pageYOffset + event.clientY
+	};
+	var offset = {
+		offsetX: eventCoord.x - pageCoord.x,
+		offsetY: eventCoord.y - pageCoord.y
+	};
+	
+	return offset;
+}
+
+function getPageCoord(element){
+	var coord = { x: 0,	y: 0 };
+	while(element){
+		coord.x += element.offsetLeft;
+		coord.y += element.offsetTop;
+		element = element.offsetParent;
+	}
+	
+	return coord;
+}
+
+//...以上是針對Netscape系列所做的offset...;
+
 function makeCanvas(title, w, h, bgcolor){		//建立畫布的方法;
 	canvas = $("<canvas>").css('background', '#fff');
 	canvas.get(0).width = w;
@@ -181,19 +235,23 @@ function makeCanvas(title, w, h, bgcolor){		//建立畫布的方法;
 	//canvas.get(0).getContext('2d').fillRect(0,0,w,h);
 	
 	canvas.mousedown(function(e){
-		fpX = e.offsetX;
-		fpY = e.offsetY;
+		fpX = e.offsetX?e.offsetX:getOffset(e).offsetX;
+		fpY = e.offsetY?e.offsetY:getOffset(e).offsetY;
 		isDraw = true;
 	});
 	canvas.mousemove(function(e){
 		if(isDraw && !isLine){
-			selectType(this.getContext("2d"), defaultColor, secondColor, lineWidth, e.offsetX, e.offsetY);
+			var thisX = e.offsetX?e.offsetX:getOffset(e).offsetX;
+			var thisY = e.offsetY?e.offsetY:getOffset(e).offsetY;
+			selectType(this.getContext("2d"), defaultColor, secondColor, lineWidth, thisX, thisY);
 		}
 
 	});
 	canvas.mouseup(function(e){
 		if(isDraw){
-			selectType(this.getContext("2d"), defaultColor, secondColor, lineWidth, e.offsetX, e.offsetY);
+			var thisX = e.offsetX?e.offsetX:getOffset(e).offsetX;
+			var thisY = e.offsetY?e.offsetY:getOffset(e).offsetY;
+			selectType(this.getContext("2d"), defaultColor, secondColor, lineWidth, thisX, thisY);
 		}
 		
 		isDraw = false;
@@ -213,6 +271,9 @@ function selectType(cxt, color, scolor, lw, x, y){		//選擇
 		case 'cleaner':
 			isLine = false;
 			return drawCleaner(cxt, 30, 30, x, y);
+		case 'brushes':
+			isLine = false;
+			return drawBrushes(cxt, color, 5, 5, x, y);
 		case 'line':
 			isLine = true;
 			return drawLine(cxt, color, lw, x, y);
@@ -259,6 +320,12 @@ function msgError(msg){		//錯誤訊息
 
 function drawCleaner(cxt, w, h, x, y){		//清除
 	cxt.clearRect(fpX - w / 2, fpY - h / 2, w, h);
+	fpX = x, fpY = y;
+}
+
+function drawBrushes(cxt, color,  w, h, x, y){
+	cxt.fillStyle = color;
+	cxt.fillRect(fpX - w / 2, fpY - h / 2, w, h);
 	fpX = x, fpY = y;
 }
 
@@ -309,16 +376,16 @@ function drawCircle(cxt, color, scolor, type, lw, x, y){ //圓形方法;
 	cxt.lineWidth = lw;
 	cxt.beginPath();
 	switch(type){
-		case 'hollowCir':
-			cxt.arc((fpX+x)/2,(fpY+y),Math.sqrt((x-fpX)*(x-fpX)+ (y-fpY)*(y-fpY)) / 2, 0, Math.PI * 2, false);
+		case 'hollowCir':			
+			cxt.arc((fpX+x)/2,(fpY+y)/2,Math.sqrt((x-fpX)*(x-fpX)+ (y-fpY)*(y-fpY)) / 2, 0, Math.PI * 2, false);
 			cxt.stroke();
 			break;
 		case 'solidCir':
-			cxt.arc((fpX+x)/2,(fpY+y),Math.sqrt((x-fpX)*(x-fpX)+ (y-fpY)*(y-fpY)) / 2, 0, Math.PI * 2, false);
+			cxt.arc((fpX+x)/2,(fpY+y)/2,Math.sqrt((x-fpX)*(x-fpX)+ (y-fpY)*(y-fpY)) / 2, 0, Math.PI * 2, false);
 			cxt.fill();
 			break;
 		case 'twiceCir':
-			cxt.arc((fpX+x)/2,(fpY+y),Math.sqrt((x-fpX)*(x-fpX)+ (y-fpY)*(y-fpY)) / 2, 0, Math.PI * 2, false);
+			cxt.arc((fpX+x)/2,(fpY+y)/2,Math.sqrt((x-fpX)*(x-fpX)+ (y-fpY)*(y-fpY)) / 2, 0, Math.PI * 2, false);
 			cxt.stroke();
 			cxt.fill();
 			break;
