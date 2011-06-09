@@ -16,22 +16,18 @@ function edit() {
 function save() {
 }
 
-onmessage = function(event){
-	postMessage(wiki2html(event.data));
-}
-
 // gi 的 g 是 global 的意思，會取代所有符合的樣式, i 是 ignore 會忽略大小寫。
 function wiki2html(wikiText) {
 //  alert("attachPath="+attachPath);
   init();
   var text = wikiText
     .replace(/\r/gi, "") // 刪除 \r 字元
-    .replace(/\[\[image\s([^\s]+)\s+size="medium"\]\]/gi, '<img src=$1 width=512px />') // 範例：[[image test.jpg size="medium"]]
-    .replace(/\[\[image\s([^\s\]]+)[^\]]*\]\]/gi, '<img src=$1 />') // 範例：[[image test.jpg]]
+   // .replace(/\[\[image\s([^\s]+)\s+size="medium"\]\]/gi, '<center><img src='+attachPath+'/$1 width=512px/></center>') // 範例：[[image test.jpg size="medium"]]
+   // .replace(/\[\[image\s([^\s\]]+)[^\]]*\]\]/gi, '<img src='+attachPath+'/$1/>') // 範例：[[image test.jpg]]
     .replace(/\[(http[s]?:\/\/[^\s\]]+)\]/gi, '<a href=$1>$1</a>') // 範例：[http://tw.yahoo.com/]
 	.replace(/\[\*?(http[s]?:\/\/[^\s\]]+)\s(.+)\]/gi, '<a href=$1>$2</a>') // 範例：[http://tw.yahoo.com/ yahoo]   //這有問題，尚無頭緒
-    .replace(/\[\[\[([:\w-]+)\]\]\]/gi, '<a href=#$1>$1</a>') // 範例：[[[innerLink]]]	
-    .replace(/\[\[\[([:\w-]+)\s*\|\s*([^\]]*)\]\]\]/gi, '<a href=#$1>$2</a>') // 範例：[[[innerLink | 內部連結]]]
+    .replace(/\[\[\[([:\w-]+)\]\]\]/gi, '<a href=#!$1>$1</a>') // 範例：[[[innerLink]]]	
+    .replace(/\[\[\[([:\w-]+)\s*\|\s*([^\]]*)\]\]\]/gi, '<a href=#!$1>$2</a>') // 範例：[[[innerLink | 內部連結]]]
     .replace(/[^=\">](http[s]?:\/\/[\w;\/\?:@=#&$-_.+!*\(\),]+)/gi, '<a href=$1>$1</a>') // 範例：http://tw.yahoo.com/
     .replace(/__(.+)__/gi, '<u>$1</u>') // 範例：__underline text__
     .replace(/\*\*(.+)\*\*/gi, '<b>$1</b>') // 範例：**bold text**

@@ -38,7 +38,7 @@ function init(){
 	
 	$('img[title=saveFile]').click(function(){
 		if(canvasFocus != null){
-			saveCanvas(canvasFocus, 'png');
+			saveCanvas(canvasFocus, 'jpg');
 		}else{
 			msgError('存檔好像有點問題，確定一下圖片吧？');
 		}
@@ -86,7 +86,7 @@ function dropFile(element){
 			return false;
 		};
 	element.ondragover = function(event){
-			this.style.border = "dashed 5px #fff";
+			this.style.border = "dashed 5px #3c3c3c";
 			return false;
 		};
 	element.ondragleave = function(event){
@@ -319,7 +319,8 @@ function msgError(msg){		//錯誤訊息
 }
 
 function drawCleaner(cxt, w, h, x, y){		//清除
-	cxt.clearRect(fpX - w / 2, fpY - h / 2, w, h);
+	cxt.fillStyle = '#fff';		//這只是暫時的處理方案;
+	cxt.fillRect(fpX - w / 2, fpY - h / 2, w, h);
 	fpX = x, fpY = y;
 }
 
@@ -341,6 +342,29 @@ function drawLine(cxt, color, lw, x, y){	//畫線方法;
 	cxt.moveTo(fpX,fpY);
 	cxt.lineTo(x,y);
 	cxt.stroke();
+	cxt.closePath();
+}
+
+function drawText(cxt, color, scolor, type, str){
+	cxt.fillStyle = scolor;	
+	cxt.strokeStyle = color;
+	cxt.font =  lw + 'sans-serif';
+	cxt.beginPath();
+	switch(type){
+		case 'hollowText':
+			cxt.strokeText(str, fpX, fpY);
+			break;
+		case 'solidText':
+			cxt.fillText(str, fpX, fpY);
+			break;
+		case 'twiceText':
+			cxt.strokeText(str, fpX, fpY);
+			cxt.fillText(str, fpX, fpY);
+			break;
+		default:
+			alert('型態錯誤!');
+			break;
+	}	
 	cxt.closePath();
 }
 

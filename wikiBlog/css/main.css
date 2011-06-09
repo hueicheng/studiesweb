@@ -1,0 +1,135 @@
+/*初始設定*/
+	/*設定給不支援HTML5的瀏覽器*/
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{
+  display:block;
+}
+
+body{ line-height: 1;}
+ol, ul{ list-style:none; }
+
+/*連結樣式*/
+a, a:visited{
+	color:rgb(20,20,150);
+	text-decoration: none;
+}
+
+a:active, a:focus{
+	color: rgb(0, 50, 200);
+	position: relative;
+	top: 1px;
+}
+
+a.hover{ color:rgb(50,50,200);}
+
+/*基本設定*/
+html{
+	margin-bottom: 1px;
+	min-height: 100%;
+}
+body{
+	background: rbg(200, 200, 200);
+	color:#444;
+}
+
+#topPane{
+	background: rgb(50,50,250);
+	position: relative;
+	margin: 0 auto;
+	height: 150px;
+	width: 100%;
+}
+
+#topPane hgroup{
+	color:#fff;
+	height: 125ppx;
+	margin: 0;
+	padding-top: 20px;
+	width: 500px;
+}
+
+#topPane hgroup h2{
+	margin: 0;
+	position: relative;
+	left: 200px;
+	top: -25px;
+	line-height: 1;
+	font-size: 16px;
+}
+
+#topPane > ul{
+	color:#fff;
+	position: absolute;
+	right: 0;
+	top: 10px;
+}
+
+#topPane > ul li{
+	float: left;
+	position: relative;
+}
+
+#topPane > ul li:after{
+	content: "\007C";
+}
+
+#topPane > ul li a{
+	color:#fff;
+	padding: 0 5px;
+}
+
+/*中央區塊*/
+#centerPane{
+	margin:0 auto 0;
+	padding: 20px 0 0 0;
+	width: 900px;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+#centerPane > aside{
+	float: right;
+	position: relative;
+	top: 20px;
+	padding: 0 120px 0 0;
+	width: 100px;
+}
+
+#mainPane{
+	border-right: 4px solid #eee;
+	margin: 0 10px 0 0;
+	padding: 20px 0 0 20px;
+	width: 650px;
+}
+
+#mainPane section header{
+
+	margin: 0 0 20px;
+	padding: 0 0 10px 30px;
+}
+
+#mainPane section header h1{
+	color:rgb(100, 150, 250);
+	line-height: 2;
+}
+
+#mainPane section aside{
+	margin: 0 auto 30px;
+	padding: 0 0 0 5px;
+	width: 450px;
+}
+
+#mainPane section footer{
+	margin: 20px auto 10px;
+	padding: 0 0 5px 0;
+	border-top: 2px solid #eee;
+}
+
+#mainPane section footer ul{
+	float: right;
+}
+
+#infoPane{
+	clear: both;
+	margin: 40px auto 0;
+	padding: 0 0 40px 0;
+	width: 800px;
+}
