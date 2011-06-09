@@ -7,6 +7,7 @@
 <script src="http://www.google.com/jsapi"></script>
 <script src="source/jquery.js"></script>
 <script src="source/jquery-ui.js"></script>
+<script src="../Drawing/source/canvas2image.js"></script>
 <script src="../Drawing/source/main.js"></script>
 <script src="source/dotwiki.js"></script>
 <script src="source/main.js"></script>
@@ -25,12 +26,14 @@
 			<li><a>the Test One</a></li>
 		</ul>
 	</header>
-	<div id="centerPane">
-		<aside class="infoPane">
-			<nav></nav>
-		</aside>
-		<div id="mainPane">
-		</div>
+	<div id="centerPane" class="group">
+		<article id="articlePane" class="group">
+			<div id="mainPane">
+			</div>
+			<aside class="centerInfo">
+				<nav></nav>
+			</aside>
+		</article>
 	</div>
 	<footer id="infoPane">
 		<p>last Info</p>

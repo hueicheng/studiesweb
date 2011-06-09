@@ -1,12 +1,19 @@
 var serverPath = "http://114.35.176.89/studiesweb/readed.php";
+var serverFLPath = "http://114.35.176.89/studiesweb/fileList.php";
+var serverSFPath = "http://114.35.176.89/studiesweb/saveFile.php";
 var artText = "";
 var selectedArt = "";
-var tags = new Array();
 
 $(function(){
 	
 	$('#topPane a').attr('href', 'javascript:;');
-	$('#topPane a[title=drawing]').click(function(){
+	$('a[title=newPaper]').click(function(){
+			$('#mainPane').empty();
+			artText = "";
+			selectedArt = "";
+			makeEditor();
+		});
+	$('a[title=drawing]').click(function(){
 			window.open('../Drawing/index.html');
 		});
 	
@@ -15,6 +22,11 @@ $(function(){
 	
 	makeFileList();
 });
+
+function makeAccordion(title, contentHTML){
+	h = $('<h3>').append($('<a>', {href:'javascript:;', html: title}));
+	return 	h.after($('<div>').append(contentHTML));
+};
 
 function insertText(target, str){
 	if(document.selection){	//for IE
@@ -59,6 +71,7 @@ function sortFileList(fs){
 
 function saveFileTag(str){
   var index = 0;
+  var tags = new Array();
   
   for(i = 0; i < str.length; i++){
     var ss = str[i].split("_");
@@ -71,36 +84,46 @@ function saveFileTag(str){
 	  index += 1;
     }
   }
+  
+  return tags;
 }
 
 
 //檔案清單;
 function makeFileList(){
 	$.ajax({
-		url: "http://114.35.176.89/studiesweb/server.php",
+		url: serverFLPath,
 		success: function(data){
 			var fs = sortFileList(data.split(" "));
-			ul = $("<ul>");
-			for(i=0; i<fs.length; i++){
-				
-				a = $("<a>",{
-					title: fs[i].toString(),
-					href:"javascript:;",
-					html: fs[i].toString()
-				}).click(function(){
-						selectedArt = this.title;
-						readFile(this.title);
-					});
-				li = $("<li>").append(a);
-				ul.append(li);
+			var tags = saveFileTag(fs);
+			for(i = 0; i < tags.length; i++){
+				ul = $('<ul>');
+				for(j = 0; j < fs.length; j++){
+					a = $("<a>",{
+						title: fs[j].toString(),
+						href:"javascript:;",
+						html: fs[j].toString()
+					}).click(function(){
+							selectedArt = this.title;
+							readFile(this.title);
+						});
+					if(fs[j].indexOf(tags[i]) == 0){
+						ul.append($("<li>").append(a));
+					}
+				}
+				$('.centerInfo nav').append(makeAccordion(tags[i], ul))
 			}
-			$('#centerPane aside nav').append(ul);
+			$('.centerInfo nav').accordion({ 
+					collapsible: true ,	
+					autoHeight: false
+				});
 		}
 	});
 }
 
-function reviewText(text){
-	$('#mainPane arcitle').html(wiki2html(text));
+function reviewText(title, text){
+	arc = addArticle(title, wiki2html(text));
+	$('#mainPane').html(arc);
 }
 
 function makeDrawMsgBox(){	//建立繪圖的訊息視窗;
@@ -134,7 +157,12 @@ function makeDrawMsgBox(){	//建立繪圖的訊息視窗;
 							"完成！":function(){
 									canvas = $(this).children().get(0);
 									drawingData = canvas.toDataURL();
-									alert(drawingData);
+									str = "[[image " + drawingData + "]]";
+									$('textarea[title=Editor]').focus();
+									insertText($('textarea[title=Editor]').get(0), str);
+									
+									$(this).remove();
+									
 								},
 							"取消": function(){ $(this).remove(); }
 						}
@@ -159,9 +187,10 @@ function makeEditor(){
 	
 	makeWindow('Editor', div).dialog({
 			width: 'auto',
+			position: ['right', 'bottom'],
 			close: function(){ 
 					isMsg = false;
-					readFile(selectedArt);
+					readFile(selectedArt, artText);
 					$(this).remove();
 				},
 			buttons:{
@@ -169,16 +198,21 @@ function makeEditor(){
 						makeDrawMsgBox();
 					},
 				"預覽":function(){
-						reviewText($(this).find('textarea').val());
+						reviewText(
+							$(this).find('input:text').val(),
+							$(this).find('textarea').val()
+						);
 					},
 				"存檔":function(){
 						isMsg = false;
+						selectedArt = $(this).find('input:text').val();
 						artText = $(this).find('textarea').val();
+						saveFile(selectedArt, artText);
 						$(this).remove();
 					},
 				"取消":function(){
 						isMsg = false;
-						reviewText(artText);
+						reviewText(selectedArt, artText);
 						$(this).remove();
 					}
 			}
@@ -215,6 +249,17 @@ function readFile(fName){
 		success: function(data){
 			artText = data;
 			$('#mainPane').html(addArticle(fName, wiki2html(data)));
+		}
+	});
+}
+
+function saveFile(fName, fContent){
+	$.ajax({
+		url: serverSFPath,
+		type:"POST",
+		data: 'title=' + fName + '&content=' + fContent,
+		success: function(data){
+			//alert(data);
 		}
 	});
 }
