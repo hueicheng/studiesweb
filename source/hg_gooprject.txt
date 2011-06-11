@@ -1,0 +1,6 @@
++ 簡介
+使用Project Hosting on Google Code的服務來放置專案，並且發佈在網路上，加上利用Mercurial 來管理，來達成多人撰寫的目的。
+
++ 建立專案
+
++ 使用Mercurial

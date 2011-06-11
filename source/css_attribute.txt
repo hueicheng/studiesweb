@@ -1,15 +1,13 @@
-+ 字型
-* [[[css:text | 字　型]]]
-
-+ 背景
-* [[[css:background | 背　景]]]
-
-+ 段落
-* [[[css:paragraph | 段　落]]]
-
-+ 其他
-* [[[css:wrapping | 文　繞　圖]]]
-* [[[css:visible | 可　視　範　圍]]]
-* [[[css:overlap | 重　疊　的　順　序]]]
-* [[[css:form | 表　格　的　隱　藏　和　顯　示]]]
-* [[[css:bullet | 項　目　符　號]]]
+[[[css:text | 文字格式(font)]]]
+[[[css:textstyle | 文字的特殊應用(fontstyle)]]]
+[[[css:border |  框線(border)]]]
+[[[css:background | 背景(background)]]]
+[[[css:paragraph | 段落(paragrath)]]]
+[[[css:position | 物件定位(position)]]]
+[[[css:wrapping | 文繞圖(float)]]]
+[[[css:clip | 可視範圍(clip)]]]
+[[[css:overlap | 重疊的順序(z-index)]]]
+[[[css:visible | 物件的隱藏和顯示(visible)]]]
+[[[css:bullet | 項目符號(bullet)]]]
+[[[css:cursor | 滑鼠游標圖案(cursor)]]]
+[[[css:color | 色碼表(rgb code)]]]

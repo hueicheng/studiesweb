@@ -1,0 +1,10 @@
+[[note]]
+加入資料：請參考INSERT INTO語法
+搜尋資料：請參考SELECT語法
+更改資料：請參考UPDATE語法
+刪除表格：請參考DELETE FROM語法
+
+上述語法：可參考本網站所寫的SQL基本語法介紹
+
+[[[*http://studiesweb.wikidot.com/sqlite:basice | SQL基本語法介紹]]]
+[[/note]]

@@ -6,7 +6,7 @@
 * [[[sqlite:download|下載]]]
 * [[[sqlite:established|建立資料庫]]]
 * [[[sqlite:table|建立表格]]]
-
+* [[[sqlite:else|其它用法]]]
 
 +++++ [[[sqlite:_template|編輯此欄]]]
 [[/cell]]
@@ -17,6 +17,7 @@
 + 參考文獻
 * [*http://www.sqlite.org/ SQLite官網]
 * [*http://www.1keydata.com/tw/sql/sql.html SQL語法教學]
+* [*http://support.oss.org.tw/?q=node/157 SQLite教學]
 
 
 [[/cell]]

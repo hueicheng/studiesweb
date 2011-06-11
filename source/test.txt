@@ -1,5 +1,0 @@
-http://www.google.com.tw
-[http://www.google.com.tw]
-[http://www.google.com.tw Google]
-
-[[audio test.mp3]]

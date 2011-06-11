@@ -1,0 +1,28 @@
+一般來說，事件處理函數首先要檢查的是目前 web server 對於我們之前 送出去的 http_request 的處理狀態為何。處理狀態的屬性名稱為 readyState， 它所有可能的值為
+0 (尚未初始化; 還沒呼叫 open())
+1 (載入中; http_request 已經設定好了，但是還沒呼叫 send())
+2 (載入完成; http_request 已經送給 server 了，server 已經開始 處理了，你可以取得 content header 了。)
+3 (可以互動的; http_request 已經部份完成了，所以有可能取得 部份處理完的資料)
+4 (完成的; compelte)
+在大部分的情形下，我們只對已經完成的狀態有興趣，所以我們的程式碼的格式如下：
+[[code type="html"]]
+..................................
+if (http_request.readyState == 4) {
+    // everything is good, the response is received
+} else {
+    // still not ready
+}
+.......................................
+[[/code]]
+
+-----------------
+
+web server 的處理結束之後，會回傳一個處理結果；例如，我們的要求 完成了，而且所需要的資料也已經回傳了；但是也有可能是，我們的要求完成了， 但是處理結果卻是"找不到檔案"。因此，我們的程式還需要檢查處理 結果，處理結果是放在 status 這個屬性內，因此檢查處理結果 的程式碼如下：
+[[code type="html"]]
+if (http_request.status == 200) {
+    // 可以依照我們的需求來處理 xml 的資料了
+} else {
+    // 404 代表檔案不存在，500 代表處理錯誤（Internal Server Error）
+    // 自行決定要如何處理錯誤的情形
+}
+[[/code]]

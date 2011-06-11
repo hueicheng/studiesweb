@@ -1,0 +1,40 @@
+Ajax如果要向伺服器要求檔案就必須用到Request。
+XMLHttpRequest 物件用於和伺服器交換數據。
+++ 建立一個XMLHTTPRequest的物件
+在現在的所有瀏覽器中均支援XMLHttpRequest 的物件。
+XMLHttpRequest 用於在後台與服務器交換數據。 這意味著可以​​在不重新加載整個網頁的情況下，對網頁的某部分進行更新。
+語法：
+[[code type="html"]]
+................
+variable=new XMLHttpRequest();
+..............
+[[/code]]
+
+而比較舊版本的IE6、IE7則建立ActiveX對象
+語法：
+[[code type="html"]]
+................
+variable=new ActiveXObject("Microsoft.XMLHTTP");
+..............
+[[/code]]
+
+------
+
+++ 向伺服器端要求檔案
+有了 XMLHttpRequest 的物件之後，就是向遠端要求檔案，在這個範例中，我們 要取得的檔案名稱是 taichung.xml。
+[[code type="html"]]
+.......................
+http_request.open('GET', 'taichung.xml', true);
+http_request.send(null);
+.........................
+[[/code]]
+語法說明：
+1.http_request.open('GET', 'taichung.xml', true)
+規定要求的類型、URL 以及是否同步處理要求。
+* 第一個參數：要求檔案的類型，一般可分為"GET"和"POST"。建議使用大寫以符合 HTTP 的標準。
+* 第二個參數：文件放在伺服器上的位置。
+* 第三個參數：用來表示這個呼叫是不是非同步。
+
+2.http_request.send(null)
+將要求的檔案發送到伺服器。
+* 如果使用 GET 的方式，send() 的參數為 null。

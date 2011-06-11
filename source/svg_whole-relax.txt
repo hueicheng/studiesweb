@@ -1,0 +1,23 @@
+[[image http://studiesweb.wikidot.com/local--files/files/all%20relax%20pont%20note.svg]]
+
++ 程式碼
+[[code type="html"]]
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" id="eighth">
+
+<rect width="9.2204475" height="5.1031408" x="10.902164" y="18.913252" 
+style="fill:#000000;stroke-width:50" id="rect2222" />
+
+<rect width="15.077462" height="1.1018145" x="7.9446626" y="22.972569" 
+style="fill:#000000;stroke-width:50" id="rect2224" />
+
+</svg>
+
+[[/code]]
++ 說明
+為一個實心的長方形記號，「掛」在從上數起的第二條譜線（即第四線）上（如上圖）。
+主要用<rect>標籤劃出全休止符。
+* 步驟一(劃出長方形)
+"width"元素設定矩形的長度"9.2204475"，設定的長度不要超過SVG文件檔的長度，不然超過的部分就無法顯示;"height"元素設定矩形的寬度"5.1031408"，一樣不行超過SVG文件檔的寬度;"x"、"y"元素來設定矩形所放置的位置，這樣就畫出了一個我們想要的長方形。
+* 步驟二(劃出五線譜期中的一條)
+劃的方式跟步驟一差不多，只要改一下各個元素後面的元素值，來設定您要的長度、寬度及位置。

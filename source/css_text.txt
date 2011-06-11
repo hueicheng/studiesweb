@@ -1,27 +1,6 @@
-[[code type="css"]]
-<style type="text/css">
-  #transform1 {text-transform: uppercase}
-  #decoration1 {text-decoration: underline}
-  #indent1 {text-indent: 2em}
-  #shadow1 {text-shadow: #666666 3px 2px 1.3px}
-  body{
-         color:red;
-         font-size:14px;
-         font-family:”Times New Roman”;
-         font-align:center;
-         font-style:oblique;
-         font-weight:700;
-  }
-</style>
-[[/code]]
-
-||color||指定文字顏色。使用#ffffff，十六進制的RGB色加法。||
-||font-size||指定文字大小。ex：font-size:20px。(px=像素)||
-||font-family||指定文字字型。ex：font-family:”Times New Roman”。||
-||font-align||文字對齊方式。ex：right，靠右對齊。left，靠左對齊。center，置中對齊。justify，分散對齊。||
-||font-weight||指定文字粗細。ex：font-weight:900。(一般文字為400，粗體為700)||
-||font-style||指定文字為斜體。ex：font-style:oblique。||
-||text-transform||將指定英文字母轉換大小寫。ex：capitalize將每個單字字首轉為大寫。ex：lowercase將每個單字轉為小寫。ex：uppercase將每個單字轉為大寫。||
-||text-indent||設定首行縮排。||
-||text-decoration||指定字體底線。ex：underline 文字加註底線。overline 文字加註上標線。through 文字加註取消線。blink 使文字閃爍。||
-||text-shadow||文字加入陰影，以下均以範例為例。左至右為，顏色、X軸、Y軸、陰影粗細||
+||~ 用法||~ 說明||~ 結果||
+||color:#ff0000||指定文字顏色。使用#ffffff，十六進制的RGB色加法。請參考[[[css:color |色碼表(rgb code)]]]||##red|color.red##||
+||font-size:30px||指定文字大小。ex：font-size:30px。(px=像素)||[[size 30px]]font-size:30px[[/size]]||
+||font-family:"Times New Roman"||指定文字字型。ex：font-family:”Times New Roman”。||[[image http://i166.photobucket.com/albums/u90/tony000aaa/font-family.jpg]]||
+||font-weight:900||指定文字粗細。ex：font-weight:900。(一般文字為400，一般粗體為700)||[[image http://i166.photobucket.com/albums/u90/tony000aaa/font-weight.jpg]]||
+||font-style:italic||指定文字為斜體。ex：font-style:italic 或者使用oblique。||//font-style:italic//||

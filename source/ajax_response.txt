@@ -1,0 +1,3 @@
+最後，就是接收來自 web server 的資料，http_request 提供兩種方式來 存取資料：
+* http_request.responseText 也就是 web server 回傳的資料是 一個字串物件，你需要利用字串的處理函數適當的處理該字串物件。
+* http_request.responseXML 也就是 web server 回傳的資料是一份 XMLDocuemnt 的物件，你可以利用 JavaScript 的 DOM APIs 來存取 這份 XML 物件。

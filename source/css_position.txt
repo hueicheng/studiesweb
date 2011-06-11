@@ -1,0 +1,10 @@
+[[code type="css"]]
+<style type="text/css">
+  position: static;  
+</style>
+[[/code]]
+
+||position-static||無定位。||
+||position-relative||依物件左上角取相對位置。||
+||position-absolute||依網頁左上角取絕對位置。||
+||position-fixed||固定位置不受捲軸影響。||

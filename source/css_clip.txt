@@ -1,0 +1,15 @@
+[[code type="css"]]
+<style type="text/css">
+  img{
+    width: 100px;
+    height: 100px;
+  }
+  #sample1
+  {
+    position:absolute;
+    clip: rect(50px, auto, auto, auto);
+  }
+</style>
+[[/code]]
+
+||clip: rect||從左至右各項參數依序表示為，上右下左。auto表示為全部(如範例大小為100，auto即為100)，上為由上開始隱藏，左為由左開始隱藏。右為由右開始顯示，下為由下開始顯示。ex：假設圖片大小為100px*100px。clip:rect(10px,100px,100px,10px);表示整張圖的隱藏範圍從上減10px，左減10px呈現出最終的結果。ex2：假設圖片大小為100px*100px。clip:rect(0px,0px,0px,0px);因右跟下設定為0，將不顯示任何東西，因不顯示任何東西，故達不到隱藏效果，所以此屬性運用必須注意顯示的範圍再去減少，或者顯示需要顯示的範圍來達成目的。||

@@ -14,3 +14,7 @@ function btnclick(){
 </body>
 </html>
 [[/code]]
+
+[[code]]
+
+[[/code]]

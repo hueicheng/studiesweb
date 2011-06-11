@@ -16,10 +16,10 @@ $(function(){
 	$('a[title=drawing]').click(function(){
 			window.open('../Drawing/index.html');
 		});
-	
+		
 	readFile('start.txt');
-	selectedArt = 'start.txt';
 	
+
 	makeFileList();
 });
 
@@ -124,6 +124,7 @@ function makeFileList(){
 function reviewText(title, text){
 	arc = addArticle(title, wiki2html(text));
 	$('#mainPane').html(arc);
+	readPicFile($('img[title]'), $('img[title]').attr('title'));
 }
 
 function makeDrawMsgBox(){	//建立繪圖的訊息視窗;
@@ -143,7 +144,9 @@ function makeDrawMsgBox(){	//建立繪圖的訊息視窗;
 					filename = $('input[title=filename]').val()!=""?$('input[title=filename]').val():"canvas" + canvasNum.toString();
 					h = $('input[title=height]').val()!=""?$('input[title=height]').val():"150";
 					w = $('input[title=width]').val()!=""?$('input[title=width]').val():"300";
-					canvas = makeCanvas(filename, w, h, "#fff");
+					colorP = $('<div>',{html:"color"}).css('background', defaultColor).click(function(){ makeColorPicker($(this));});
+					canvas = makeCanvas(filename, w, h, "#fff").before(colorP);
+					canvas.get(0).title = filename;
 					makeWindow(filename, canvas).dialog({
 						width:'auto',
 						resizable: false,
@@ -155,9 +158,10 @@ function makeDrawMsgBox(){	//建立繪圖的訊息視窗;
 						},
 						buttons:{
 							"完成！":function(){
-									canvas = $(this).children().get(0);
-									drawingData = canvas.toDataURL();
-									str = "[[image " + drawingData + "]]";
+									canvas = $(this).children('canvas').get(0);
+									//drawingData = canvas.toDataURL();
+									savePic(canvas.title, 'png', canvas.toDataURL())
+									str = "[[image " + canvas.title + "]]";
 									$('textarea[title=Editor]').focus();
 									insertText($('textarea[title=Editor]').get(0), str);
 									
@@ -208,6 +212,10 @@ function makeEditor(){
 						selectedArt = $(this).find('input:text').val();
 						artText = $(this).find('textarea').val();
 						saveFile(selectedArt, artText);
+						reviewText(
+							$(this).find('input:text').val(),
+							$(this).find('textarea').val()
+						);
 						$(this).remove();
 					},
 				"取消":function(){
@@ -242,13 +250,25 @@ function addArticle(title, context){
 	return section.append(header, arcitle, footer);
 }
 
+function readPicFile(target, fName){
+	$.ajax({
+		url: serverPath,
+		data: 'title=' + fName + '&type=image',
+		success: function(data){
+			target.attr('src', data);
+		}
+	});
+}
+
 function readFile(fName){
 	$.ajax({
 		url: serverPath,
-		data: 'title=' + fName,
+		data: 'title=' + fName + '&type=text',
 		success: function(data){
 			artText = data;
-			$('#mainPane').html(addArticle(fName, wiki2html(data)));
+			selectedArt = fName;
+			arc = addArticle(selectedArt, wiki2html(artText));
+			$('#mainPane').html(arc);
 		}
 	});
 }
@@ -257,9 +277,6 @@ function saveFile(fName, fContent){
 	$.ajax({
 		url: serverSFPath,
 		type:"POST",
-		data: 'title=' + fName + '&content=' + fContent,
-		success: function(data){
-			//alert(data);
-		}
+		data: 'title=' + fName + '&content=' + encodeURIComponent(fContent)
 	});
 }

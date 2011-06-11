@@ -5,7 +5,7 @@
 ||autoplay	||autoplay	||音樂會自動播放||
 ||controls	||controls	||顯示音頻控件，如播放、暫停按鈕等||
 ||loop	||loop	||當音樂播放結束，會自動重新播放||
-
+||preload    ||preload   ||指定音頻會被加載在網頁加載，並準備運行。如果自動播放忽略存在。||
 * 範例
 [[code type="HTML"]]
 <html>

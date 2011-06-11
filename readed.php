@@ -1,13 +1,22 @@
 <?php
-$dir = "source/";
+switch($_GET['type']){
+	case 'text':
+		$dir = "source/";
+		break;
+	case 'image':
+		$dir = "imageF/";
+		break;
+	default:
+		echo "error";
+}
 $title = $_GET['title'];
 $m = $dir . $title;
-$fp = fopen($m, "r");
+$fp = fopen($m, "rb");
 while (!feof($fp)) {
    $content .= fgets($fp);
 }
 fclose($fp);
 
-echo $content;
+echo rawurldecode($content);
 
 ?>

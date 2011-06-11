@@ -1,0 +1,33 @@
++ 簡介
+Mercurial 是一個版本管理系統，主要是分散式合作開發用的管理工具。
+
++ 安裝及初步設定
+* 進入[*http://mercurial.selenic.com/ Mercurial] 的官方網站、並下載安裝檔。
+[[image flickr:5392609428]]
+[[image flickr:5392609602]]
+* 雙擊進入安裝程序。
+* 安裝完成後，接著是初步設定，%HOME% 環境變數中設定Mercurial 的預設管理資料夾，這個管理資料夾是用來存放Mercurial 將要管理的專案。這裡設定在 C:\HG ，並在C槽中建立一個HG資料夾。
+[[image flickr:5392125181]]
+[[image flickr:5392132171]]
+* 在HG資料夾中，建立 Mercurial.ini 的設定檔，在設定檔中，輸入使用者資訊。
+* 以下是筆者所設定的資訊
+[[code]]
+[ui]
+username = hueicheng <pikachuliou@gmail.com>
+[[/code]]
+其中，ui是一定要設定的，內容##red|username## = ##blue|你的名字(請用英文)## ##green|<你的信箱>##
+
+如此即可開始使用Mercurial。
++ 試用
+完成設定之後，請開始測試是否有問題，Mercurial 官方提供了一個小專案，以便測試。專案網址 http://www.selenic.com/repo/hello
+
+* 開啟shell 命令提示字元，請將目前資料夾移至HOME所設定的資料夾中。
+使用命令 cd 來移動資料夾
+[[image flickr:5392757340]]
+* 在shell中輸入 hg clone http://www.selenic.com/repo/hello hello
+[[image flickr:5392757352]]
+[[image flickr:5392757366]]
+[[image flickr:5392158651]]
+其中 hg 指的是使用Mercurial ，##red|clone## 指的是複製整個，##blue|http://www.selenic.com/repo/hello## 指的是專案的地點，##green|hello## 最後一個指的是放置的目的地。所以會多一個名為##green|hello##的資料夾。
+
+如果以上執行沒有問題表示已經將Mercurial 初步設定設定終了。

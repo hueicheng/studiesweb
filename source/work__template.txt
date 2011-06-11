@@ -1,0 +1,19 @@
+[[include _thead]]
+++ 介面簡介
+[[[work:blog|部落格]]]
+[[[work:drawing|繪圖板]]]
+++ 程式解說
+
++++ 繪圖板
+[[[work:drawLine | 繪製直線(drawLine)]]]
+[[[work:drawRect | 繪製矩形(drawRect)]]]
+[[[work:drawCircle | 繪製圓形(drawCircle)]]]
+[[[work:pen | 製作畫筆(pen)]]]
+++ [[[work:show|作品呈現]]]
+++ [[[work:experience|使用心得]]]
++++++ [[[work:_template|邊欄]]]
+
+[[include _centerthead]]
++ 參考文獻
+
+[[include _endthead]]

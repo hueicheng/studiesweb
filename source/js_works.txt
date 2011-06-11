@@ -9,7 +9,13 @@
 因為沒有支援分享到噗浪，所以也拿來--佔空間--。
 
 [[html]]
-<a href="javascript:%20var%20t%20=%20document.getElementsByClassName('video_title')[0].innerHTML;t=t.substring(t.indexOf('>',0)+1,t.indexOf('<',t.indexOf('>')));t=t.replace('(','%EF%BC%88');%20t=t.replace(')','%EF%BC%89')%20;%20m=location.href%20+%20'%20('%20+%20t%20+%20')',%20f='http://www.plurk.com/?status='%20+%20encodeURIComponent(m)%20+%20'&amp;qualifier=shares'%20,w%20=%20window.open(f,'surfing');w.focus();%20if(!w)location.href=f;void(0);">從ニコニコ分享到Plurk</a>
+<a href="javascript: var t = document.getElementsByClassName('video_title')[0].innerHTML;t=t.substring(t.indexOf('>',0)+1,t.indexOf('<',t.indexOf('>')));t=t.replace('(','%EF%BC%88'); t=t.replace(')','%EF%BC%89') ; m=location.href + ' (' + t + ')', f='http://www.plurk.com/?status=' + encodeURIComponent(m) + '&amp;qualifier=shares' ,w = window.open(f,'surfing');w.focus(); if(!w)location.href=f;void(0);">從ニコニコ分享到Plurk</a>
+[[/html]]
+
+* 通用分享到Plurk
+
+[[html]]
+<a href="javascript:var t=document.getElementsByTagName('title')[0].innerHTML;t=t.replace('(','%EF%BC%88');%20t=t.replace(')','%EF%BC%89')%20;%20m=location.href%20+%20'%20('%20+%20t%20+%20')',%20f='http://www.plurk.com/?status='%20+%20encodeURIComponent(m)%20+%20'&qualifier=shares'%20,w%20=%20window.open(f,'surfing');w.focus();%20if(!w)location.href=f;void(0);">分享到Plurk</a>
 [[/html]]
 
 

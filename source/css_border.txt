@@ -1,0 +1,11 @@
+[[code type="css"]]
+<style type="text/css">
+  border-color: #ff00ff;
+  border-width: 2px;
+  border-style: solid;
+</style>
+[[/code]]
+
+||border-color||框線顏色，可以指定單邊框線色彩。ex：border-top-color: #ff0000，指定上框線為紅色。||
+||border-width||框線粗細，可以指定單邊框線粗細。ex：border-right-width: 1px，指定下框線粗細為1px。||
+||border-style||框線樣式，solid為實線框，dotted虛線框，double雙線框，groove立體內凸框，ridge立體浮凸框，inset凹框，outset凸框。||

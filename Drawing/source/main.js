@@ -1,4 +1,5 @@
 google.load("jqueryui", "1.8");
+var serverPSPath = "http://114.35.176.89/studiesweb/saveImage.php";
 var lineWidth = 1;	//初始筆粗;
 var defaultColor = "#f00";	//預設顏色;
 var secondColor = "#00f"	//預設二色;
@@ -38,7 +39,7 @@ function init(){
 	
 	$('img[title=saveFile]').click(function(){
 		if(canvasFocus != null){
-			saveCanvas(canvasFocus, 'jpg');
+			saveCanvas(canvasFocus, 'png');
 		}else{
 			msgError('存檔好像有點問題，確定一下圖片吧？');
 		}
@@ -52,18 +53,25 @@ function init(){
 	
 	$('#colorPicker').css({'background': defaultColor, color: 'rgba(0,0,0,0)'});	
 	$('#colorPicker').click(function(){
-		var colorPi = $('<div>').farbtastic(function(color){
-			$('#colorPicker').css('background', color);
-			defaultColor = color;
-		});
-		makeWindow('調色盤', colorPi).dialog({
-					width:'auto',
-					resizable: false,
-					close:function(){ $(this).remove();}
-				});
+		makeColorPicker($(this));
 	});
 	
 	$('#colorPicker').before(makeRange(1, 10, 1));
+}
+
+function makeColorPicker(contentHTML){
+	var colorPi = $('<div>').farbtastic(function(color){
+			contentHTML.css('background', color);
+			defaultColor = color;
+		});
+	makeWindow('調色盤', colorPi).dialog({
+				width:'auto',
+				position: ['right', 'top'],
+				resizable: false,
+				close:function(){ $(this).remove();}
+			});
+	
+	return colorPi;
 }
 
 function makeRange(min, max, step){
@@ -138,7 +146,8 @@ function readPic(file){
 function saveCanvas(canvas, type){		//儲存檔案
 	switch(type){
 		case 'png':
-			Canvas2Image.saveAsPNG(canvas);
+			pic = Canvas2Image.saveAsPNG(canvas, false);
+			//savePic(canvasFocus.title, 'png', pic.src);
 			break;
 		case 'jpg':
 			Canvas2Image.saveAsJPEG(canvas);
@@ -147,8 +156,16 @@ function saveCanvas(canvas, type){		//儲存檔案
 			Canvas2Image.saveAsBMP(canvas);
 			break;
 		default:
-			return 'type error';
+			return msgError('type error');
 	}
+}
+
+function savePic(fName, pType, pContent){
+	$.ajax({
+		url: serverPSPath,
+		type:"POST",
+		data: 'title=' + fName + '&type=' + pType + '&content=' + encodeURIComponent(pContent)
+	});
 }
 
 function makeMsgBox(){	//建立初始的訊息視窗;
@@ -229,6 +246,7 @@ function getPageCoord(element){
 
 function makeCanvas(title, w, h, bgcolor){		//建立畫布的方法;
 	canvas = $("<canvas>").css('background', '#fff');
+	canvas.get(0).title = title;
 	canvas.get(0).width = w;
 	canvas.get(0).height = h;
 	//canvas.get(0).getContext('2d').fillStyle = bgcolor;

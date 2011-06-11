@@ -3,7 +3,10 @@
    body{
       background-image:url(“back.gif”);
       background-repeat:no-repeat;
-      background-attachment: fixed;    
+      background-attachment: fixed;
+      background-transparent;
+      background-position: center;
+    
    }
 </style>
 [[/code]]
@@ -11,3 +14,5 @@
 ||background-image||指定背景圖片。ex：background-image: url(“background.jpg”)。延伸應用：background-repeat:repeat 表示背景圖片縱向橫向呈瓷磚狀排列。background-repeat:repeat-x表示背景圖片橫向重複排列。background-repeat:repeat-y表示背景圖片縱向重複排列。background-repeat:no-repeat 只有一個背景圖片不重複排列。||
 ||background-color||指定背景顏色。ex：background-color:#000000，表示背景為黑色。||
 ||background-attachment||固定背景圖片的位置。||
+||background-transparent||透視背景||
+||background-position||背景的對齊方式，有right，left，top，bottom，center，或者指定x軸跟y軸。ex：90% 90%||

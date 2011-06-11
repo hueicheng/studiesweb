@@ -1,0 +1,40 @@
+程式碼如下
+[[code type="css"]]
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+<canvas width="300" height="300" id="myLine" style="border:2px solid #000;"></canvas>
+<script>
+document.onmousedown = mouseGetPoint; //滑鼠左鍵按下時執行方法mouseGetPoint
+document.onmouseup = drawRect;  //滑鼠左鍵放開時執行方法drawRect
+var firstPointX = 0;  //宣告一全域變數，用途為第一點的X座標
+var firstPointY = 0;  //宣告一全域變數，用途為第一點的Y座標
+var secondPointX = 0;  //宣告一全域變數，用途為第二點的X座標
+var secondPointY = 0;  //宣告一全域變數，用途為第二點的Y座標
+function mouseGetPoint(){ //取得滑鼠左鍵按下時的座標
+		firstPointX = window.event.offsetX; //取得第一點X座標
+		firstPointY = window.event.offsetY;  //取得第一點Y座標
+}
+
+function drawRect(){ //開始畫矩形
+  secondPointX = window.event.offsetX;  //取得第二點X座標
+  secondPointY = window.event.offsetY;  //取得第二點Y座標
+  var canvas = document.getElementById('myLine');  //所要使用的畫布名稱
+  if(canvas && canvas.getContext){  //如果瀏覽器支援canvas的話
+        var cxt = canvas.getContext("2d");  //畫布的前後關係(可以理解為該畫布的各種屬性設定)
+	cxt.strokeStyle = "#f00";  //線條顏色
+	cxt.lineWidth = 3;  //線條粗細
+	var temp1 = (secondPointX - firstPointX);  //計算矩形之寬
+	var temp2 = (secondPointY - firstPointY);  //計算矩形之高
+	cxt.rect(firstPointX,firstPointY,temp1,temp2);  //從左至右分別為：矩形左上角之X座標、Y座標、矩形寬、矩形高
+	cxt.stroke();  //開始畫囉
+  }
+}
+</script>
+</body>
+</html>
+[[/code]]
+
+將全部的文字複製，貼上記事本，存成HTML檔，即可使用此範例

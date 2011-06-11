@@ -7,6 +7,12 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{
 body{ line-height: 1;}
 ol, ul{ list-style:none; }
 
+pre{ 
+	border: 2px dashed #666;
+	padding: 5px 0 0 5px;
+	border-radius: 5px;
+}
+
 /*連結樣式*/
 a, a:visited{
 	color:rgb(20,20,150);
@@ -83,7 +89,7 @@ body{
 #centerPane{
 	margin:0 auto 0;
 	padding: 20px 0 0 0;
-	width: 900px;
+	width: 1000px;
 	box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
 }
 
@@ -93,12 +99,12 @@ body{
 }
 
 #mainPane{
-	border-right: 4px solid #eee;
+	border-right: 4px solid #ccc;
 	float: left;
 	margin: 0 10px 0 0;
 	padding: 0 10px 0 20px;
 	position: relative;
-	width: 650px;
+	width: 700px;
 }
 
 #mainPane section header{
@@ -107,10 +113,9 @@ body{
 	padding: 0 0 10px 30px;
 }
 
-#mainPane section header h1{
-	color:rgb(100, 150, 250);
-	line-height: 2;
-}
+#mainPane section h1{ font-size: 2em; }
+
+#mainPane section header h1{color:rgb(100, 150, 250);}
 
 #mainPane section aside{
 	margin: 0 auto 30px;
@@ -121,7 +126,7 @@ body{
 #mainPane section footer{
 	margin: 20px auto 10px;
 	padding: 0 0 5px 0;
-	border-top: 2px solid #eee;
+	border-top: 2px solid #ccc;
 }
 
 #mainPane section footer ul{
@@ -132,13 +137,13 @@ body{
 	clear: both;
 	margin: 40px auto 0;
 	padding: 0 0 40px 0;
-	width: 800px;
+	width: 900px;
 }
 
 .centerInfo{
-	float:left;
-	padding: 0 0 20px 0;
-	width: 150px;
+	float:right;
+	padding: 0 0 20px 30px;
+	width: 200px;
 }
 
 .centerInfo ul{ margin:0; padding: 0;}

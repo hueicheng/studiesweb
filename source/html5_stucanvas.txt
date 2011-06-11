@@ -1,0 +1,19 @@
++ 簡介
+HTML5的Canvas元素是一個HTML標籤，與HTML標籤不同之處在於它的內容與呈現出來的JavaScript。 換句話說，為了充分利用HTML5的畫布，你需要放置Canvas標籤在HTML中的某個地方，創建一個初始化JavaScript函數訪問Canvas標籤一旦頁面加載，然後利用HTML5的API來繪製畫布你的視覺效果。
+
+------
+
++ 如何創建Canvas元素
+Canvas元素是設定一個矩形。
+一開始先指定Canvas元素的ID，之後設定矩形長和寬的長度。<canvas id="myCanvas" width="200" height="100"></canvas>
+放置的位置；
+[[code type="html"]]
+<html>
+　<body>
+    <canvas id="myCanvas" width="200" height="100"></canvas>
+    <script type="text/javascript">
+    利用JavaScrip畫圖的地方
+    </script>
+　</body>
+</html>
+[[/code]]

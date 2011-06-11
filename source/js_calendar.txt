@@ -1,0 +1,60 @@
+Google的日曆服務並提供Calendar API，我們可以透過Calendar API使用Google日曆服務中的各項功能
+
+絕大部分功能都是從Google Data API架構下所延伸出來的，Google Data API可以幫助我們讀取與撰寫網頁上的資料。
+
+如果我們想要利用Google Calendar API對未公開的日曆(自己或他人)，那麼身分認證就格為重要了。
+
+Google提供了一系列身分認證方法，在這裡介紹其中一種認證方式「AuthSub」。
+
+身分認證: 需為http為開頭網址，不能用本機開啟網頁，否則認證過程會錯誤
+
+身分認證實作:
+[[code]]
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load("gdata","1");
+
+var url = "http://www.google.com/calendar/feeds/";
+
+function login(){
+     var token = google.accounts.user.login(url);
+}
+
+function logout(){
+     google.accounts.user.logout();
+}
+
+function checkLogin(){
+     window.alert(google.accounts.user.checkLogin(url));
+}
+
+function handleInfo(data){
+     var response = eval(data.currentTarget.responseText);
+     window.alert('Target: ' + response.Target + "\n" +
+             'Scope: ' + response.Scope + "\n" +
+             'Secure: ' + response.Secure);
+}
+
+function getInfo(){
+     if(google.accounts.user.checkLogin(url)){
+             google.accounts.user.getInfo(handleInfo);
+     }
+}
+</script>
+</head>
+<body>
+<input type="button" value="login" onclick="login()" />
+<input type="button" value="logout" onclick="logout()" />
+<input type="button" value="checkLogin" onclick="checkLogin()" />
+<input type="button" value="getInfo" onclick="getInfo()" />
+</body>
+</html>
+[[/code]]
+
+取得日曆資訊實作:
+[[code]]
+施工中~
+[[/code]]

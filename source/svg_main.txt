@@ -34,7 +34,7 @@ xmlns="http://www.w3.org/2000/svg">
 ||<?xml version="1.0" standalone="no"?>||XML的宣告。version註明xml版本的屬性是一定要有的，standalone表示SVG文件是獨立的。standalone="no"表示SVG文檔有一個引用到外部的DTD文件。||
 ||<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN">||指SVG外部的DTD。||
 ||<"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">||DTD的位址。DTD的駐留在W3C，它包含所有允許SVG的元素。||
-||<svg>~</svg>||為SVG的主要內容，它包含了開使 <svg>標籤和結束 </svg>標籤。||
+||<svg>~</svg>||為SVG的主要內容，它包含了開始 <svg>標籤和結束 </svg>標籤。||
 ||width||設置SVG文件檔的寬度。||
 ||height||設置SVG文件檔的高度。||
 ||version||這裡的version是註明SVG版本的屬性，也是一定要有的。||

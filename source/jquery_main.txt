@@ -1,1 +1,29 @@
-原本更早以前就能學一下，但是拖太久加上自己太懶演變成這學期有課開...。
++ 簡介
+jQuery 是一套物件導向式簡潔輕量級的 JavaScript Library。透過 jQuery 你可以用最精簡少量的程式碼來輕鬆達到跨瀏覽器 DOM 操作、事件處理、設計頁面元素動態效果、AJAX 互動等。jQuery 的優點如下
+1. 官方文件詳細。
+2. 簡潔不笨重，壓縮後大約15KB (v1.2.6)。
+3. 只要你有 JavaScript 的基礎，不用再多去學習一大堆新語法。
+4. 不用去煩惱跨瀏覽器的問題，jQuery 已經幫你作好了。(IE 6.0+、FF 1.5+、Safari 2.0+、Opera 9.0+)
+5. 支援CSS3選擇器。
+6. 社群活躍，你可以有很多人家寫好免費的 plugin 用。
+7. 跟其它 library 一起使用也不衝突。(jQuery.noConflict())
+8. jQuery UI 幫你漂亮搞定 (Web 2.0?) 網站使用者介面。
+
+jQuery UI則是一個建立在jQuery JavaScript函式庫上的小工具跟互動式函式庫，用來建立高互動的web應用程式，以提高jQuery工作速度，
+
+-------
+
++ jQuery放置的位置
+jQuery主要儲存在單獨的JavaScript文件裡，包含jQuery的。
+**※**必須放置在JavaScript的<script>標籤網頁的<head>裡。
+[[code type="html"]]
+<html>
+<head>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+//這裡放置你的程式碼。
+</script>
+</head>
+</body>
+</html>
+[[/code]]

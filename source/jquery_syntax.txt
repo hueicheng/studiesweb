@@ -1,0 +1,24 @@
+關於錢記號 $ 將會是你學習及使用 jQuery 的過程中最重要的物件。jQuery 程式碼由 $ (或jQuery) 開始 → 後面會接著圓刮號「()」→ 而圓刮號裡面的參數是你想叫 jQuery 幫你找什麼 (取得哪個(些)元素) → 接著是你想叫 jQuery 執行什麼動作 (或處理事件)。
+例如：
+[[code type="html"]]
+<html>
+<head>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+$("#demo").click(function(){
+  $("#demo").css("background-color","gray");
+});
+</script>
+</head>
+
+<body>
+<h2>This is a heading</h2>
+<p>This is a paragraph.</p>
+<p>This is another paragraph.</p>
+<button>Click me</button>
+</body>
+</html>
+[[/code]]
+++ 程式解說：
+||$("#demo")||選取id為demo的元素，並綁定onclick事件。||
+||.css("background-color","gray")||叫jQuery將其CSS的背景顏色屬性改成灰色。||

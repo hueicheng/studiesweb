@@ -2,7 +2,9 @@
 [[row]]
 [[cell style="width:120px; vertical-align:top; "]]
 +++ [[[jquery:main|簡介]]]
-
++++ [[[jquery:syntax|基本語法]]]
++++ [[[jquery:select|選取器]]]
++++ [[[jquery:event|事件處理]]]
 
 +++++ --[[[jquery:_template|此欄]]]--
 [[/cell]]

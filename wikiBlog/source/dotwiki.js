@@ -18,7 +18,7 @@ function save() {
 
 onmessage = function(event){
 	postMessage(wiki2html(event.data));
-}
+};
 
 // gi 的 g 是 global 的意思，會取代所有符合的樣式, i 是 ignore 會忽略大小寫。
 function wiki2html(wikiText) {
@@ -26,8 +26,9 @@ function wiki2html(wikiText) {
   init();
   var text = wikiText
     .replace(/\r/gi, "") // 刪除 \r 字元
-    .replace(/\[\[image\s([^\s]+)\s+size="medium"\]\]/gi, '<img src=$1 width=512px />') // 範例：[[image test.jpg size="medium"]]
-    .replace(/\[\[image\s([^\s\]]+)[^\]]*\]\]/gi, '<img src=$1 />') // 範例：[[image test.jpg]]
+    .replace(/\<(\s*\w+\s*\w*)\>(.[^\<\>])*\<(\/\s*\w+\s*)\>/gi, '&lt;$1&gt;$2&lt;$3&gt;')	//顯示HTML
+    //.replace(/\[\[image\s([^\s]+)\s+([^\s]=([^\s]+))*[\]]*\]\]/gi, '<img src=$1 $2=$3 />') // 範例：[[image test.jpg size="medium"]] <---目前有問題...
+    .replace(/\[\[image\s([^\s\]]+)[^\]]*\]\]/gi, '<img title=$1 />') // 範例：[[image test.jpg]]
     .replace(/\[(http[s]?:\/\/[^\s\]]+)\]/gi, '<a href=$1>$1</a>') // 範例：[http://tw.yahoo.com/]
 	.replace(/\[\*?(http[s]?:\/\/[^\s\]]+)\s(.+)\]/gi, '<a href=$1>$2</a>') // 範例：[http://tw.yahoo.com/ yahoo]   //這有問題，尚無頭緒
     .replace(/\[\[\[([:\w-]+)\]\]\]/gi, '<a href=#$1>$1</a>') // 範例：[[[innerLink]]]	
@@ -59,18 +60,17 @@ function wiki2html(wikiText) {
 	.replace(/\[\[\$\s(.+)*\s\$\]\]/gi, '<img src="http://chart.apis.google.com/chart?cht=tx&chl=$1" />')//範例：數學表達式 尚有莫名錯誤..
 	.replace(/\[\[math label1\]\]\n\r(.+)*\n\r\[\[\/math label1\]\]/gi,'<img src="http://chart.apis.google.com/chart?cht=tx&chl=$1" />')
 	.replace(/:\s(.+)\s:\s(.+)/gi, '<dt>$1<dd>$2</dd></dt>')
-	.replace(/\[\[note\]\](.+)\[\[\/note\]\]/gi, '<pre>$1</pre>')  //範例 ：[[note]]hello world[[/note]]
-	.replace(/\[\[html\]\](.+)\[\[\/html\]\]/gi, '$1')  //範例：[[html]]<p>hello</p>[[/html]]
+	
 	//.replace(/\@\@(.+)\@\@/gi, '@@$1@@')  //範例：@@hello //world// **bye**@@
    // .replace(/\[\[video\s([^\s\]]+)[^\]]*\]\]/gi,'<video src='+attachPath+'/$1 controls="controls"></video>') //範例: [[video test.mp4]]
    // .replace(/\[\[audio\s([^\s\]]+)[^\]]*\]\]/gi,'<audio src='+attachPath+'/$1 controls="controls"></audio>') //範例: [[audio test.mp3]]
-   
+   ;
     
   var lines = text.replace(/\r/, '').split("\n");
   var html = "";
   for (i in lines) {
     html += convertLine(lines[i]);
-    if (inCode || inList || inTitle || inComment || inTable || inTabs) 
+    if (inCode || inList || inTitle || inComment || inTable || inTabs || inHtml || inNote) 
       html+="\n";
     else
       html+="<br />";
@@ -80,7 +80,7 @@ function wiki2html(wikiText) {
 var temp = 0;
 var levelStack = new Array();
 var tabStack = new Array();
-var inList=false, inCode=false, inTitle=false, inComment=false, inTable=false, inTabs=false;
+var inList=false, inCode=false, inTitle=false, inComment=false, inTable=false, inTabs=false, inHtml = false, inNote = false;
 function init() {
   levelStack.length = 0;
   tabStack.lengt = 0;
@@ -89,16 +89,21 @@ function init() {
   inTitle=false; 
   inComment=false;
   inTable=false;
+  inHtml = false;
+  inNote = false;
   inTabs=false;
 }
  
 function convertLine(line) {
   var toLine = line;
+  toLine = convertCode(toLine);
   toLine = convertList(toLine);
   toLine = convertTable(toLine);
   toLine = convertTitle(toLine);
-  toLine = convertCode(toLine);
+  
   toLine = convertComment(toLine);
+  toLine = convertHtml(toLine);
+  toLine = convertNote(toLine);
   toLine = convertTabs(toLine);
   return toLine;
 }
@@ -193,6 +198,32 @@ function convertCode(line) {
   }
   else
     return line;
+}
+
+function convertHtml(line){
+	if(line.match(/^\[\[html(\s(.*))?\]\]\s*$/i)){
+		inHtml = true;
+		return line.replace(/^\[\[html(\s(.*))?\]\]\s*$/i, "<pre $1>");
+	}
+	else if(line.match(/^\[\[\/html\]\]\s*$/i)){
+		inHtml = false;
+		return line.replace(/^\[\[\/html\]\]\s*$/i, "</pre>");
+	}
+	else
+		return line;
+}
+
+function convertNote(line){
+	if(line.match(/^\[\[note(\s(.*))?\]\]\s*$/i)){
+		inNote = true;
+		return line.replace(/^\[\[note(\s(.*))?\]\]\s*$/i, '<pre class="note" $1>');
+	}
+	else if(line.match(/^\[\[\/note\]\]\s*$/i)){
+		inNote = false;
+		return line.replace(/^\[\[\/note\]\]\s*$/i, "</pre>");
+	}
+	else
+		return line;
 }
  
 function convertComment(line) {

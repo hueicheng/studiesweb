@@ -1,0 +1,13 @@
++ 音符實作
+* [[[SVG:whole | 全音符]]]
+* [[[SVG:two | 二分音符]]]
+* [[[SVG:four | 四分音符]]]
+* [[[SVG:eight | 八分音符]]]
+* [[[SVG:sixteen | 十六分音符]]]
+* [[[SVG:thirty two | 三十二分音符]]]
+* [[[SVG:whole relax | 全休止符]]]
+* [[[SVG:two relax | 二分休止符]]]
+* [[[SVG:four relax | 四分休止符]]]
+* [[[SVG:high | 高音譜號]]]
+* [[[SVG:alto | 中音譜號]]]
+* [[[SVG:low | 低音譜號]]]

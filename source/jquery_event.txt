@@ -1,0 +1,38 @@
+jQuery 的事件處理函式大都提供兩種用途，一種是呼叫帶有參數的函式 － 綁定事件處理函式；另一種則是呼叫不帶有參數的函式 － 觸發該事件。
+* 帶有參數的範例： _
+程式解說：綁定所有段落觸發 click 事件時，將背景顏色改為藍色。
+[[code type="html"]]
+$("p").click(function() {
+  $(this).css("background-color","blue");
+});
+[[/code]]
+
+* 不帶有參數的範例： _
+程式解說：觸發所有被選取的"p"做click 事件。
+[[code type="html"]]
+$("p").click();
+[[/code]]
+##red|事件處理函數中的「this」為被觸發的「DOM元素」。(非jQuery物件)##
+
+上述的程式碼，我們用到 jQuery 定義好的 click 函式來處理 click event，然而 jQuery 也同樣對 DOM 其它的 event 都有相關的函式，如以下的 jQuery 事件函式也是同樣的使用方法：
+||事件||觸發條件||
+||(on) blur||物件失去焦點時||
+||(on) change||物件內容改變時||
+||(on) click||滑鼠點擊物件時||
+||(on) dblclick||滑鼠連點二下物件時||
+||(on) error||當圖片或文件下載產生錯誤時||
+||(on) focus||當物件被點擊或取得焦點時||
+||(on) keydown||按下鍵盤按鍵時||
+||(on) keypress||按下並放開鍵盤按鍵後||
+||(on) onkeyup||按下並放開鍵盤按鍵時||
+||(on) onload||網頁或圖片完成下載時||
+||(on) mousedown||按下滑鼠按鍵時||
+||(on) mousemove||介於over跟out間的滑鼠移動行為||
+||(on) mouseout||滑鼠離開某物件四周時||
+||(on) mouseover||滑鼠離開某物件四周時||
+||(on) mouseup||放開滑鼠按鍵時||
+||(on) resize||當視窗或框架大小被改變時||
+||(on) scroll||當捲軸被拉動時||
+||(on) select||當文字被選取時||
+||(on) submit||當按下送出按紐時||
+||(on) unload||當使用者關閉網頁時||

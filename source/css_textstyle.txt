@@ -1,0 +1,9 @@
+||text-transform:uppercase||將指定英文字母轉換大小寫。ex：capitalize將每個單字字首轉為大寫。ex：lowercase將每個單字轉為小寫。ex：uppercase將每個單字轉為大寫。||[[image http://i166.photobucket.com/albums/u90/tony000aaa/text-transform.jpg]]||
+||text-indent:2em||設定首行縮排。||[[image http://i166.photobucket.com/albums/u90/tony000aaa/text-indent.jpg]]||
+||text-decoration:||指定字體底線。ex：underline 文字加註底線。overline 文字加註上標線。line-through 文字加註取消線。||[[image http://i166.photobucket.com/albums/u90/tony000aaa/text-decoration.jpg]]||
+||text-shadow:#666666 3px 2px 1.3px||文字加入陰影，以下均以範例為例。左至右為，顏色、X軸、Y軸、陰影粗細。||[[image http://i166.photobucket.com/albums/u90/tony000aaa/text-shadow.jpg]]||
+||letter-spacing:5px||字間距離。||[[image http://i166.photobucket.com/albums/u90/tony000aaa/letter-spacing.jpg]]||
+||word-spacing:5px||單字間距。||[[image http://i166.photobucket.com/albums/u90/tony000aaa/word-spacing.jpg]]||
+||line-height:30px||設定行高。||[[image http://i166.photobucket.com/albums/u90/tony000aaa/line-height.jpg]]||
+||vertical-align:top||top：垂直向上對齊；middle：垂直置中對齊；bottom：垂直向下對齊，範例圖片為垂直向上對齊||[[image http://i166.photobucket.com/albums/u90/tony000aaa/vertical-align.jpg]]||
+||text-align:right||文字對齊方式。ex：right，靠右對齊。left，靠左對齊。center，置中對齊。justify，左右對齊。||[[image http://i166.photobucket.com/albums/u90/tony000aaa/text-align.jpg]]||

@@ -17,3 +17,23 @@
 + 新表單元素
 * [[[html5:datalist | 資　料　列　表　標　籤]]]
 * [[[html5:output | 輸　出　標　籤]]]
+* [[[html5:input | 新　類　型　輸　入　標　籤]]]
+
+[[collapsible show="停　用　標　籤" hide="返　回"]]
+||標籤名稱||說明||
+||<acronym>||首字母大寫||
+||<applet>||內嵌Java Applet||
+||<basefont>||指定基準字體||
+||<big>||放大字體||
+||<center>||內容置中對齊||
+||<dir>||目錄一覽||
+||<font>||指定字型||
+||<frame>||窗格||
+||<frameset>||窗格集合||
+||<noframes>||傳送給不支援窗格的瀏覽器內容||
+||<s>||刪除線||
+||<strike>||刪除線||
+||<tt>||以等寬字體顯示||
+||<u>||字體加下底線||
+||<xmp>||直接輸出內容||
+[[/collapsible]]

@@ -1,0 +1,3 @@
+XMLHTTP是一組API函式集，可被JavaScript、JScript、VBScript以及其它web瀏覽器內嵌的指令碼語言呼叫，透過HTTP在瀏覽器和web伺服器之間收發XML或其它資料。XMLHTTP最大的好處在於可以動態地更新網頁，它無需重新從伺服器讀取整個網頁，也不需要安裝額外的外掛程式。該技術被許多網站使用，以實作快速響應的動態網頁應用。例如：Google的Gmail服務、Google Suggest動態尋找介面以及Google Map地理資訊服務。
+XMLHTTP是AJAX網頁開發技術的重要組成部分。
+除XML之外，XMLHTTP還能用於獲取其它格式的資料，如JSON或者甚至純文字。

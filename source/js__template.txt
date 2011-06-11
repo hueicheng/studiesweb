@@ -8,7 +8,13 @@
 * [[[js:loop|迴圈]]]
 * [[[js:function|函數]]]
 * [[[js:dom|DOM]]]
++++ 進階使用
+* [[[js:get|取得元素]]]
++++ [[[ajax:main|AJAX]]]
++++ [[[jquery:main|jQuery]]]
 +++ [[[js:works|作品]]]
++++ Google API
+* [[[js:calendar | Calendar API]]]
 
 +++++ [[[js:_template|編輯此欄]]]
 [[include _centerthead]]

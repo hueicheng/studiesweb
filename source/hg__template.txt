@@ -1,0 +1,16 @@
+[[include _thead]]
+
++++ [[[hg:main|簡介]]]
++++ [[[hg:basic|基礎用法]]]
++++ [[[hg:gooprject|Google Code]]]
+
+
++++++ --[[[hg:_template|板塊]]]--
+
+[[include _centerthead]]
++ 參考文獻
+[*http://mercurial.selenic.com/wiki/ Mercurial wiki]
+[*http://zh.wikipedia.org/zh-tw/Mercurial 維基百科-Mercurial]
+[*http://code.google.com/intl/zh-TW/projecthosting/ Google Code]
+
+[[include _endthead]]

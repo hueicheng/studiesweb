@@ -1,0 +1,32 @@
+在前面章節的例子中使用 $("#demo") 來選取元素，帶入的參數 demo 是表示你要找的元素，這是 CSS 選擇器(CSS Selector) 的語法，就如同 CSS 在做排版和外觀所使用的選擇器語法一樣。jQuery 所支援的 CSS Selector 包含了 CSS 1、CSS2 以及仍未正式發佈的 CSS3，此外透過 plugin 還可支援常用的 XPath 語法，善用這些 CSS、XPath 語法就可以很容易地找到你要處理的網頁元素，底下來看看更多的範例。
+
++ 選取元素
+jQuery使用CSS選擇器來選擇HTML元素。
+++ 一些選取元素的基本語法：
+* 一個簡單的範例：
+[[code type="html"]]
+<div id="body">  
+  <h2>Some Header</h2>  
+  <div class="contents">  
+    <p>...</p>  
+    <p>...</p>  
+  </div>  
+</div>
+[[/code]]
+
+||語法||說明||
+||$(this)||選取當前的HTML元素||
+||$("div")||選取所有<div>元素，包括開始和結束||
+||$("#body")||選取 id 為 body 的元素||
+||$("div#body")||選取 id 為 body 的 <div>||
+||$("div.contents p")||選取 class 為 contents 的 <div> 所包住的所有下層的 <p>||
+||$("div > div")||選取被 <div> 包住的下一層 <div>||
+||$("div:has(div)")||和前一個範例相反，這邊是選取至少有包住一個 <div> 的 <div>||
+
+------------
++ 選取屬性
+jQuery使用XPath表達式來選擇元素與給定的屬性。
+++ 一些選取元素的基本語法：
+||語法||說明||
+||$("[href]")||選擇所有屬性為"href"的元素。||
+||$("[href='#']") ||選擇所有屬性為"fref"的元素與值等於'#'。||

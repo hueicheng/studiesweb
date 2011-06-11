@@ -1,0 +1,19 @@
+[[note]]
+測試環境：Windows
+
+輸入：create table data1(name, age);
+
+這樣創建了一個名為data1的表格，裡面有name跟age這兩個欄位。
+[[/note]]
+
+[[note]]
+創建表格語法：
+create table table_name(field1, field2, field3, ...);
+
+table_name:表格名稱
+field:欄位名稱
+[[/note]]
+
+[[note]]
+[[image https://dl-web.dropbox.com/get/%E5%B0%88%E9%A1%8C%E7%94%A8%E8%B3%87%E6%96%99/%E7%AC%AC%E4%B8%80%E5%AD%B8%E6%9C%9F/SQLite%20image/create.png?w=2c3d09bf]]
+[[/note]]

@@ -1,0 +1,26 @@
+**全音符[[image  http://studiesweb.wikidot.com/local--files/files/all%20point%20note.svg]]**
++ 程式碼
+[[code type="html"]]
+<?xml version="1.0" encoding="UTF-8"?>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"
+ id="eighth">
+
+<!--符頭的部分-->
+<ellipse rx="100" ry="80" transform="translate(530,330)" style="fill:#000;" 
+ id="notehead" />
+
+<ellipse rx="70" ry="50" transform="translate(530,330) rotate(25)" style="fill:#fff;" 
+ id="center" /> 
+
+ 
+
+</svg>
+[[/code]]
+
++ 說明
+利用<ellipse>標籤來劃出全音符
+* 步驟一(畫出一個大橢圓形)
+一開始先定義橢圓在x軸上的長度rx="100" ，之後再定義y軸上的長度ry="80"，定義完橢圓形在x、y軸上的半徑之後我們要設定橢圓形的轉換"transform"，轉換為"translate(530,330)"。
+* 步驟二(劃出一個小橢圓形)
+之後，一樣照以上的步驟劃出小圓圈，只是從上圖可以看到第二個橢圓形比較小，所以在x、y上的半徑就比較小rx="70"、ry="50"，之後一樣設定橢圓形的轉換，而在這裡所設的轉換不一樣在"transform"屬性裡面多設了一個"rotate"屬性值，由上可以看到小的橢圓形有一點傾斜，所以該屬性值是用來設定頃斜的角度"25"。
