@@ -1,4 +1,5 @@
 <?php
+/*
 switch($_GET['type']){
 	case 'text':
 		$dir = "source/";
@@ -8,7 +9,8 @@ switch($_GET['type']){
 		break;
 	default:
 		echo "error";
-}
+}*/
+$dir = "source/";
 $title = $_GET['title'];
 $m = $dir . $title;
 $fp = fopen($m, "rb");

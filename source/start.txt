@@ -19,7 +19,7 @@
 ------
 
 我們推薦的瀏覽器：
-* [*http://moztw.org/ Firefox]
+* [*http://moztw.org Firefox]
 * [*http://www.google.com/chrome Google瀏覽器]
 
 至於IE 9 不推薦的理由是：它得在Vista / 7 等作業系統上才能使用。

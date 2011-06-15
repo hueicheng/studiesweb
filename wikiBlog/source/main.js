@@ -124,7 +124,9 @@ function makeFileList(){
 function reviewText(title, text){
 	arc = addArticle(title, wiki2html(text));
 	$('#mainPane').html(arc);
-	readPicFile($('img[title]'), $('img[title]').attr('title'));
+	for(pic in $('img[title]')){
+		readPicFile($('img[title]')[pic], $('img[title]')[pic].title);
+	}
 }
 
 function makeDrawMsgBox(){	//建立繪圖的訊息視窗;
@@ -160,7 +162,8 @@ function makeDrawMsgBox(){	//建立繪圖的訊息視窗;
 							"完成！":function(){
 									canvas = $(this).children('canvas').get(0);
 									//drawingData = canvas.toDataURL();
-									savePic(canvas.title, 'png', canvas.toDataURL())
+									//savePic(canvas.title, 'png', canvas.toDataURL())
+									localStorage.setItem(canvas.title, canvas.toDataURL());
 									str = "[[image " + canvas.title + "]]";
 									$('textarea[title=Editor]').focus();
 									insertText($('textarea[title=Editor]').get(0), str);
@@ -212,6 +215,7 @@ function makeEditor(){
 						selectedArt = $(this).find('input:text').val();
 						artText = $(this).find('textarea').val();
 						saveFile(selectedArt, artText);
+						//makeFileList();
 						reviewText(
 							$(this).find('input:text').val(),
 							$(this).find('textarea').val()
@@ -251,6 +255,7 @@ function addArticle(title, context){
 }
 
 function readPicFile(target, fName){
+	/*
 	$.ajax({
 		url: serverPath,
 		data: 'title=' + fName + '&type=image',
@@ -258,9 +263,19 @@ function readPicFile(target, fName){
 			target.attr('src', data);
 		}
 	});
+	* */
+	data = localStorage.getItem(fName);
+	target.src = data;
 }
 
 function readFile(fName){
+	if(localStorage.getItem(fName) != null){
+		artText = localStorage.getItem(fName);
+		selectedArt = fName;
+		arc = addArticle(selectedArt, wiki2html(artText));
+		$('#mainPane').html(arc);
+	}else{
+	
 	$.ajax({
 		url: serverPath,
 		data: 'title=' + fName + '&type=text',
@@ -269,14 +284,22 @@ function readFile(fName){
 			selectedArt = fName;
 			arc = addArticle(selectedArt, wiki2html(artText));
 			$('#mainPane').html(arc);
+			
+			localStorage.setItem(selectedArt, artText);
 		}
 	});
+	
+}
 }
 
 function saveFile(fName, fContent){
+	/*
 	$.ajax({
 		url: serverSFPath,
 		type:"POST",
 		data: 'title=' + fName + '&content=' + encodeURIComponent(fContent)
 	});
+	* */
+	
+	localStorage.setItem(fName, fContent);
 }
